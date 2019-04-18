@@ -1,0 +1,102 @@
+//
+//  PlanATour4ViewController.swift
+//  MAMG
+//
+//  Created by Sarah Al-Matawah on 25/02/2019.
+//  Copyright © 2019 Areej. All rights reserved.
+//
+
+import UIKit
+import SwiftyJSON
+import Alamofire
+class PlanATour4ViewController: UIViewController {
+
+    //TODO: •    The user has the option to start the tour or add it to the favorites.
+    //•    After the user clicks favorite, then a flag value will display if the user is signed in.
+    //•    If the name is not signed in, then the user will be redirected to the Sign in interface.
+    //•    If the name is signed in, then the tour will be added to the users' favorite tours.
+    //•    After the user clicks start, then the user will be redirected to the on tour interface.
+    
+    
+    var hallsSelected : [String] = []
+    var ObjSelected : [String] = []
+    var tourID: Int = 0
+    var tourName: String = ""
+    let ObjURL = "http://192.168.64.2/dashboard/MyWebServices/api/savePlannedTour.php"
+    let UserURL = "http://192.168.64.2/dashboard/MyWebServices/api/saveUsersTour.php"
+    var parameterUser: [String : Any] = [:]
+    
+    
+    //Outlets
+    
+    @IBOutlet weak var saveTour: UIButton!
+    
+    @IBOutlet weak var startTour: UIButton!
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        if isUserAGust {
+            saveTour.isHidden = true
+        } else {
+            saveTour.isHidden = false
+            parameterUser = ["UserID": usersEmaile, "TourID": tourID]
+        }
+    }
+    
+    func setUser(){
+        print("Setting user")
+        Alamofire.request(UserURL, method: .post, parameters: parameterUser).responseData(completionHandler: {(response) in
+            if response.result.isSuccess {
+                
+                let ObjJSON : JSON = JSON(response.data)
+                print("user set")
+                print(ObjJSON)
+            } else {
+                print("Error \(String(describing: response.result.error))")
+            }
+        })
+    }
+    
+    func setObjs(){
+        //Objects is uploaded intoDB
+        for row in 0..<ObjSelected.count{
+            print("Setting obj")
+            let objID = ObjSelected[row]
+            var parameterObj: [String : Any] = ["ObjID": objID, "TourID": tourID, "UserID": usersEmaile]
+            Alamofire.request(ObjURL, method: .post, parameters: parameterObj).responseData(completionHandler: {(response) in
+                if response.result.isSuccess {
+                    let ObjJSON : JSON = JSON(response.data)
+                    print("obj set")
+                    print(ObjJSON)
+                } else {
+                    print("Error \(String(describing: response.result.error))")
+                }
+            })
+        }
+    }
+    
+    @IBAction func saveTourInDB(_ sender: Any) {
+        print("***************************************\n\n\n")
+        print("***************************************")
+        print( "Object ID:")
+        print(ObjSelected)
+        print( "Tour ID: \(tourID)")
+        print( "User ID: \(usersEmaile)")
+        
+        if !usersEmaile.isEmpty {
+            setUser()
+        }
+        
+        setObjs()
+    }
+    
+    @IBAction func startOnTour(_ sender: Any) {
+        
+        //TODO: Indoor Nav Segue
+        let cv = UIStoryboard(name: "IndoorNavigation", bundle: nil).instantiateViewController(withIdentifier: "mapTE") as! OnTourMapViewController
+         cv.tourID = tourID
+        self.present(cv, animated: true, completion: nil)
+    }
+    
+    
+
+}

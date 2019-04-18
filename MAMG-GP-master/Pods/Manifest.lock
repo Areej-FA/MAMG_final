@@ -1,0 +1,36 @@
+PODS:
+  - Alamofire (4.8.1)
+  - MIDITimeTableView (1.0.2)
+  - StepProgressBar (0.1.4)
+  - SwiftyJSON (4.2.0)
+  - TCProgressBar (0.4)
+  - YoutubePlayer-in-WKWebView (0.2.5)
+
+DEPENDENCIES:
+  - Alamofire
+  - MIDITimeTableView
+  - StepProgressBar
+  - SwiftyJSON
+  - TCProgressBar
+  - YoutubePlayer-in-WKWebView
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - Alamofire
+    - MIDITimeTableView
+    - StepProgressBar
+    - SwiftyJSON
+    - TCProgressBar
+    - YoutubePlayer-in-WKWebView
+
+SPEC CHECKSUMS:
+  Alamofire: 16ce2c353fb72865124ddae8a57c5942388f4f11
+  MIDITimeTableView: 007f2fcbebf8bcbe30e48d7369e13121c8d2074c
+  StepProgressBar: 0dd24d84add0c914aea42848737416583eb95db9
+  SwiftyJSON: c4bcba26dd9ec7a027fc8eade48e2c911f229e96
+  TCProgressBar: 14bf8cce9d9a4dae2d82fe88b8e9c45709ebe55d
+  YoutubePlayer-in-WKWebView: 4dad12b3ece938a6456fa4374df78942f88b485a
+
+PODFILE CHECKSUM: 58a7d377baa00909a61e1915f5aa3d7b6a592fb3
+
+COCOAPODS: 1.6.1
