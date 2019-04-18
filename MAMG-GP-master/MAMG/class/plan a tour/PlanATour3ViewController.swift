@@ -24,11 +24,7 @@ struct ObjsName{
 }
 
 
-class PlanATour3ViewController: UIViewController {
-
- 
-    @IBOutlet weak var ObjTable: UITableView!
-    
+class PlanATour3ViewController: UIViewController, UITableViewDataSource,UITableViewDelegate {
     var tourID: Int = 0
     var tourName: String = ""
     var url = "http://192.168.64.2/dashboard/MyWebServices/api/getObjects.php"
@@ -38,12 +34,23 @@ class PlanATour3ViewController: UIViewController {
     var selectAll: Bool = false
     
     
+    @IBOutlet weak var ObjTable: UITableView!
+    
+    //TODO: •    This interface presents the scientific objects for the specified hall by retrieving them from the database.
+    //•    The user can select the scientific objects they want to visit on their tour.
+    //•    After the user clicks next, then the scientific objects selected by the user will be stored in an array.
+    //•    If the array is empty, then the user has to select at least one scientific object.
+    //•    If the array is not empty, then the user will be redirected to the plan a tour step 4 interface and those scientific objects will be added to the database.
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        ObjTable.dataSource = self
+        ObjTable.delegate = self
+        
+        getObj()
     }
+    
     func getObj(){
         for row in 0..<hallsSelected.count{
             let hallID = hallsSelected[row]
@@ -52,7 +59,7 @@ class PlanATour3ViewController: UIViewController {
             Alamofire.request(url, method: .post, parameters: parameter).responseData(completionHandler: { (response) in
                 
                 if response.result.isSuccess {
-                    let ObjJSON : JSON = JSON(response.data)
+                    let ObjJSON : JSON = JSON(response.data as Any)
                     print(ObjJSON)
                     
                     let lastRow = ObjJSON["objectdata"].count
@@ -180,13 +187,29 @@ class PlanATour3ViewController: UIViewController {
         reloadTable()
     }
     
+    @IBAction func backBtn(_ sender: Any) {
+        if isItArabic {
+            //
+            let cv = UIStoryboard(name: "ToursStoryboard", bundle: nil).instantiateViewController(withIdentifier: "PlanATour2AR") as! PlanATour2ViewController
+            cv.tourID = tourID
+            cv.hallsSelected = hallsSelected
+            self.present(cv, animated: true, completion: nil)
+            
+        } else {
+            
+            let cv = UIStoryboard(name: "ToursStoryboard", bundle: nil).instantiateViewController(withIdentifier: "PlanATour2E") as! PlanATour2ViewController
+            cv.tourID = tourID
+            cv.hallsSelected = hallsSelected
+            self.present(cv, animated: true, completion: nil)
+            
+        }
+    }
+    
+    
     func alertMessage(TitleOfMessage: String, Message: String, Okay: String){
         let alertPrompt = UIAlertController(title: TitleOfMessage, message: Message, preferredStyle: .actionSheet)
         var confirmAction = UIAlertAction(title: Okay, style: UIAlertAction.Style.default, handler: nil)
         alertPrompt.addAction(confirmAction)
         present(alertPrompt, animated: true, completion: nil)
     }
-
-    
-
 }

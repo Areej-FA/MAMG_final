@@ -92,9 +92,7 @@ class OnTourMapViewController: UIViewController {
     }
     
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
-        scitechMapWeb.evaluateJavaScript("document.body.style.webkitTouchCallout='none';")
         webLoaded = true
-        
     }
     
     //Function called every time users position updates

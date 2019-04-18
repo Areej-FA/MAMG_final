@@ -172,8 +172,6 @@ class OnTourObjViewController: UIViewController {
     @IBAction func startOnTour(_ sender: Any) {
         //TODO: Indoor Nav Segue
         let cv = UIStoryboard(name: "IndoorNavigation", bundle: nil).instantiateViewController(withIdentifier: "mapTE") as! OnTourMapViewController
-        
-        cv.tourID = tourID
         self.present(cv, animated: true, completion: nil)
     }
     

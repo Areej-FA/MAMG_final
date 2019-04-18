@@ -24,20 +24,22 @@ struct HallsName{
 }
 class PlanATour2ViewController: UIViewController, UITableViewDataSource,UITableViewDelegate {
    
-    @IBOutlet weak var tableHalls: UITableView!
-    
-    
     var tourID: Int = 0
     var url = "http://192.168.64.2/dashboard/MyWebServices/api/returnHalls.php"
     var nameArray: NSMutableArray = NSMutableArray()
     var hallsSelected : [String] = []
     var tourName: String = ""
     
- 
+    @IBOutlet weak var tableHalls: UITableView!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        tableHalls.dataSource = self
+        tableHalls.delegate = self
+        
+        getHalls()
     }
     
     func getHalls(){
@@ -78,8 +80,20 @@ class PlanATour2ViewController: UIViewController, UITableViewDataSource,UITableV
         //print("Img Array: \(imgArray.count)")
         tableHalls.reloadData()
     }
-
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = self.tableHalls.dequeueReusableCell(withIdentifier: "HallCell", for: indexPath) as! PlanATour2TableCellViewController
+        //print("Set cells")
+        
+        let HallNames = nameArray[indexPath.row] as! HallsName
+        cell.ObjName.text = HallNames.Name
+        cell.ObjImg.image = UIImage(data: HallNames.UriName)
+        
+        return cell
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        //print("count")
         return nameArray.count
     }
     
@@ -110,17 +124,6 @@ class PlanATour2ViewController: UIViewController, UITableViewDataSource,UITableV
         
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = self.tableHalls.dequeueReusableCell(withIdentifier: "HallCell", for: indexPath) as! PlanATour2TableCellViewController
-        //print("Set cells")
-        
-        let HallNames = nameArray[indexPath.row] as! HallsName
-        cell.ObjName.text = HallNames.Name
-        cell.ObjImg.image = UIImage(data: HallNames.UriName)
-        
-        return cell
-    }
-    
     @IBAction func NextStep(_ sender: Any) {
         if hallsSelected.isEmpty {
             if isItArabic{
@@ -147,6 +150,22 @@ class PlanATour2ViewController: UIViewController, UITableViewDataSource,UITableV
                 self.present(cv, animated: true, completion: nil)
                 
             }
+        }
+    }
+    
+    @IBAction func backBtn(_ sender: Any) {
+        if isItArabic {
+            //
+            let cv = UIStoryboard(name: "ToursStoryboard", bundle: nil).instantiateViewController(withIdentifier: "PlanATour1_VC_Ar") as! PlanATour1ViewController
+            cv.tourN = tourName
+            self.present(cv, animated: true, completion: nil)
+            
+        } else {
+            
+            let cv = UIStoryboard(name: "ToursStoryboard", bundle: nil).instantiateViewController(withIdentifier: "PlanATour1_VC_En") as! PlanATour1ViewController
+            cv.tourN = tourName
+            self.present(cv, animated: true, completion: nil)
+            
         }
     }
     

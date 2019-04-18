@@ -58,9 +58,7 @@ class ToursInformationViewController: UIViewController {
                 print("Error \(String(describing: response.result.error))")
             }
         }
-        
     }
-    
     
     func Tours_info(json: JSON){
         if isItArabic  {

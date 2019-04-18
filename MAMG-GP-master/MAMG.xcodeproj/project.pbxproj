@@ -73,6 +73,10 @@
 		FC139F6B222464840045237C /* PlanATour4ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC139F6A222464840045237C /* PlanATour4ViewController.swift */; };
 		FC139F6D22250C260045237C /* MainTourViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC139F6C22250C260045237C /* MainTourViewController.swift */; };
 		FC139F7122250CC90045237C /* TourInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC139F7022250CC90045237C /* TourInfoViewController.swift */; };
+		FC9EA2A42268C20D009BC241 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC9EA2A32268C20D009BC241 /* LoginViewController.swift */; };
+		FC9EA2A62268C276009BC241 /* userProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC9EA2A52268C276009BC241 /* userProfileViewController.swift */; };
+		FC9EA2A82268C31C009BC241 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC9EA2A72268C31C009BC241 /* SignUpViewController.swift */; };
+		FC9EA2AA2268C3AF009BC241 /* VolunteersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC9EA2A92268C3AF009BC241 /* VolunteersViewController.swift */; };
 		FCB6FA3C220F3C4A0003C311 /* ObjectInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB6FA3B220F3C4A0003C311 /* ObjectInfoViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -176,6 +180,10 @@
 		FC139F6A222464840045237C /* PlanATour4ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanATour4ViewController.swift; sourceTree = "<group>"; };
 		FC139F6C22250C260045237C /* MainTourViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTourViewController.swift; sourceTree = "<group>"; };
 		FC139F7022250CC90045237C /* TourInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TourInfoViewController.swift; sourceTree = "<group>"; };
+		FC9EA2A32268C20D009BC241 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		FC9EA2A52268C276009BC241 /* userProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = userProfileViewController.swift; sourceTree = "<group>"; };
+		FC9EA2A72268C31C009BC241 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		FC9EA2A92268C3AF009BC241 /* VolunteersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VolunteersViewController.swift; sourceTree = "<group>"; };
 		FCB6FA3B220F3C4A0003C311 /* ObjectInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectInfoViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -251,7 +259,6 @@
 			isa = PBXGroup;
 			children = (
 				A00A022721D164E400723260 /* AppDelegate.swift */,
-				84B47483222D1D56006CE54D /* models */,
 				A047138721F6FD0B005ADD1F /* story board */,
 				A047138621F6FCAB005ADD1F /* class */,
 				A047137821F6FB1E005ADD1F /* Resources */,
@@ -309,7 +316,9 @@
 		A047138621F6FCAB005ADD1F /* class */ = {
 			isa = PBXGroup;
 			children = (
+				84B47483222D1D56006CE54D /* models */,
 				A00A022921D164E400723260 /* MainViewController.swift */,
+				CF056D0D2267E63E00B2BAEB /* plan a tour */,
 				CF056D0C2267E62E00B2BAEB /* tours */,
 				A91A9223225D21890058DB89 /* EventInfoViewController.swift */,
 				A91A922B225D218A0058DB89 /* EventViewController.swift */,
@@ -329,6 +338,10 @@
 				A047139621F70A1E005ADD1F /* VisitTimeViewController.swift */,
 				CF056D0E2267EA9600B2BAEB /* GetTicketViewController.swift */,
 				CF056D1A22687F6200B2BAEB /* IndoorNavigation */,
+				FC9EA2A32268C20D009BC241 /* LoginViewController.swift */,
+				FC9EA2A52268C276009BC241 /* userProfileViewController.swift */,
+				FC9EA2A72268C31C009BC241 /* SignUpViewController.swift */,
+				FC9EA2A92268C3AF009BC241 /* VolunteersViewController.swift */,
 			);
 			path = class;
 			sourceTree = "<group>";
@@ -355,7 +368,6 @@
 				CF056D1022686F0000B2BAEB /* ScitechToursTableViewCell.swift */,
 				CF056D1222686F2000B2BAEB /* ScitechToursViewController.swift */,
 				CF056D142268758B00B2BAEB /* ToursInformationViewController.swift */,
-				CF056D0D2267E63E00B2BAEB /* plan a tour */,
 			);
 			path = tours;
 			sourceTree = "<group>";
@@ -665,11 +677,13 @@
 				A91A9236225D218A0058DB89 /* EventViewController.swift in Sources */,
 				A047139321F7045C005ADD1F /* AboutUsViewController.swift in Sources */,
 				A91A9232225D218A0058DB89 /* FavoriteToursViewController.swift in Sources */,
+				FC9EA2A62268C276009BC241 /* userProfileViewController.swift in Sources */,
 				CF056D1E2268816A00B2BAEB /* OnTourObjViewController.swift in Sources */,
 				A91A922F225D218A0058DB89 /* HallInfoViewController.swift in Sources */,
 				A047139721F70A1E005ADD1F /* VisitTimeViewController.swift in Sources */,
 				A91A9231225D218A0058DB89 /* WishlistViewController.swift in Sources */,
 				A047138921F6FD9F005ADD1F /* TourViewController.swift in Sources */,
+				FC9EA2A42268C20D009BC241 /* LoginViewController.swift in Sources */,
 				A91A9230225D218A0058DB89 /* GiftInfoViewController.swift in Sources */,
 				CF056D1C22687F8F00B2BAEB /* OnTourMapViewController.swift in Sources */,
 				A91A9235225D218A0058DB89 /* ToursHistoryViewController.swift in Sources */,
@@ -685,6 +699,7 @@
 				A047139121F70025005ADD1F /* ObjectIdViewController.swift in Sources */,
 				A00A022821D164E400723260 /* AppDelegate.swift in Sources */,
 				FC139F67222464690045237C /* PlanATour2ViewController.swift in Sources */,
+				FC9EA2AA2268C3AF009BC241 /* VolunteersViewController.swift in Sources */,
 				A91A9233225D218A0058DB89 /* HallsViewController.swift in Sources */,
 				A047138321F6FBD4005ADD1F /* ProgressHUD.m in Sources */,
 				8469E6712235373E009BF495 /* TourHistoryBean.swift in Sources */,
@@ -693,6 +708,7 @@
 				8469E66F223536FC009BF495 /* FavoriteTourBean.swift in Sources */,
 				8418A390222DCF2900843DC2 /* GiftBean.swift in Sources */,
 				CF056D152268758B00B2BAEB /* ToursInformationViewController.swift in Sources */,
+				FC9EA2A82268C31C009BC241 /* SignUpViewController.swift in Sources */,
 				A0A631D421EC4EC0009B5799 /* SettingsViewController.swift in Sources */,
 				A91A922E225D218A0058DB89 /* EventInfoViewController.swift in Sources */,
 				FCB6FA3C220F3C4A0003C311 /* ObjectInfoViewController.swift in Sources */,

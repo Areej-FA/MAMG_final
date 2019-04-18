@@ -17,6 +17,8 @@ class PlanATour4ViewController: UIViewController {
     //•    If the name is signed in, then the tour will be added to the users' favorite tours.
     //•    After the user clicks start, then the user will be redirected to the on tour interface.
     
+    @IBOutlet weak var saveTour: UIButton!
+    @IBOutlet weak var startTour: UIButton!
     
     var hallsSelected : [String] = []
     var ObjSelected : [String] = []
@@ -27,19 +29,31 @@ class PlanATour4ViewController: UIViewController {
     var parameterUser: [String : Any] = [:]
     
     
-    //Outlets
-    
-    @IBOutlet weak var saveTour: UIButton!
-    
-    @IBOutlet weak var startTour: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         if isUserAGust {
             saveTour.isHidden = true
         } else {
             saveTour.isHidden = false
             parameterUser = ["UserID": usersEmaile, "TourID": tourID]
         }
+    }
+    
+    @IBAction func saveTourInDB(_ sender: Any) {
+        print("***************************************\n\n\n")
+        print("***************************************")
+        print( "Object ID:")
+        print(ObjSelected)
+        print( "Tour ID: \(tourID)")
+        print( "User ID: \(usersEmaile)")
+        
+        if !usersEmaile.isEmpty {
+            setUser()
+        }
+        
+        setObjs()
+        
     }
     
     func setUser(){
@@ -74,29 +88,29 @@ class PlanATour4ViewController: UIViewController {
         }
     }
     
-    @IBAction func saveTourInDB(_ sender: Any) {
-        print("***************************************\n\n\n")
-        print("***************************************")
-        print( "Object ID:")
-        print(ObjSelected)
-        print( "Tour ID: \(tourID)")
-        print( "User ID: \(usersEmaile)")
-        
-        if !usersEmaile.isEmpty {
-            setUser()
-        }
-        
-        setObjs()
-    }
-    
     @IBAction func startOnTour(_ sender: Any) {
-        
         //TODO: Indoor Nav Segue
         let cv = UIStoryboard(name: "IndoorNavigation", bundle: nil).instantiateViewController(withIdentifier: "mapTE") as! OnTourMapViewController
-         cv.tourID = tourID
+        cv.tourName = tourName
+        cv.tourID = tourID
         self.present(cv, animated: true, completion: nil)
     }
     
-    
-
+    @IBAction func backBtn(_ sender: Any) {
+        if isItArabic {
+            //
+            let cv = UIStoryboard(name: "ToursStoryboard", bundle: nil).instantiateViewController(withIdentifier: "PlanATour3AR") as! PlanATour3ViewController
+            cv.hallsSelected = hallsSelected
+            cv.tourID = tourID
+            self.present(cv, animated: true, completion: nil)
+            
+        } else {
+            
+            let cv = UIStoryboard(name: "ToursStoryboard", bundle: nil).instantiateViewController(withIdentifier: "PlanATour3E") as! PlanATour3ViewController
+            cv.hallsSelected = hallsSelected
+            cv.tourID = tourID
+            self.present(cv, animated: true, completion: nil)
+            
+        }
+    }
 }

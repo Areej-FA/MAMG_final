@@ -45,19 +45,12 @@ class PlanATour1ViewController: UIViewController {
     
     
     @IBAction func UploadImage(_ sender: Any) {
-        
         let myPickerController = UIImagePickerController()
         myPickerController.delegate = self as! UIImagePickerControllerDelegate & UINavigationControllerDelegate
         myPickerController.sourceType = .photoLibrary
         self.present(myPickerController, animated: true, completion: nil)
-        
     }
-    
-    
-    
-    
-    
-    
+
     @IBAction func uploadPlannedTour(_ sender: Any) {
         
         if tourName.text!.isEmpty && tourDiscription.text!.isEmpty {
@@ -69,7 +62,6 @@ class PlanATour1ViewController: UIViewController {
             }
             
         } else {
-            
             var imgInData: Data = Data()
             var parameters: Parameters
             var imgName = "file"
@@ -92,9 +84,6 @@ class PlanATour1ViewController: UIViewController {
             
         }
     }
-    
-    
-    
     
     func uploadToDB(_ imgInData: Data,_ parameters: Parameters,_ imgName: String){
         
