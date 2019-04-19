@@ -99,7 +99,7 @@ class ScitechToursViewController: UIViewController, UITableViewDelegate, UITable
         }
         let TourNames = nameArray[indexPath.row] as! ScitechTours
         cell.Sname.text = TourNames.name
-        cell.SImage.image = UIImage(data: TourNames.UriName)
+        cell.Simage.image = UIImage(data: TourNames.UriName)
         
         return cell
         

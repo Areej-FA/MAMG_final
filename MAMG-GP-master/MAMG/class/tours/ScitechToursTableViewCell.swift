@@ -10,7 +10,8 @@ import UIKit
 
 class ScitechToursTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var SImage: UIImageView!
+
+    @IBOutlet weak var Simage: UIImageView!
     
     @IBOutlet weak var Sname: UILabel!
     

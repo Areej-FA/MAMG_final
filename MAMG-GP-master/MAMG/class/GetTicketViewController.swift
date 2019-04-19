@@ -93,7 +93,7 @@ class GetTicketViewController: UIViewController {
         var adultsTicketPrice : Double = 0.0
         switch type {
         case "Scientific Halls":
-            if adultsStepper.value >= 5{
+            if adultsStepper.value >= 5 {
                 adultsTicketPrice = weatherJSON[2]["Price"].doubleValue
             }else{
                 adultsTicketPrice = weatherJSON[0]["Price"].doubleValue

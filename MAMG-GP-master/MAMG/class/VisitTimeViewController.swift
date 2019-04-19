@@ -2,7 +2,7 @@
 //  VisitTimeViewController.swift
 //  MAMG
 //
-//  Created by Areej on 1/22/19.
+//  Created by Adhwaa Ahmed on 19/04/2019.
 //  Copyright © 2019 Areej. All rights reserved.
 //
 
@@ -14,7 +14,6 @@ class VisitTimeViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        print("hi i am areej")
     }
     
 

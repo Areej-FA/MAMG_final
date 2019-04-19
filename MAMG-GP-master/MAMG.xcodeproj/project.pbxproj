@@ -37,7 +37,6 @@
 		A047138921F6FD9F005ADD1F /* TourViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A047138821F6FD9F005ADD1F /* TourViewController.swift */; };
 		A047139121F70025005ADD1F /* ObjectIdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A047139021F70025005ADD1F /* ObjectIdViewController.swift */; };
 		A047139321F7045C005ADD1F /* AboutUsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A047139221F7045C005ADD1F /* AboutUsViewController.swift */; };
-		A047139721F70A1E005ADD1F /* VisitTimeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A047139621F70A1E005ADD1F /* VisitTimeViewController.swift */; };
 		A05AE34F220DD62F00134469 /* ToursStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A05AE34E220DD62F00134469 /* ToursStoryboard.storyboard */; };
 		A05C41DB220AD1F200201AA1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A05C41DA220AD1F200201AA1 /* Main.storyboard */; };
 		A05D97D3221038A400B171F4 /* ScitechInfoFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = A05D97D2221038A400B171F4 /* ScitechInfoFile.swift */; };
@@ -66,6 +65,7 @@
 		CF056D1C22687F8F00B2BAEB /* OnTourMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF056D1B22687F8F00B2BAEB /* OnTourMapViewController.swift */; };
 		CF056D1E2268816A00B2BAEB /* OnTourObjViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF056D1D2268816A00B2BAEB /* OnTourObjViewController.swift */; };
 		CF056D2022688D2900B2BAEB /* IndoorNavVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF056D1F22688D2900B2BAEB /* IndoorNavVC.swift */; };
+		CF0A248A2269FC87000A896D /* VisitTimeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF0A24892269FC87000A896D /* VisitTimeViewController.swift */; };
 		D8F8DEDFC36636B4E9568992 /* Pods_MAMGTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 97728C40295D5C79CD2D0237 /* Pods_MAMGTests.framework */; };
 		FC139F652224644E0045237C /* PlanATour1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC139F642224644E0045237C /* PlanATour1ViewController.swift */; };
 		FC139F67222464690045237C /* PlanATour2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC139F66222464690045237C /* PlanATour2ViewController.swift */; };
@@ -143,7 +143,6 @@
 		A047138821F6FD9F005ADD1F /* TourViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TourViewController.swift; sourceTree = "<group>"; };
 		A047139021F70025005ADD1F /* ObjectIdViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ObjectIdViewController.swift; path = MAMG/class/ObjectIdViewController.swift; sourceTree = SOURCE_ROOT; };
 		A047139221F7045C005ADD1F /* AboutUsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutUsViewController.swift; sourceTree = "<group>"; };
-		A047139621F70A1E005ADD1F /* VisitTimeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = VisitTimeViewController.swift; path = MAMG/class/VisitTimeViewController.swift; sourceTree = SOURCE_ROOT; };
 		A05AE34E220DD62F00134469 /* ToursStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ToursStoryboard.storyboard; sourceTree = "<group>"; };
 		A05C41DA220AD1F200201AA1 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		A05D97D2221038A400B171F4 /* ScitechInfoFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScitechInfoFile.swift; sourceTree = "<group>"; };
@@ -173,6 +172,7 @@
 		CF056D1B22687F8F00B2BAEB /* OnTourMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnTourMapViewController.swift; sourceTree = "<group>"; };
 		CF056D1D2268816A00B2BAEB /* OnTourObjViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnTourObjViewController.swift; sourceTree = "<group>"; };
 		CF056D1F22688D2900B2BAEB /* IndoorNavVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndoorNavVC.swift; sourceTree = "<group>"; };
+		CF0A24892269FC87000A896D /* VisitTimeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisitTimeViewController.swift; sourceTree = "<group>"; };
 		F824C0DC2D6F171A2AF41728 /* Pods_MAMG.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MAMG.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC139F642224644E0045237C /* PlanATour1ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanATour1ViewController.swift; sourceTree = "<group>"; };
 		FC139F66222464690045237C /* PlanATour2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanATour2ViewController.swift; sourceTree = "<group>"; };
@@ -331,17 +331,17 @@
 				A91A9226225D218A0058DB89 /* WishlistViewController.swift */,
 				841E1A1E223130F60085ADF3 /* TabBarViewController.swift */,
 				A047139221F7045C005ADD1F /* AboutUsViewController.swift */,
-				FCB6FA3B220F3C4A0003C311 /* ObjectInfoViewController.swift */,
 				A05D97D2221038A400B171F4 /* ScitechInfoFile.swift */,
 				A0A631D321EC4EC0009B5799 /* SettingsViewController.swift */,
 				A047139021F70025005ADD1F /* ObjectIdViewController.swift */,
-				A047139621F70A1E005ADD1F /* VisitTimeViewController.swift */,
+				FCB6FA3B220F3C4A0003C311 /* ObjectInfoViewController.swift */,
 				CF056D0E2267EA9600B2BAEB /* GetTicketViewController.swift */,
 				CF056D1A22687F6200B2BAEB /* IndoorNavigation */,
 				FC9EA2A32268C20D009BC241 /* LoginViewController.swift */,
 				FC9EA2A52268C276009BC241 /* userProfileViewController.swift */,
 				FC9EA2A72268C31C009BC241 /* SignUpViewController.swift */,
 				FC9EA2A92268C3AF009BC241 /* VolunteersViewController.swift */,
+				CF0A24892269FC87000A896D /* VisitTimeViewController.swift */,
 			);
 			path = class;
 			sourceTree = "<group>";
@@ -365,8 +365,8 @@
 				FC139F7022250CC90045237C /* TourInfoViewController.swift */,
 				A91A9227225D218A0058DB89 /* FavoriteToursViewController.swift */,
 				A91A922A225D218A0058DB89 /* ToursHistoryViewController.swift */,
-				CF056D1022686F0000B2BAEB /* ScitechToursTableViewCell.swift */,
 				CF056D1222686F2000B2BAEB /* ScitechToursViewController.swift */,
+				CF056D1022686F0000B2BAEB /* ScitechToursTableViewCell.swift */,
 				CF056D142268758B00B2BAEB /* ToursInformationViewController.swift */,
 			);
 			path = tours;
@@ -680,7 +680,6 @@
 				FC9EA2A62268C276009BC241 /* userProfileViewController.swift in Sources */,
 				CF056D1E2268816A00B2BAEB /* OnTourObjViewController.swift in Sources */,
 				A91A922F225D218A0058DB89 /* HallInfoViewController.swift in Sources */,
-				A047139721F70A1E005ADD1F /* VisitTimeViewController.swift in Sources */,
 				A91A9231225D218A0058DB89 /* WishlistViewController.swift in Sources */,
 				A047138921F6FD9F005ADD1F /* TourViewController.swift in Sources */,
 				FC9EA2A42268C20D009BC241 /* LoginViewController.swift in Sources */,
@@ -694,6 +693,7 @@
 				CF056D2022688D2900B2BAEB /* IndoorNavVC.swift in Sources */,
 				A00A022A21D164E400723260 /* MainViewController.swift in Sources */,
 				CF056D0F2267EA9600B2BAEB /* GetTicketViewController.swift in Sources */,
+				CF0A248A2269FC87000A896D /* VisitTimeViewController.swift in Sources */,
 				842064D82237DA2E00035D5C /* WishlistBean.swift in Sources */,
 				A01124C0220AE5310005ABE7 /* Variables.swift in Sources */,
 				A047139121F70025005ADD1F /* ObjectIdViewController.swift in Sources */,

@@ -13,7 +13,7 @@ import SwiftyJSON
 class VolunteersViewController: UIViewController {
 
     //MARK:
-    let DataURL: String = "http://localhost/dashboard/server/MyWebServices/api/addVolunteer.php"
+    let DataURL: String = "http://192.168.64.2/dashboard/MyWebServices/api/addVolunteer.php"
     var message : String = ""
     var gender : String = ""
     var peroid : String = ""

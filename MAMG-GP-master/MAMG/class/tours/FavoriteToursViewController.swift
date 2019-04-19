@@ -30,7 +30,7 @@ class FavoriteToursViewController: UIViewController, UITableViewDelegate, UITabl
     }
     
     func getFavorites() {
-        let myURL = "http://" + networkIP + "/magazin/MyWebServices/api/getUserFavoriteTour.php"
+        let myURL = "http://192.168.64.2/dashboard/MyWebServices/api/getUserFavoriteTour.php"
         favouriteList.removeAll()
         
         let params : Parameters = ["Email":usersEmaile]
@@ -118,7 +118,7 @@ class FavoriteToursViewController: UIViewController, UITableViewDelegate, UITabl
     }
     //  to delete a tour from favoite
     func deleteFromFavorite(index: IndexPath) {
-        let myURL = "http://" + networkIP + "/magazin/MyWebServices/api/deleteFavourite.php"
+        let myURL = "http://192.168.64.2/dashboard/MyWebServices/api/deleteFavourite.php"
         
         let tour_id = favouriteList[index.row].Tour_id
         let params : Parameters = ["Email":usersEmaile, "Tour_id":tour_id]
