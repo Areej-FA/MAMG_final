@@ -350,7 +350,7 @@
         <!--Home-->
         <scene sceneID="fYr-h6-74F">
             <objects>
-                <viewController id="WDL-Nc-q63" customClass="MainViewController" customModule="MAMG" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="home" useStoryboardIdentifierAsRestorationIdentifier="YES" id="WDL-Nc-q63" customClass="MainViewController" customModule="MAMG" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="CRV-29-W51">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -374,10 +374,16 @@
                                                             <constraint firstAttribute="width" constant="100" id="r2y-XD-aqb"/>
                                                         </constraints>
                                                         <state key="normal" image="eventsButton"/>
+                                                        <connections>
+                                                            <action selector="toEvent:" destination="WDL-Nc-q63" eventType="touchUpInside" id="qoD-8F-fw7"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QLO-F7-QVm">
                                                         <rect key="frame" x="160" y="0.0" width="100" height="100"/>
                                                         <state key="normal" image="IMAXButton"/>
+                                                        <connections>
+                                                            <action selector="toMovies:" destination="WDL-Nc-q63" eventType="touchUpInside" id="RWf-q0-4Qd"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                             </stackView>
@@ -391,10 +397,16 @@
                                                             <constraint firstAttribute="width" constant="100" id="hHE-HO-f3I"/>
                                                         </constraints>
                                                         <state key="normal" image="ToursButton"/>
+                                                        <connections>
+                                                            <action selector="toTours:" destination="WDL-Nc-q63" eventType="touchUpInside" id="EpT-cH-ChU"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TSm-hE-SCq">
                                                         <rect key="frame" x="160" y="0.0" width="100" height="100"/>
                                                         <state key="normal" image="ioButton"/>
+                                                        <connections>
+                                                            <action selector="toObjectId:" destination="WDL-Nc-q63" eventType="touchUpInside" id="Z3H-J8-3NQ"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                             </stackView>
@@ -408,10 +420,16 @@
                                                             <constraint firstAttribute="width" constant="100" id="jES-Ga-flV"/>
                                                         </constraints>
                                                         <state key="normal" image="aboutButton"/>
+                                                        <connections>
+                                                            <action selector="toAboutUs:" destination="WDL-Nc-q63" eventType="touchUpInside" id="bdi-0x-V7E"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oaL-r3-u7u">
                                                         <rect key="frame" x="160" y="0.0" width="100" height="100"/>
                                                         <state key="normal" image="settingsButton"/>
+                                                        <connections>
+                                                            <action selector="toSettings:" destination="WDL-Nc-q63" eventType="touchUpInside" id="dje-aB-KBZ"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                             </stackView>
@@ -425,10 +443,16 @@
                                                             <constraint firstAttribute="height" constant="100" id="dbM-tr-5A8"/>
                                                         </constraints>
                                                         <state key="normal" image="ticketsButton"/>
+                                                        <connections>
+                                                            <action selector="toTickets:" destination="WDL-Nc-q63" eventType="touchUpInside" id="PB8-TB-7dy"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JET-1N-VvI">
                                                         <rect key="frame" x="160" y="0.0" width="100" height="100"/>
                                                         <state key="normal" image="giftshopButton"/>
+                                                        <connections>
+                                                            <action selector="toGiftshop:" destination="WDL-Nc-q63" eventType="touchUpInside" id="ooP-mR-m7m"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                             </stackView>
@@ -442,10 +466,16 @@
                                                             <constraint firstAttribute="width" constant="100" id="yke-f9-v9M"/>
                                                         </constraints>
                                                         <state key="normal" image="VButton"/>
+                                                        <connections>
+                                                            <action selector="toVolunteerFourm:" destination="WDL-Nc-q63" eventType="touchUpInside" id="GjG-59-PdS"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tZ4-rS-b5n">
                                                         <rect key="frame" x="160" y="0.0" width="100" height="100"/>
                                                         <state key="normal" image="VTButton"/>
+                                                        <connections>
+                                                            <action selector="toVisitationTimes:" destination="WDL-Nc-q63" eventType="touchUpInside" id="MGb-Bm-Vbp"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                             </stackView>
@@ -489,7 +519,7 @@
         <!--Events-->
         <scene sceneID="1xG-9q-TC0">
             <objects>
-                <viewController id="llH-YF-9rD" customClass="EventViewController" customModule="MAMG" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="eventE" useStoryboardIdentifierAsRestorationIdentifier="YES" id="llH-YF-9rD" customClass="EventViewController" customModule="MAMG" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="XeW-ud-Tua">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -597,7 +627,7 @@
         <!--Settings-->
         <scene sceneID="YUM-b1-klf">
             <objects>
-                <viewController id="llx-AX-oJf" customClass="SettingsViewController" customModule="MAMG" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="setE" useStoryboardIdentifierAsRestorationIdentifier="YES" id="llx-AX-oJf" customClass="SettingsViewController" customModule="MAMG" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="xea-xt-qM9">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -690,7 +720,7 @@
         <!--IMAX Movie-->
         <scene sceneID="vjl-L9-OSu">
             <objects>
-                <viewController id="GKe-SP-mYp" customClass="ImaxViewController" customModule="MAMG" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ImaxE" useStoryboardIdentifierAsRestorationIdentifier="YES" id="GKe-SP-mYp" customClass="ImaxViewController" customModule="MAMG" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="4KG-y4-WR3">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -829,7 +859,7 @@
         <!--Movie Info View Controller-->
         <scene sceneID="KrT-ml-iBx">
             <objects>
-                <viewController id="VG7-qQ-aKk" customClass="MovieInfoViewController" customModule="MAMG" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ImaxInfoE" useStoryboardIdentifierAsRestorationIdentifier="YES" id="VG7-qQ-aKk" customClass="MovieInfoViewController" customModule="MAMG" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="81h-yn-xm3">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1059,7 +1089,7 @@
         <!--Event Info View Controller-->
         <scene sceneID="6BW-tQ-avr">
             <objects>
-                <viewController id="uKi-o7-NmA" customClass="EventInfoViewController" customModule="MAMG" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="eventInfoE" useStoryboardIdentifierAsRestorationIdentifier="YES" id="uKi-o7-NmA" customClass="EventInfoViewController" customModule="MAMG" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="eTh-Su-mkH">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1227,7 +1257,7 @@
         <!--Visit Time View Controller-->
         <scene sceneID="wyW-fa-uHM">
             <objects>
-                <viewController id="hal-wd-8qn" customClass="VisitTimeViewController" customModule="MAMG" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="visitE" useStoryboardIdentifierAsRestorationIdentifier="YES" id="hal-wd-8qn" customClass="VisitTimeViewController" customModule="MAMG" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Vug-qE-HsX">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1470,7 +1500,7 @@
         <!--Giftshop-->
         <scene sceneID="xrD-J9-3QU">
             <objects>
-                <viewController id="i23-aH-wbo" customClass="GiftshopeViewController" customModule="MAMG" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="giftE" useStoryboardIdentifierAsRestorationIdentifier="YES" id="i23-aH-wbo" customClass="GiftshopeViewController" customModule="MAMG" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="BBX-4O-Jsy">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1549,7 +1579,7 @@
         <!--Gift Info View Controller-->
         <scene sceneID="3T6-0O-a6L">
             <objects>
-                <viewController id="fMD-vh-bX9" customClass="GiftInfoViewController" customModule="MAMG" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="giftInfoE" useStoryboardIdentifierAsRestorationIdentifier="YES" id="fMD-vh-bX9" customClass="GiftInfoViewController" customModule="MAMG" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8JN-aR-7JS">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1650,7 +1680,7 @@
         <!--About Us View Controller-->
         <scene sceneID="0OX-VF-iTH">
             <objects>
-                <viewController id="1sV-tU-WcE" customClass="AboutUsViewController" customModule="MAMG" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="aboutE" useStoryboardIdentifierAsRestorationIdentifier="YES" id="1sV-tU-WcE" customClass="AboutUsViewController" customModule="MAMG" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="H8U-qU-1Y7">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1905,7 +1935,7 @@
         <!--Tours-->
         <scene sceneID="vCV-5f-Jsg">
             <objects>
-                <viewController id="51R-hP-W8V" customClass="TourViewController" customModule="MAMG" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="tourE" id="51R-hP-W8V" customClass="TourViewController" customModule="MAMG" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="EP8-7J-uIv">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -2322,7 +2352,7 @@
         <!--Get Ticket View Controller-->
         <scene sceneID="wtk-vA-tbu">
             <objects>
-                <viewController id="aFi-8h-nWH" customClass="GetTicketViewController" customModule="MAMG" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ticketE" useStoryboardIdentifierAsRestorationIdentifier="YES" id="aFi-8h-nWH" customClass="GetTicketViewController" customModule="MAMG" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ida-N1-f9e">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -3584,7 +3614,7 @@
         <!--Volunteers View Controller-->
         <scene sceneID="j2U-zA-jnB">
             <objects>
-                <viewController storyboardIdentifier="VolunteerForm" useStoryboardIdentifierAsRestorationIdentifier="YES" id="xxm-4B-Jba" customClass="VolunteersViewController" customModule="MAMG" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="VolunteerE" useStoryboardIdentifierAsRestorationIdentifier="YES" id="xxm-4B-Jba" customClass="VolunteersViewController" customModule="MAMG" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="isM-Q9-Ay2">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

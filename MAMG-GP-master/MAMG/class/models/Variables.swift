@@ -13,5 +13,4 @@ import Foundation
 var isItArabic : Bool = false
 var autoPlaySound : Bool = false
 var isUserAGust : Bool = false
-var networkIP : String = "172.20.10.10"
-var usersEmaile :String = "admin@scitech.com"
+var usersEmaile : String = "example@scitech.com"
