@@ -90,7 +90,7 @@ class PlanATour4ViewController: UIViewController {
     
     @IBAction func startOnTour(_ sender: Any) {
         //TODO: Indoor Nav Segue
-        let cv = UIStoryboard(name: "IndoorNavigation", bundle: nil).instantiateViewController(withIdentifier: "mapTE") as! OnTourMapViewController
+        let cv = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "mapTE") as! OnTourMapViewController
         cv.tourName = tourName
         cv.tourID = tourID
         self.present(cv, animated: true, completion: nil)
@@ -99,14 +99,14 @@ class PlanATour4ViewController: UIViewController {
     @IBAction func backBtn(_ sender: Any) {
         if isItArabic {
             //
-            let cv = UIStoryboard(name: "ToursStoryboard", bundle: nil).instantiateViewController(withIdentifier: "PlanATour3AR") as! PlanATour3ViewController
+            let cv = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "PlanATour3AR") as! PlanATour3ViewController
             cv.hallsSelected = hallsSelected
             cv.tourID = tourID
             self.present(cv, animated: true, completion: nil)
             
         } else {
             
-            let cv = UIStoryboard(name: "ToursStoryboard", bundle: nil).instantiateViewController(withIdentifier: "PlanATour3E") as! PlanATour3ViewController
+            let cv = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "PlanATour3E") as! PlanATour3ViewController
             cv.hallsSelected = hallsSelected
             cv.tourID = tourID
             self.present(cv, animated: true, completion: nil)

@@ -135,34 +135,32 @@ class PlanATour2ViewController: UIViewController, UITableViewDataSource,UITableV
         } else {
             if isItArabic {
                 //
-                let cv = UIStoryboard(name: "ToursStoryboard", bundle: nil).instantiateViewController(withIdentifier: "PlanATour3AR") as! PlanATour3ViewController
-                cv.tourID = tourID
-                cv.tourName = tourName
-                cv.hallsSelected = hallsSelected
-                self.present(cv, animated: true, completion: nil)
                 
             } else {
-                
-                let cv = UIStoryboard(name: "ToursStoryboard", bundle: nil).instantiateViewController(withIdentifier: "PlanATour3E") as! PlanATour3ViewController
-                cv.tourID = tourID
-                cv.tourName = tourName
-                cv.hallsSelected = hallsSelected
-                self.present(cv, animated: true, completion: nil)
-                
+                self.performSegue(withIdentifier: "PlanATour3E", sender: self)
             }
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if(segue.identifier == "PlanATour3E"){
+            let cv = segue.destination as! PlanATour3ViewController
+            cv.tourID = tourID
+            cv.tourName = tourName
+            cv.hallsSelected = hallsSelected
         }
     }
     
     @IBAction func backBtn(_ sender: Any) {
         if isItArabic {
             //
-            let cv = UIStoryboard(name: "ToursStoryboard", bundle: nil).instantiateViewController(withIdentifier: "PlanATour1_VC_Ar") as! PlanATour1ViewController
+            let cv = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "PlanATour1_VC_Ar") as! PlanATour1ViewController
             cv.tourN = tourName
             self.present(cv, animated: true, completion: nil)
             
         } else {
             
-            let cv = UIStoryboard(name: "ToursStoryboard", bundle: nil).instantiateViewController(withIdentifier: "PlanATour1_VC_En") as! PlanATour1ViewController
+            let cv = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "PlanATour1_VC_En") as! PlanATour1ViewController
             cv.tourN = tourName
             self.present(cv, animated: true, completion: nil)
             

@@ -158,23 +158,21 @@ class PlanATour3ViewController: UIViewController, UITableViewDataSource,UITableV
         } else {
             if isItArabic {
                 //
-                let cv = UIStoryboard(name: "ToursStoryboard", bundle: nil).instantiateViewController(withIdentifier: "PlanATour4AR") as! PlanATour4ViewController
-                cv.tourID = tourID
-                cv.tourName = tourName
-                cv.ObjSelected = ObjSelected
-                cv.hallsSelected = hallsSelected
-                self.present(cv, animated: true, completion: nil)
                 
             } else {
                 
-                let cv = UIStoryboard(name: "ToursStoryboard", bundle: nil).instantiateViewController(withIdentifier: "PlanATour4E") as! PlanATour4ViewController
-                cv.tourID = tourID
-                cv.tourName = tourName
-                cv.ObjSelected = ObjSelected
-                cv.hallsSelected = hallsSelected
-                self.present(cv, animated: true, completion: nil)
-                
+                self.performSegue(withIdentifier: "PlanATour4E", sender: self)
             }
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if(segue.identifier == "PlanATour4E"){
+            let cv = segue.destination as! PlanATour4ViewController
+            cv.tourID = tourID
+            cv.tourName = tourName
+            cv.ObjSelected = ObjSelected
+            cv.hallsSelected = hallsSelected
         }
     }
     
@@ -190,14 +188,14 @@ class PlanATour3ViewController: UIViewController, UITableViewDataSource,UITableV
     @IBAction func backBtn(_ sender: Any) {
         if isItArabic {
             //
-            let cv = UIStoryboard(name: "ToursStoryboard", bundle: nil).instantiateViewController(withIdentifier: "PlanATour2AR") as! PlanATour2ViewController
+            let cv = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "PlanATour2AR") as! PlanATour2ViewController
             cv.tourID = tourID
             cv.hallsSelected = hallsSelected
             self.present(cv, animated: true, completion: nil)
             
         } else {
             
-            let cv = UIStoryboard(name: "ToursStoryboard", bundle: nil).instantiateViewController(withIdentifier: "PlanATour2E") as! PlanATour2ViewController
+            let cv = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "PlanATour2E") as! PlanATour2ViewController
             cv.tourID = tourID
             cv.hallsSelected = hallsSelected
             self.present(cv, animated: true, completion: nil)

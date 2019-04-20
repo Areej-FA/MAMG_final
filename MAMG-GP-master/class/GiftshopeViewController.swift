@@ -19,7 +19,7 @@ class GiftshopeViewController: UIViewController, UICollectionViewDelegate, UICol
         // to check if it is gust or user
         if(isUserAGust  == true)
         {
-            let alertController = UIAlertController(title: nil, message: "Sorry for only registed user ", preferredStyle: .alert)
+            let alertController = UIAlertController(title: nil, message: "Sorry, you must be logged in", preferredStyle: .alert)
             
             let action3 = UIAlertAction(title: "OK", style: .destructive) { (action:UIAlertAction) in
                 print("You've pressed the destructive");
@@ -65,7 +65,7 @@ class GiftshopeViewController: UIViewController, UICollectionViewDelegate, UICol
                     self.giftsList.append(object)
                 }
                 if (self.giftsList.count < 1) {
-                    let alertController = UIAlertController(title: nil, message: "This is No Gifts", preferredStyle: .alert)
+                    let alertController = UIAlertController(title: nil, message: "This are No Gifts", preferredStyle: .alert)
                     
                     let action3 = UIAlertAction(title: "OK", style: .destructive) { (action:UIAlertAction) in
                         print("You've pressed the destructive");

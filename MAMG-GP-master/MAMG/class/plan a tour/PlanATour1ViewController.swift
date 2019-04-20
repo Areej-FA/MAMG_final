@@ -10,7 +10,7 @@ import UIKit
 import Alamofire
 import Photos
 import SwiftyJSON
-class PlanATour1ViewController: UIViewController {
+class PlanATour1ViewController: UIViewController, UIImagePickerControllerDelegate,UINavigationControllerDelegate {
 
     @IBOutlet weak var tourName: UITextField!
     @IBOutlet weak var tourDiscription: UITextField!
@@ -18,6 +18,7 @@ class PlanATour1ViewController: UIViewController {
     
     
     var tourN: String = ""
+    var toursID: Int = 0
     
     var imageToUpload: UIImage!
     var imgToUp: UIImage!
@@ -46,7 +47,7 @@ class PlanATour1ViewController: UIViewController {
     
     @IBAction func UploadImage(_ sender: Any) {
         let myPickerController = UIImagePickerController()
-        myPickerController.delegate = self as! UIImagePickerControllerDelegate & UINavigationControllerDelegate
+        myPickerController.delegate = self
         myPickerController.sourceType = .photoLibrary
         self.present(myPickerController, animated: true, completion: nil)
     }
@@ -100,8 +101,7 @@ class PlanATour1ViewController: UIViewController {
             case .success(let upload, _, _):
                 upload.responseString { response in
                     let ObjectJSON : JSON = JSON(response.data)
-                    self.moveToStep2(ObjectJSON["Tour_id"].int!)
-                    debugPrint(response)
+                    self.toursID = ObjectJSON["Tour_id"].int!
                 }
             case .failure(let encodingError):
                 print(encodingError)
@@ -116,7 +116,7 @@ class PlanATour1ViewController: UIViewController {
             if response.result.isSuccess{
                 print("Success! Got the object data")
                 let ObjectJSON : JSON = JSON(response.data)
-                self.moveToStep2(ObjectJSON["Tour_id"].int!)
+                self.toursID = ObjectJSON["Tour_id"].int!
             }else{
                 print("Error \(String(describing: response.result.error))")
             }
@@ -126,18 +126,17 @@ class PlanATour1ViewController: UIViewController {
     func moveToStep2(_ IDOfTour: Int){
         if isItArabic {
             //
-            let cv = UIStoryboard(name: "ToursStoryboard", bundle: nil).instantiateViewController(withIdentifier: "PlanATour2AR") as! PlanATour2ViewController
-            cv.tourID = IDOfTour
-            cv.tourName = tourName.text!
-            self.present(cv, animated: true, completion: nil)
             
         } else {
-            
-            let cv = UIStoryboard(name: "ToursStoryboard", bundle: nil).instantiateViewController(withIdentifier: "PlanATour2E") as! PlanATour2ViewController
-            cv.tourID = IDOfTour
+            self.performSegue(withIdentifier: "PlanATour2E", sender: self)
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if(segue.identifier == "PlanATour2E"){
+            let cv = segue.destination as! PlanATour2ViewController
+            cv.tourID = toursID
             cv.tourName = tourName.text!
-            self.present(cv, animated: true, completion: nil)
-            
         }
     }
     
