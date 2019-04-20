@@ -5,6 +5,7 @@ import UIKit
 class HallInfoViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
 
     var hall = HallBean()
+    var objectID = ""
     
     @IBOutlet weak var hallImage: UIImageView!
     @IBOutlet weak var hallDescription: UILabel!
@@ -52,6 +53,19 @@ class HallInfoViewController: UIViewController, UICollectionViewDelegate, UIColl
             featureImage.image = UIImage(data: imageData)
         }
         return cell
+    }
+    
+    // to know wich row was selected
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        objectID = hall.objects[indexPath.row].Object_id
+        self.performSegue(withIdentifier: "ObjectInfoE", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if(segue.identifier == "ObjectInfoE"){
+            let objInfoVC = segue.destination as! ObjectInfoViewController
+            objInfoVC.decodedURL = self.objectID
+        }
     }
     
     @IBAction func audioAction(_ sender: Any) {

@@ -13,20 +13,21 @@ class HallsViewController: UIViewController, UICollectionViewDelegate, UICollect
 
         // Do any additional setup after loading the view.
         hallsCollectionView!.contentInset = UIEdgeInsets(top: 20, left: 20, bottom: 20, right: 20)
-        
+        print("Getting halls")
         getHalls()
     }
     
     func getHalls() {
         let myURL = "http://192.168.64.2/dashboard/MyWebServices/api/getHalls.php"
         hallsList.removeAll()
-        
-        Alamofire.request(myURL, method: .get, parameters: nil).responseJSON{
+        print("sending request")
+        Alamofire.request(myURL, method: .post).responseJSON{
             response in
             switch(response.result){
                 // case successed
             case .success:
                 let json = JSON(response.data!)
+                print(json)
                 let array = json["product"].arrayValue
                 for i in 0..<array.count {
                     let dic = JSON(array[i])

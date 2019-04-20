@@ -39,6 +39,7 @@ class ObjectInfoViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        print("getting object \(decodedURL)")
         int = ["id": decodedURL]; // Recieved value from QRCode
         dataToJson(url: DataURL, id: int)
     }
@@ -67,27 +68,27 @@ class ObjectInfoViewController: UIViewController {
         
         if isItArabic {
             //Object Arabic Name
-            if let name = json["Name_AR"].string {
+            if let name = json["object"][0]["Name_AR"].string {
                 ObjectName.text = name
             } else {
                 ObjectName.text = ""
             }
             
-            if let name = json["Description_AR"].string {
-                ObjectDescribtion.text = name
+            if let desc = json["object"][0]["Description_AR"].string {
+                ObjectDescribtion.text = desc
             } else {
                 ObjectDescribtion.text = ""
             }
             
-            if let name = json["Video_AR"].string {
-                videoLink = name;
+            if let video = json["object"][0]["Video_AR"].string {
+                videoLink = video;
                 
             } else {
                 ObjectVideo.isHidden = true
             }
             
-            if let name = json["Resource_AR"].string {
-                resourceLink = name;
+            if let resource = json["object"][0]["Resource_AR"].string {
+                resourceLink = resource;
                 
             } else {
                 ObjectLink.isHidden = true
@@ -95,27 +96,27 @@ class ObjectInfoViewController: UIViewController {
             
         } else {
             //Object English Name
-            if let name = json["Name_E"].string {
+            if let name = json["object"][0]["Name_E"].string {
                 ObjectName.text = name
             } else {
                 ObjectName.text = ""
             }
             
-            if let name = json["Description_E"].string {
-                ObjectDescribtion.text = name
+            if let desc = json["object"][0]["Description_E"].string {
+                ObjectDescribtion.text = desc
             } else {
                 ObjectDescribtion.text = ""
             }
             
-            if let name = json["Video_E"].string {
-                videoLink = name;
+            if let video = json["object"][0]["Video_E"].string {
+                videoLink = video;
                 
             } else {
                 ObjectVideo.isHidden = true
             }
             
-            if let name = json["Resource_E"].string {
-                resourceLink = name;
+            if let resource = json["object"][0]["Resource_E"].string {
+                resourceLink = resource;
                 
             } else {
                 ObjectLink.isHidden = true
@@ -124,12 +125,17 @@ class ObjectInfoViewController: UIViewController {
         }
         
         //Display the rate count
-        if let rate = json["Rate_Count"].int {
+        //TODO: Alignment for arabic to english
+        //TODO: Condition if no rating found
+        if let rate = json[0]["Rate_Count"].int {
             ObjectRate.text = rate as? String
+        } else {
+            ObjectRate.text = "0"
         }
         
         // Change grey star to gold star depending on rate value
-        if let rate = json["Rate"].int {
+        // TODO: CHange to switch statement
+        if let rate = json[0]["Rate"].int {
             if rate == 1 {
                 Object1Star.setImage(UIImage(named: "star-1"), for: .normal)
             }
@@ -158,14 +164,12 @@ class ObjectInfoViewController: UIViewController {
         }
         
         //Download image
-        if let image = json["Picture"].string {
-            if let url = Foundation.URL(string: image) {
-                ObjectImage.contentMode = .scaleAspectFit
-                downloadImage(from: url)
-            }
-        } else {
-            //Image default
-            //ObjectImage
+        if json["product"][0]["Picture"].stringValue != "null"{
+            let encodedImage = json["product"][0]["Picture"].stringValue
+            let imageData = Data(base64Encoded: encodedImage) //Get image url from json and send it to function to download
+            ObjectImage.image = UIImage(data: imageData!)
+        }else {
+            ObjectImage.image = UIImage(named: "diamond")
         }
         
         
@@ -174,62 +178,19 @@ class ObjectInfoViewController: UIViewController {
         
     }
     
-    //MARK: Download image from url
-    
-    func downloadImage(from url: URL) {
-        print("Download Started")
-        getData(from: url) { data, response, error in
-            guard let data = data, error == nil else { return }
-            
-            print(response?.suggestedFilename ?? url.lastPathComponent)
-            print("Download Finished")
-            DispatchQueue.main.async() {
-                self.ObjectImage.image = UIImage(data: data)
-            }
-        }
-    }
-    
-    func getData(from url: URL, completion: @escaping (Data?, URLResponse?, Error?) -> ()) {
-        URLSession.shared.dataTask(with: url, completionHandler: completion).resume()
-    }
-    
     //MARK: Video button clicked
     
     @IBAction func openVideoWebpage(_ sender: Any) {
         
         let settingsUrl = NSURL(string:videoLink)! as URL
-            UIApplication.shared.open(settingsUrl, options: [:], completionHandler: nil)
+        UIApplication.shared.open(settingsUrl, options: [:], completionHandler: nil)
         
     }
     
     @IBAction func openResourceWebpage(_ sender: Any) {
         
         let settingsUrl = NSURL(string:resourceLink)! as URL
-            UIApplication.shared.open(settingsUrl, options: [:], completionHandler: nil)
-
-    }
-    
-    
-    //MARK: Bookmark object
-    
-    @IBAction func SetObjectinBookmark(_ sender: Any) {
-        let setURL: String = "http://192.168.64.2/dashboard/MyWebServices/api/setObjectInBookmark.php"
-        
-        Alamofire.request(setURL, method: .post, parameters: int).responseData { (response) in
-            
-            if response.result.isSuccess{
-                print("Success! Got the object data")
-                
-                let isAdded : JSON = JSON(response.data)
-                if (isAdded[0] == "successfully"){
-                    print("Added")
-                }else{
-                    print("Try again later")
-                }
-            }else{
-                print("Error \(String(describing: response.result.error))")
-            }
-        }
+        UIApplication.shared.open(settingsUrl, options: [:], completionHandler: nil)
         
     }
     

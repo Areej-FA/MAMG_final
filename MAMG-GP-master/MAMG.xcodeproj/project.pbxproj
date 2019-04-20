@@ -897,13 +897,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = DK5ZVY5S7H;
+				DEVELOPMENT_TEAM = VJFUAMY9DL;
 				INFOPLIST_FILE = MAMG/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = scitech.test1.MAMG;
+				PRODUCT_BUNDLE_IDENTIFIER = com.scitech9.MAMG;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "MAMG/MAMG-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -919,13 +919,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = DK5ZVY5S7H;
+				DEVELOPMENT_TEAM = VJFUAMY9DL;
 				INFOPLIST_FILE = MAMG/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = scitech.test1.MAMG;
+				PRODUCT_BUNDLE_IDENTIFIER = com.scitech9.MAMG;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "MAMG/MAMG-Bridging-Header.h";
 				SWIFT_VERSION = 4.2;
