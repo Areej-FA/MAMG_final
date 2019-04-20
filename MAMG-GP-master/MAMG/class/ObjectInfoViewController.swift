@@ -194,16 +194,28 @@ class ObjectInfoViewController: UIViewController {
         
     }
     
+    //MARK: Bookmark object
     
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destination.
-     // Pass the selected object to the new view controller.
-     }
-     */
+    @IBAction func SetObjectinBookmark(_ sender: Any) {
+        let setURL: String = "http://192.168.64.2/dashboard/MyWebServices/api/setObjectInBookmark.php"
+        
+        Alamofire.request(setURL, method: .post, parameters: int).responseData { (response) in
+            
+            if response.result.isSuccess{
+                print("Success! Got the object data")
+                
+                let isAdded : JSON = JSON(response.data)
+                if (isAdded[0] == "successfully"){
+                    print("Added")
+                }else{
+                    print("Try again later")
+                }
+            }else{
+                print("Error \(String(describing: response.result.error))")
+            }
+        }
+    }
+        
     
 }
 
