@@ -2387,6 +2387,9 @@
                                     <segment title="Scientific Halls and IMAX"/>
                                 </segments>
                                 <color key="tintColor" red="0.90588235289999997" green="0.29803921570000003" blue="0.23529411759999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <action selector="selectInfoType:" destination="aFi-8h-nWH" eventType="valueChanged" id="cc6-PL-hqH"/>
+                                </connections>
                             </segmentedControl>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="select ticket type" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mo9-9V-vYm">
                                 <rect key="frame" x="17" y="184" width="143" height="40"/>
@@ -2441,11 +2444,17 @@
                                 <rect key="frame" x="42" y="539" width="94" height="29"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="tintColor" red="0.17254901959999999" green="0.24313725489999999" blue="0.31372549020000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <action selector="adultsCounter:" destination="aFi-8h-nWH" eventType="valueChanged" id="Wht-rz-sAN"/>
+                                </connections>
                             </stepper>
                             <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="20" translatesAutoresizingMaskIntoConstraints="NO" id="bKr-CO-ecu">
                                 <rect key="frame" x="245" y="539" width="94" height="29"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="tintColor" red="0.17254901959999999" green="0.24313725489999999" blue="0.31372549020000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <action selector="kidsCounter:" destination="aFi-8h-nWH" eventType="valueChanged" id="7zj-aP-Z5G"/>
+                                </connections>
                             </stepper>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="select the number of users" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U97-LA-XL5">
                                 <rect key="frame" x="89" y="313" width="237" height="40"/>
@@ -2457,6 +2466,14 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="iWP-8O-9P2"/>
                     </view>
+                    <connections>
+                        <outlet property="adultsStepper" destination="cSX-Yf-UuV" id="cED-ZS-Cax"/>
+                        <outlet property="kidsStepper" destination="bKr-CO-ecu" id="UGD-Zc-GwD"/>
+                        <outlet property="numberOfAdultsLablel" destination="vOb-Uc-l4u" id="xLX-XI-AVv"/>
+                        <outlet property="numberOfKidsLablel" destination="rS7-e2-i6W" id="Juo-yT-zCg"/>
+                        <outlet property="priceLabel" destination="v4D-6C-uim" id="xzA-J4-iyT"/>
+                        <outlet property="ticketTypeSegmentControl" destination="ccl-bu-QVL" id="SGS-dC-zrc"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fmU-a6-pk0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

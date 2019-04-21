@@ -35,7 +35,7 @@ struct objTour {
         self.distance = distance
     }
 }
-class OnTourMapViewController: UIViewController {
+class OnTourMapViewController: UIViewController, WKNavigationDelegate, CLLocationManagerDelegate {
 //VARIABLES
     
     let locationManager = CLLocationManager()
@@ -72,7 +72,21 @@ class OnTourMapViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        super.viewDidLoad()
         
+        requestAuthurization()
+        
+        scitechMapWeb.navigationDelegate = self
+        
+        idPar = ["id": tourID]
+        
+        ObjectName.text = tourName + " Tour"
+        
+        let url = URL(string: "http://192.168.64.2/dashboard/scitech2.html")!
+        scitechMapWeb.load(URLRequest(url: url))
+        
+        
+        getTObj()
     }
     
     func requestAuthurization(){

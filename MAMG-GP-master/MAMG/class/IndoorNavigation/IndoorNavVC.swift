@@ -25,9 +25,18 @@ class IndoorNavVC: UIViewController, WKNavigationDelegate, CLLocationManagerDele
     var userLongitude = 0.0//location.longitude
     
     var webFinishedLoading = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        requestAuthurization()
+        
+        scitechMapWeb.navigationDelegate = self
+        
+        let url = URL(string: "http://192.168.64.2/dashboard/scitech2.html")!
+        scitechMapWeb.load(URLRequest(url: url))
     }
+    
     func requestAuthurization(){
         
         locationManager.requestWhenInUseAuthorization()
