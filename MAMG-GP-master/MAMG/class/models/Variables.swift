@@ -13,4 +13,4 @@ import Foundation
 var isItArabic : Bool = false
 var autoPlaySound : Bool = false
 var isUserAGust : Bool = false
-var usersEmaile : String = "example@scitech.com"
+var usersEmaile : String = ""

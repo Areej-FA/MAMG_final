@@ -86,11 +86,17 @@ class SignUpViewController: UIViewController {
             let user = ["Email": email , "First_name": fname   , "Last_name":lname, "Password" : pass , "Mobile" : num ];
             dataToJson(url: DataURL, id:  user as! [String : String] )
             displayAlert(message: "welcome /(fname)")
-            let cv = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "profile") as! userProfileViewController
-            self.present(cv, animated: true, completion: nil)
             usersEmaile = emailTextField.text!
+            self.performSegue(withIdentifier: "fSignup", sender: self)
+            
         }
         
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if(segue.identifier == "fSignup"){
+            let hallInfoVC = segue.destination as! userProfileViewController
+        }
     }
     
     //MARK: chack If  Fields are empty

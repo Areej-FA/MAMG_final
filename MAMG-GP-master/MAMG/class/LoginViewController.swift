@@ -34,8 +34,8 @@ class LoginViewController: UIViewController {
                 print("Success! Got the object data")
                 let weatherJSON : JSON = JSON( response.result.value! )
                 print(weatherJSON)
-                usersEmaile = weatherJSON[0]["Email"].stringValue
-                print(usersEmaile)
+                usersEmaile = weatherJSON["Email"].stringValue
+                print("Got email: \(usersEmaile)")
                 if(usersEmaile == ""){
                     self.displayAlert(message: "email or password dont match");
                 }
@@ -63,9 +63,7 @@ class LoginViewController: UIViewController {
                 let pass = passwordTextfield_Ar.text
                 let user = ["Email": email ,  "Password" : pass ];
                 dataToJson(url: DataURL, id:  user as! [String : String] )
-                let cv = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "profile") as! userProfileViewController
-                self.present(cv, animated: true, completion: nil)
-                usersEmaile = emailTextfield_E.text!
+                
             }
         }
         else{
@@ -76,8 +74,15 @@ class LoginViewController: UIViewController {
                 let pass = passwordTextfield_E.text
                 let user = ["Email": email ,  "Password" : pass ];
                 dataToJson(url: DataURL, id:  user as! [String : String] )
+                self.performSegue(withIdentifier: "fLogin", sender: self)
             }
             
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if(segue.identifier == "fLogin"){
+            let hallInfoVC = segue.destination as! userProfileViewController
         }
     }
     

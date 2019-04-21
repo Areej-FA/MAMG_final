@@ -21,7 +21,7 @@ class userProfileViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        print("\(usersEmaile)")
         let user = ["Email": usersEmaile ];
         dataToJson(url: DataURL, id:  user )
     }
@@ -38,10 +38,10 @@ class userProfileViewController: UIViewController {
     }
     
     func updateWeatherData (json : JSON){
-        let email = json[0]["Email"].stringValue
-        let fname = json[0]["First_name"].stringValue
-        let lname = json[0]["Last_name"].stringValue
-        let mobile = json[0]["Mobile"].stringValue
+        let email = json["Email"].stringValue
+        let fname = json["First_name"].stringValue
+        let lname = json["Last_name"].stringValue
+        let mobile = json["Mobile"].stringValue
         let name = "\(fname) \(lname)"
         nameLable.text = name
         emailLable.text = email

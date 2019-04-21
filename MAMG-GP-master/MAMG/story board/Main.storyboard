@@ -1073,6 +1073,9 @@
                                 <state key="normal" title="Log in">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="loginButton:" destination="1OB-qB-Ino" eventType="touchUpInside" id="SKW-Z8-yhK"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l8T-tW-opb">
                                 <rect key="frame" x="51" y="678" width="313" height="36"/>
@@ -1098,6 +1101,13 @@
                         <viewLayoutGuide key="safeArea" id="uTx-8v-ldd"/>
                     </view>
                     <navigationItem key="navigationItem" id="hxF-cF-P1p"/>
+                    <connections>
+                        <outlet property="emailTextfield_Ar" destination="EGf-qh-wGi" id="XnH-Q2-nYW"/>
+                        <outlet property="emailTextfield_E" destination="EGf-qh-wGi" id="6yg-tI-Tty"/>
+                        <outlet property="passwordTextfield_Ar" destination="DBj-fI-BhM" id="Gib-yX-dbg"/>
+                        <outlet property="passwordTextfield_E" destination="DBj-fI-BhM" id="Mkj-co-duv"/>
+                        <segue destination="VNj-Ih-He5" kind="show" identifier="fLogin" id="baM-3n-QMl"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TSZ-bo-RQS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1787,7 +1797,7 @@
         <!--Profile-->
         <scene sceneID="T54-i4-yRB">
             <objects>
-                <viewController title="Profile" id="VNj-Ih-He5" customClass="userProfileViewController" customModule="MAMG" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ProfileE" title="Profile" id="VNj-Ih-He5" customClass="userProfileViewController" customModule="MAMG" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="tw2-75-Jj2">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1865,6 +1875,12 @@
                         <viewLayoutGuide key="safeArea" id="G2E-Va-cgt"/>
                     </view>
                     <navigationItem key="navigationItem" title="Profile" id="Z3p-Ms-IAo"/>
+                    <connections>
+                        <outlet property="emailLable" destination="HFg-xU-4SD" id="AxR-qO-5f1"/>
+                        <outlet property="mobileLable" destination="iE4-4q-3Rd" id="brX-4n-3Iy"/>
+                        <outlet property="nameLable" destination="FBi-Gs-xHK" id="pmy-53-VMJ"/>
+                        <outlet property="signOutButton" destination="3OQ-OT-14z" id="Ckr-45-U7b"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dzF-e4-ZoZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1879,13 +1895,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="like-2" translatesAutoresizingMaskIntoConstraints="NO" id="MuL-Zt-SdT">
-                                <rect key="frame" x="0.0" y="44" width="414" height="220"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="220"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="MuL-Zt-SdT" secondAttribute="height" multiplier="207:110" id="vj4-xJ-MsK"/>
                                 </constraints>
                             </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="cIE-j5-O3Z">
-                                <rect key="frame" x="0.0" y="272" width="414" height="590"/>
+                                <rect key="frame" x="0.0" y="316" width="414" height="497"/>
                                 <color key="backgroundColor" red="0.92549019610000005" green="0.94117647059999998" blue="0.94509803920000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="cell" rowHeight="85" id="Kqr-pv-QeS">
@@ -3646,6 +3662,7 @@
                         <outlet property="passwordLable" destination="Se1-hP-rDs" id="2ge-fb-XhH"/>
                         <outlet property="passwordTextField" destination="VCB-VY-Oge" id="r6d-l0-Q5U"/>
                         <outlet property="signUpButton" destination="6hI-AD-LRX" id="FrB-An-XYU"/>
+                        <segue destination="VNj-Ih-He5" kind="show" identifier="fSignin" id="S6l-ot-7Ha"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1Xm-Ei-XtG" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -3834,6 +3851,7 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="Pf6-LG-9Pd"/>
+        <segue reference="S6l-ot-7Ha"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.94509803920000002" green="0.76862745099999996" blue="0.058823529409999999" alpha="1" colorSpace="calibratedRGB"/>
 </document>
