@@ -19,7 +19,7 @@ class LoginViewController: UIViewController {
     @IBOutlet var emailTextfield_Ar: UITextField!
     @IBOutlet var passwordTextfield_Ar: UITextField!
     
-    let DataURL: String = "http://192.168.64.2/dashboard/MyWebServices/api/login.php"
+    let DataURL: String = "http://localhost/dashboard/MyWebServices/api/login.php"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,17 +29,10 @@ class LoginViewController: UIViewController {
     
     //MARK: Send POST request
     func dataToJson(url: String,id: [String: String]){
-        Alamofire.request(url, method: .post, parameters: id).responseData { (response) in
+        Alamofire.request(url, method: .get, parameters: id).responseData { (response) in
             if response.result.isSuccess{
-                print("Success! Got the object data")
-                let weatherJSON : JSON = JSON( response.result.value! )
-                print(weatherJSON)
-                usersEmaile = weatherJSON["Email"].stringValue
-                print("Got email: \(usersEmaile)")
-                if(usersEmaile == ""){
-                    self.displayAlert(message: "email or password dont match");
-                }
-                
+                print("Success! ")
+//                let weatherJSON : JSON = JSON( response.result.value! )
             }else{
                 print("Error \(String(describing: response.result.error))")
                 
@@ -51,45 +44,30 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func loginButton(_ sender: Any) {
-        
-        if isItArabic {
-            if (emailTextfield_Ar.text == "" || passwordTextfield_Ar.text == ""){
-                displayAlert(message: "  لا يمكن ان تكون الخانات فارغة");
-                let cv = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "profile") as! userProfileViewController
-                self.present(cv, animated: true, completion: nil)
-                usersEmaile = emailTextfield_Ar.text!
-            }else{
-                let email = emailTextfield_Ar.text
-                let pass = passwordTextfield_Ar.text
-                let user = ["Email": email ,  "Password" : pass ];
-                dataToJson(url: DataURL, id:  user as! [String : String] )
-                
-            }
-        }
-        else{
-            if (emailTextfield_Ar.text == "" || passwordTextfield_Ar.text == ""){
+            if (emailTextfield_E.text == "" || passwordTextfield_E.text == ""){
                 displayAlert(message: "fileds must be filled");
             }else{
                 let email = emailTextfield_E.text
                 let pass = passwordTextfield_E.text
+                 usersEmaile = emailTextfield_E.text!
                 let user = ["Email": email ,  "Password" : pass ];
                 dataToJson(url: DataURL, id:  user as! [String : String] )
-                self.performSegue(withIdentifier: "fLogin", sender: self)
+                let cv = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ProfileE") as! userProfileViewController
+                self.present(cv, animated: true, completion: nil)
+               
             }
             
-        }
+  
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if(segue.identifier == "fLogin"){
-            let hallInfoVC = segue.destination as! userProfileViewController
-        }
-    }
+  
     
     @IBAction func signUpButton(_ sender: Any) {
         
         
     }
+    
+    
     func displayAlert(message: String){
         if (isItArabic) {
             let alert = UIAlertController(title: "تنبيه", message: message, preferredStyle: .alert)

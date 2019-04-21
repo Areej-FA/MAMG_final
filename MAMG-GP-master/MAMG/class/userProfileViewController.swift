@@ -17,7 +17,7 @@ class userProfileViewController: UIViewController {
     @IBOutlet weak internal var mobileLable: UILabel!
     @IBOutlet weak var signOutButton: UIButton!
     
-    let DataURL: String = "http://192.168.64.2/dashboard/MyWebServices/api/userProfile.php"
+    let DataURL: String = "http://localhost/dashboard/MyWebServices/api/userProfile.php"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,10 +27,11 @@ class userProfileViewController: UIViewController {
     }
     
     func dataToJson(url: String,id: [String: String]){
-        Alamofire.request(url, method: .post, parameters: id).responseData { (response) in
+        Alamofire.request(url, method: .get, parameters: id).responseData { (response) in
             if response.result.isSuccess{
                 let weatherJSON : JSON = JSON( response.result.value! )
                 self.updateWeatherData(json: weatherJSON)
+                print(weatherJSON)
             }else{
                 print("Error \(String(describing: response.result.error))")
             }
@@ -47,5 +48,12 @@ class userProfileViewController: UIViewController {
         emailLable.text = email
         mobileLable.text = mobile
     }
+    
+    @IBAction func SignOut(_ sender: Any) {
+        usersEmaile = ""
+        let cv = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "loginE") as! LoginViewController
+        self.present(cv, animated: true, completion: nil)
+    }
+    
 
 }

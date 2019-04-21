@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="PTf-jz-JSd">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="PTf-jz-JSd">
     <device id="retina6_1" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -1026,7 +1026,7 @@
         <!--Login View Controller-->
         <scene sceneID="WjO-pR-FJv">
             <objects>
-                <viewController id="1OB-qB-Ino" customClass="LoginViewController" customModule="MAMG" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="loginE" id="1OB-qB-Ino" customClass="LoginViewController" customModule="MAMG" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="mMA-nc-2PI">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1042,9 +1042,9 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
-                                <textInputTraits key="textInputTraits" textContentType="password"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="20" translatesAutoresizingMaskIntoConstraints="NO" id="EGf-qh-wGi">
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="20" translatesAutoresizingMaskIntoConstraints="NO" id="EGf-qh-wGi" userLabel="EmailTextfield">
                                 <rect key="frame" x="51" y="446" width="313" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
@@ -1074,7 +1074,8 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <action selector="loginButton:" destination="1OB-qB-Ino" eventType="touchUpInside" id="SKW-Z8-yhK"/>
+                                    <action selector="loginButton:" destination="1OB-qB-Ino" eventType="touchUpInside" id="Bgq-Ky-Mgm"/>
+                                    <segue destination="VNj-Ih-He5" kind="show" id="HCR-Ob-Dmf"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l8T-tW-opb">
@@ -1086,6 +1087,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
+                                    <action selector="signUpButton:" destination="1OB-qB-Ino" eventType="touchUpInside" id="u1E-mG-fGX"/>
                                     <segue destination="BJI-sy-Pur" kind="show" id="7Rc-Mm-tMc"/>
                                 </connections>
                             </button>
@@ -1102,9 +1104,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="hxF-cF-P1p"/>
                     <connections>
-                        <outlet property="emailTextfield_Ar" destination="EGf-qh-wGi" id="XnH-Q2-nYW"/>
                         <outlet property="emailTextfield_E" destination="EGf-qh-wGi" id="6yg-tI-Tty"/>
-                        <outlet property="passwordTextfield_Ar" destination="DBj-fI-BhM" id="Gib-yX-dbg"/>
                         <outlet property="passwordTextfield_E" destination="DBj-fI-BhM" id="Mkj-co-duv"/>
                         <segue destination="VNj-Ih-He5" kind="show" identifier="fLogin" id="baM-3n-QMl"/>
                     </connections>
@@ -1797,7 +1797,7 @@
         <!--Profile-->
         <scene sceneID="T54-i4-yRB">
             <objects>
-                <viewController storyboardIdentifier="ProfileE" title="Profile" id="VNj-Ih-He5" customClass="userProfileViewController" customModule="MAMG" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ProfileE" title="Profile" useStoryboardIdentifierAsRestorationIdentifier="YES" id="VNj-Ih-He5" customClass="userProfileViewController" customModule="MAMG" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="tw2-75-Jj2">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1832,6 +1832,9 @@
                                 <state key="normal" title="sign out">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="SignOut:" destination="VNj-Ih-He5" eventType="touchUpInside" id="Oxd-UJ-Zg4"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="name of user" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FBi-Gs-xHK">
                                 <rect key="frame" x="124" y="281" width="153" height="30"/>
@@ -3794,19 +3797,19 @@
         </scene>
     </scenes>
     <resources>
-        <image name="2" width="234.72000122070312" height="219.83999633789062"/>
-        <image name="201952" width="600" height="410.25"/>
+        <image name="2" width="489" height="458"/>
+        <image name="201952" width="800" height="547"/>
         <image name="51_thumb.jpg" width="1135" height="355"/>
         <image name="7170323866_03baccf987_o" width="4476" height="2874"/>
         <image name="FavoriteTours" width="152" height="151.5"/>
         <image name="IMAXButton" width="75" height="75"/>
-        <image name="Image" width="319.67999267578125" height="303.83999633789062"/>
-        <image name="Picture2" width="189.60000610351562" height="338.8800048828125"/>
+        <image name="Image" width="333" height="316.5"/>
+        <image name="Picture2" width="395" height="706"/>
         <image name="PlanATour-1" width="150" height="152"/>
-        <image name="SCITECH_LOGO.png" width="1972" height="980"/>
+        <image name="SCITECH_LOGO.png" width="473.27999877929688" height="235.19999694824219"/>
         <image name="ScitechTours" width="150" height="150"/>
         <image name="Screen Shot 2019-01-15 at 6.55.30 AM.png" width="162" height="214"/>
-        <image name="Tours2" width="234.72000122070312" height="219.83999633789062"/>
+        <image name="Tours2" width="489" height="458"/>
         <image name="ToursButton" width="75" height="75"/>
         <image name="ToursHistory" width="150" height="150"/>
         <image name="VButton" width="75" height="75"/>
@@ -3836,7 +3839,7 @@
         <image name="planning" width="128" height="128"/>
         <image name="play" width="128" height="128"/>
         <image name="settings" width="128" height="128"/>
-        <image name="settings1" width="235.67999267578125" height="220.80000305175781"/>
+        <image name="settings1" width="491" height="460"/>
         <image name="settingsButton" width="75" height="75"/>
         <image name="solar-system" width="128" height="128"/>
         <image name="speaker-4" width="128" height="128"/>
@@ -3853,7 +3856,7 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="Pf6-LG-9Pd"/>
-        <segue reference="S6l-ot-7Ha"/>
+        <segue reference="baM-3n-QMl"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.94509803920000002" green="0.76862745099999996" blue="0.058823529409999999" alpha="1" colorSpace="calibratedRGB"/>
 </document>

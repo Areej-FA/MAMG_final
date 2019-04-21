@@ -31,7 +31,7 @@ class SignUpViewController: UIViewController {
     @IBOutlet weak var conformPasswordLable: UILabel!
     @IBOutlet weak var signUpButton: UIButton!
     
-    let DataURL: String = "http://192.168.64.2/dashboard/MyWebServices/api/newUser.php" //Link to PHP code in localHost
+    let DataURL: String = "http://localhost/dashboard/MyWebServices/api/newUser.php" //Link to PHP code in localHost
     
     //MARK: Send POST request
     func dataToJson(url: String,id: [String: String]){
@@ -46,17 +46,7 @@ class SignUpViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        if (isItArabic == true){
-            emailLable.text = "البريد الالكتروني"
-            firstNameLable.text = "الاسم الاول"
-            lastNameLable.text = "الاسم الاخير"
-            mobileLable.text = "الجوال"
-            passwordLable.text = "كلمة السر"
-            conformPasswordLable.text = "تاكيد كلمة السر"
-            
-            signUpButton.setTitle("سجل", for: .normal)
-            
-        }else{
+    
             emailLable.text = "Email"
             firstNameLable.text = "First Name"
             lastNameLable.text = "Last Name"
@@ -64,17 +54,12 @@ class SignUpViewController: UIViewController {
             passwordLable.text = "Password"
             conformPasswordLable.text = "Conform Password"
             signUpButton.setTitle("Sign Up", for: .normal)
-        }
+
         
     }
     
     // TODO: vad & var
     @IBAction func signUpButton(_ sender: Any) {
-        chackFields()
-    }
-    
-    //TODO: cases
-    func chackFields(){
         if !chackIfEmpty() || !filedFormat()  {
             displayAlert(message: message)
         }else{
@@ -85,23 +70,35 @@ class SignUpViewController: UIViewController {
             let num = mobileTextField.text
             let user = ["Email": email , "First_name": fname   , "Last_name":lname, "Password" : pass , "Mobile" : num ];
             dataToJson(url: DataURL, id:  user as! [String : String] )
-            displayAlert(message: "welcome /(fname)")
+            displayAlert(message: "welcome " + fname!)
             usersEmaile = emailTextField.text!
-            self.performSegue(withIdentifier: "fSignup", sender: self)
-            
+                    let cv = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ProfileE") as! userProfileViewController
+                    self.present(cv, animated: true, completion: nil)
         }
-        
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if(segue.identifier == "fSignup"){
-            let hallInfoVC = segue.destination as! userProfileViewController
-        }
+    //TODO: cases
+    func chackFields(){
+//        if !chackIfEmpty() || !filedFormat()  {
+//            displayAlert(message: message)
+//        }else{
+//            let email = emailTextField.text
+//            let fname = firstNameTextField.text
+//            let lname = lastNameTextField.text
+//            let pass = passwordTextField.text
+//            let num = mobileTextField.text
+//            let user = ["Email": email , "First_name": fname   , "Last_name":lname, "Password" : pass , "Mobile" : num ];
+//            dataToJson(url: DataURL, id:  user as! [String : String] )
+//            displayAlert(message: "welcome /(fname)")
+//            usersEmaile = emailTextField.text!
+//            self.performSegue(withIdentifier: "fSignup", sender: self)
+//        }
     }
+    
+
     
     //MARK: chack If  Fields are empty
     func chackIfEmpty()-> Bool{
-        
         if (emailTextField.text == "" && firstNameTextField.text == "" && lastNameTextField.text == "" && mobileTextField.text == "" && passwordTextField.text == "" && conformPasswordTextField.text == "" && !isItArabic) {
             displayAlert(message: " All fields are empty ")
             print("it work")

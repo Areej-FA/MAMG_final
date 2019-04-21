@@ -38,11 +38,11 @@
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "MAMG.SettingsViewController.autoPlaySound_En.getter : weak Swift.Optional&lt;__C.UISwitch&gt;"
+                  symbolName = "MAMG.SettingsViewController.autoPlaySound_En.getter : Swift.Optional&lt;__C.UISwitch&gt;"
                   moduleName = "MAMG"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/areej/Documents/Gradation_project/MAMG/MAMG/class/SettingsViewController.swift"
-                  timestampString = "572468221.819769"
+                  urlString = "file:///Users/areej/Desktop/MAMG_final/MAMG-GP-master/MAMG/class/SettingsViewController.swift"
+                  timestampString = "577572148.72291"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "14"
@@ -53,11 +53,11 @@
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "MAMG.SettingsViewController.autoPlaySound_En.setter : weak Swift.Optional&lt;__C.UISwitch&gt;"
+                  symbolName = "MAMG.SettingsViewController.autoPlaySound_En.setter : Swift.Optional&lt;__C.UISwitch&gt;"
                   moduleName = "MAMG"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/areej/Documents/Gradation_project/MAMG/MAMG/class/SettingsViewController.swift"
-                  timestampString = "572468221.825066"
+                  urlString = "file:///Users/areej/Desktop/MAMG_final/MAMG-GP-master/MAMG/class/SettingsViewController.swift"
+                  timestampString = "577572148.726209"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "14"
@@ -68,16 +68,46 @@
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "MAMG.SettingsViewController.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__C.NSBundle&gt;) -&gt; MAMG.SettingsViewController"
+                  symbolName = "MAMG.SettingsViewController.autoPlaySound_En.modify : Swift.Optional&lt;__C.UISwitch&gt;"
                   moduleName = "MAMG"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/areej/Documents/Gradation_project/MAMG/MAMG/class/SettingsViewController.swift"
-                  timestampString = "572468221.830327"
+                  urlString = "file:///Users/areej/Desktop/MAMG_final/MAMG-GP-master/MAMG/class/SettingsViewController.swift"
+                  timestampString = "577572148.7296979"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "69">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MAMG.SettingsViewController.autoPlaySound_En.modify : Swift.Optional&lt;__C.UISwitch&gt; with unmangled suffix &quot;.resume.0&quot;"
+                  moduleName = "MAMG"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/areej/Desktop/MAMG_final/MAMG-GP-master/MAMG/class/SettingsViewController.swift"
+                  timestampString = "577572148.73309"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "14"
                   endingLineNumber = "14"
-                  offsetFromSymbolStart = "186">
+                  offsetFromSymbolStart = "72">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MAMG.SettingsViewController.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__C.NSBundle&gt;) -&gt; MAMG.SettingsViewController"
+                  moduleName = "MAMG"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/areej/Desktop/MAMG_final/MAMG-GP-master/MAMG/class/SettingsViewController.swift"
+                  timestampString = "577572148.737012"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "14"
+                  endingLineNumber = "14"
+                  offsetFromSymbolStart = "321">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -86,13 +116,13 @@
                   symbolName = "MAMG.SettingsViewController.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;MAMG.SettingsViewController&gt;"
                   moduleName = "MAMG"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/areej/Documents/Gradation_project/MAMG/MAMG/class/SettingsViewController.swift"
-                  timestampString = "572468221.835227"
+                  urlString = "file:///Users/areej/Desktop/MAMG_final/MAMG-GP-master/MAMG/class/SettingsViewController.swift"
+                  timestampString = "577572148.740445"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "14"
                   endingLineNumber = "14"
-                  offsetFromSymbolStart = "157">
+                  offsetFromSymbolStart = "241">
                </Location>
             </Locations>
          </BreakpointContent>
