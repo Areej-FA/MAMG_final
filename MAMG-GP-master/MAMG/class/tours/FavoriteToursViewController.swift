@@ -53,7 +53,7 @@ class FavoriteToursViewController: UIViewController, UITableViewDelegate, UITabl
                     object.Name_Ar = dic["Name_Ar"].stringValue
                     self.favouriteList.append(object)
                 }
-                if (self.favouriteList.count) == nil{
+                if (self.favouriteList.count) < 1{
                     let alertController = UIAlertController(title: nil, message: "This is No Favorite for this user", preferredStyle: .alert)
                     
                     let action3 = UIAlertAction(title: "OK", style: .destructive) { (action:UIAlertAction) in

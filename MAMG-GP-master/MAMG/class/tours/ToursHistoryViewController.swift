@@ -13,7 +13,7 @@ class ToursHistoryViewController: UIViewController, UITableViewDelegate, UITable
         // Do any additional setup after loading the view.
         if(isUserAGust == true)
         {
-            let alertController = UIAlertController(title: nil, message: "Sorry for only registed user", preferredStyle: .alert)
+            let alertController = UIAlertController(title: nil, message: "Sorry this is for registred users", preferredStyle: .alert)
             
             let action3 = UIAlertAction(title: "OK", style: .destructive) { (action:UIAlertAction) in
                 print("You've pressed the destructive");

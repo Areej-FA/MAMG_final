@@ -89,11 +89,20 @@ class PlanATour4ViewController: UIViewController {
     }
     
     @IBAction func startOnTour(_ sender: Any) {
-        //TODO: Indoor Nav Segue
-        let cv = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "mapTE") as! OnTourMapViewController
-        cv.tourName = tourName
-        cv.tourID = tourID
-        self.present(cv, animated: true, completion: nil)
+//        //TODO: Indoor Nav Segue
+//        let cv = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "mapTE") as! OnTourMapViewController
+//        cv.tourName = tourName
+//        cv.tourID = tourID
+//        self.present(cv, animated: true, completion: nil)
+        self.performSegue(withIdentifier: "mapTE", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if(segue.identifier == "mapTE"){
+            let cv = segue.destination as! OnTourMapViewController
+            cv.tourName = tourName
+            cv.tourID = tourID
+        }
     }
     
     @IBAction func backBtn(_ sender: Any) {

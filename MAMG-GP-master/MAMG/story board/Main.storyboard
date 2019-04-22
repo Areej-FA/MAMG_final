@@ -1963,7 +1963,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OV9-Ki-sMp">
-                                <rect key="frame" x="0.0" y="88" width="414" height="300"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="300"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="2" translatesAutoresizingMaskIntoConstraints="NO" id="S6t-YK-v3d">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="300"/>
@@ -2078,7 +2078,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ex2-RJ-fcT">
-                                <rect key="frame" x="0.0" y="319" width="414" height="494"/>
+                                <rect key="frame" x="0.0" y="275" width="414" height="587"/>
                                 <color key="backgroundColor" red="0.92549019610000005" green="0.94117647059999998" blue="0.94509803920000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="cell" rowHeight="85" id="gpn-NW-BA2">
@@ -2120,7 +2120,7 @@
                                 </connections>
                             </tableView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="FavoriteTours" translatesAutoresizingMaskIntoConstraints="NO" id="ZVg-Oc-nkw">
-                                <rect key="frame" x="107" y="88" width="201" height="144"/>
+                                <rect key="frame" x="107" y="44" width="201" height="144"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="ZVg-Oc-nkw" secondAttribute="height" multiplier="207:110" constant="-69.981818181818198" id="NF2-MS-qNl"/>
                                 </constraints>
@@ -2288,7 +2288,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="xhD-Ev-5Mb">
-                                <rect key="frame" x="0.0" y="316" width="414" height="497"/>
+                                <rect key="frame" x="0.0" y="272" width="414" height="590"/>
                                 <color key="backgroundColor" red="0.92549019610000005" green="0.94117647059999998" blue="0.94509803920000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="cell" rowHeight="85" id="3hY-yO-DeM">
@@ -2342,7 +2342,7 @@
                                 </connections>
                             </tableView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ToursHistory" translatesAutoresizingMaskIntoConstraints="NO" id="Vwr-3Q-IpS">
-                                <rect key="frame" x="107" y="88" width="201" height="144"/>
+                                <rect key="frame" x="107" y="44" width="201" height="144"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="Vwr-3Q-IpS" secondAttribute="height" multiplier="207:110" constant="-69.981818181818198" id="qJq-2v-W49"/>
                                 </constraints>
@@ -2720,7 +2720,7 @@
                                 </prototypes>
                             </tableView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ScitechTours" translatesAutoresizingMaskIntoConstraints="NO" id="2N9-cE-eHy">
-                                <rect key="frame" x="107" y="123" width="201" height="144"/>
+                                <rect key="frame" x="107" y="79" width="201" height="144"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="2N9-cE-eHy" secondAttribute="height" multiplier="207:110" constant="-69.981818181818198" id="Ilc-yC-oNy"/>
                                 </constraints>
@@ -2918,12 +2918,12 @@
                                 </state>
                             </button>
                             <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progressViewStyle="bar" progress="0.60000002384185791" trackImage="attachment" translatesAutoresizingMaskIntoConstraints="NO" id="CRf-Th-yKW">
-                                <rect key="frame" x="28" y="88" width="342" height="2.5"/>
+                                <rect key="frame" x="28" y="44" width="342" height="2.5"/>
                                 <color key="progressTintColor" red="0.18039215689999999" green="0.80000000000000004" blue="0.4431372549" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="trackTintColor" red="0.79215686269999996" green="0.81176470590000005" blue="0.82352941180000006" alpha="1" colorSpace="calibratedRGB"/>
                             </progressView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="uIQ-r8-HpZ">
-                                <rect key="frame" x="16" y="98" width="382" height="623"/>
+                                <rect key="frame" x="16" y="54" width="382" height="711"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="HallCell" rowHeight="100" id="h7J-vu-sCc" customClass="PlanATour2TableCellViewController" customModule="MAMG" customModuleProvider="target">
@@ -2959,7 +2959,7 @@
                                 </prototypes>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="geY-f1-RPd">
-                                <rect key="frame" x="84" y="729" width="247" height="30"/>
+                                <rect key="frame" x="84" y="773" width="247" height="30"/>
                                 <color key="backgroundColor" red="0.16078431369999999" green="0.50196078430000002" blue="0.72549019609999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="Next">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -3012,7 +3012,7 @@
                                 <color key="trackTintColor" red="0.79215686269999996" green="0.81176470590000005" blue="0.82352941180000006" alpha="1" colorSpace="calibratedRGB"/>
                             </progressView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vIw-9a-aw9">
-                                <rect key="frame" x="16" y="671" width="382" height="98"/>
+                                <rect key="frame" x="16" y="671" width="382" height="142"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" distribution="fillEqually" spacing="181" translatesAutoresizingMaskIntoConstraints="NO" id="0Ca-w8-j7q">
                                         <rect key="frame" x="41" y="34" width="307" height="30"/>
@@ -3044,10 +3044,10 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="260" translatesAutoresizingMaskIntoConstraints="NO" id="ztf-iW-2f5">
-                                <rect key="frame" x="20" y="96" width="382" height="567"/>
+                                <rect key="frame" x="20" y="52" width="382" height="611"/>
                                 <subviews>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="W8C-vh-EJU">
-                                        <rect key="frame" x="0.0" y="0.0" width="382" height="567"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="382" height="611"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <prototypes>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ObjCell" rowHeight="100" id="PMm-uX-Gne" customClass="PlanATour3TableViewCell" customModule="MAMG" customModuleProvider="target">
@@ -3125,10 +3125,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2s3-RP-NRn">
-                                <rect key="frame" x="16" y="88" width="382" height="629"/>
+                                <rect key="frame" x="16" y="44" width="382" height="766"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="destination" translatesAutoresizingMaskIntoConstraints="NO" id="cHD-xd-UZo">
-                                        <rect key="frame" x="141" y="264.5" width="100" height="100"/>
+                                        <rect key="frame" x="141" y="333" width="100" height="100"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="100" id="ah5-II-Iv0"/>
                                             <constraint firstAttribute="width" constant="100" id="cfz-IM-HCc"/>
@@ -3141,7 +3141,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="kLZ-KA-qW4">
-                                        <rect key="frame" x="0.0" y="599" width="382" height="30"/>
+                                        <rect key="frame" x="0.0" y="736" width="382" height="30"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TGN-Vm-RJQ">
                                                 <rect key="frame" x="0.0" y="0.0" width="186" height="30"/>
@@ -3163,7 +3163,7 @@
                                                 </state>
                                                 <connections>
                                                     <action selector="startOnTour:" destination="fEA-Qq-nRE" eventType="touchUpInside" id="3wA-i7-pFM"/>
-                                                    <segue destination="FmN-ZR-1zT" kind="presentation" identifier="mapTE" id="NTK-Za-9Js"/>
+                                                    <segue destination="FmN-ZR-1zT" kind="show" identifier="mapTE" id="NTK-Za-9Js"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -3233,6 +3233,7 @@
                                         </constraints>
                                         <state key="normal" image="cancel-1"/>
                                         <connections>
+                                            <action selector="backToMain:" destination="FmN-ZR-1zT" eventType="touchUpInside" id="Eml-mE-Ntp"/>
                                             <segue destination="fEA-Qq-nRE" kind="show" id="0PQ-8l-fpn"/>
                                         </connections>
                                     </button>
@@ -3326,6 +3327,7 @@
                     <connections>
                         <outlet property="ObjectName" destination="edG-6S-JoG" id="riZ-bW-WUS"/>
                         <outlet property="scitechMapWeb" destination="BcU-wn-9bE" id="Qo9-IC-A5G"/>
+                        <segue destination="51R-hP-W8V" kind="show" identifier="onMap" id="8lz-rp-oFQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nR5-RE-vPN" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -3840,9 +3842,11 @@
         <image name="wc" width="128" height="128"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Dvm-m0-uaB"/>
+        <segue reference="NTK-Za-9Js"/>
+        <segue reference="0PQ-8l-fpn"/>
         <segue reference="Pf6-LG-9Pd"/>
         <segue reference="mbU-7k-ziC"/>
+        <segue reference="8lz-rp-oFQ"/>
         <segue reference="tq0-5Z-19J"/>
         <segue reference="baM-3n-QMl"/>
         <segue reference="7Sj-TC-aJB"/>

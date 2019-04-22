@@ -49,9 +49,15 @@ class ScitechToursViewController: UIViewController, UITableViewDelegate, UITable
                 let toursJSON = JSON.init(parseJSON: response.value!)
                 print("This is the json ***> \(toursJSON)")
                 let array = toursJSON["scitechdata"].arrayValue
-                
+                if array.count < 1 {
+                    let alert = UIAlertController(title: nil, message: "No tours added by Scitech at this moment", preferredStyle: .alert)
+                    var confirmAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil)
+                    alert.addAction(confirmAction)
+                    self.present(alert, animated: true, completion: nil)
+                }
                 
                 print(array)
+                
                 
                 for i in 0..<array.count{
                     let TourID = toursJSON["scitechdata"][i]["Tour_id"].string!

@@ -14,4 +14,5 @@ var isItArabic : Bool = false
 var autoPlaySound : Bool = false
 var isUserAGust : Bool = false
 var usersEmaile : String = ""
-var URLNET : String = "http://localhost:8888/MyWebServices/api/"
+var URLNET : String = "http://192.168.64.2/dashboard/MyWebServices/api/"
+

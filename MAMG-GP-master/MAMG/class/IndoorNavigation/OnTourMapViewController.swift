@@ -326,6 +326,11 @@ class OnTourMapViewController: UIViewController, WKNavigationDelegate, CLLocatio
         })
     }
     
+    @IBAction func backToMain(_ sender: Any) {
+        _ = navigationController?.popViewController(animated: true)
+    }
+    
+    
     func locateUserByBeacons(AC: Double, BC: Double, AB: Double, By: Double, Bx: Double, Ay: Double, Ax: Double){
         //φ1=arctan2(𝐵𝑦−𝐴𝑦,𝐵𝑥−𝐴𝑥)
         let delta1 = atan2(By-Ay, Bx-Ax)
