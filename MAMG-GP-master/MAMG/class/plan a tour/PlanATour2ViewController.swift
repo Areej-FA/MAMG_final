@@ -92,6 +92,10 @@ class PlanATour2ViewController: UIViewController, UITableViewDataSource,UITableV
         return cell
     }
     
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 100
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         //print("count")
         return nameArray.count
@@ -152,19 +156,6 @@ class PlanATour2ViewController: UIViewController, UITableViewDataSource,UITableV
     }
     
     @IBAction func backBtn(_ sender: Any) {
-        if isItArabic {
-            //
-            let cv = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "PlanATour1_VC_Ar") as! PlanATour1ViewController
-            cv.tourN = tourName
-            self.present(cv, animated: true, completion: nil)
-            
-        } else {
-            
-            let cv = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "PlanATour1_VC_En") as! PlanATour1ViewController
-            cv.tourN = tourName
-            self.present(cv, animated: true, completion: nil)
-            
-        }
     }
     
     

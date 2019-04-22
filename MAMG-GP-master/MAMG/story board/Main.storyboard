@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="PTf-jz-JSd">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -1835,39 +1835,36 @@
                                     <action selector="SignOut:" destination="VNj-Ih-He5" eventType="touchUpInside" id="Oxd-UJ-Zg4"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="name of user" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FBi-Gs-xHK">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="name of user" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FBi-Gs-xHK">
                                 <rect key="frame" x="29" y="281" width="347" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="25"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Axn-3h-5Kp">
-                                <rect key="frame" x="29" y="692" width="88" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.16078431369999999" green="0.50196078430000002" blue="0.72549019609999998" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="20"/>
-                                <state key="normal" title="bookmark">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                            </button>
                             <button contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p4l-Vl-w2X">
-                                <rect key="frame" x="145" y="692" width="110" height="30"/>
+                                <rect key="frame" x="49" y="692" width="110" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.16078431369999999" green="0.50196078430000002" blue="0.72549019609999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="20"/>
                                 <state key="normal" title="wishlist">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="wishlist:" destination="VNj-Ih-He5" eventType="touchUpInside" id="qgA-CL-7yI"/>
+                                </connections>
                             </button>
                             <button contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mcv-Nz-RBC">
-                                <rect key="frame" x="284" y="692" width="109" height="30"/>
+                                <rect key="frame" x="246" y="692" width="109" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.16078431369999999" green="0.50196078430000002" blue="0.72549019609999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="20"/>
                                 <state key="normal" title="Tours history">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="history:" destination="VNj-Ih-He5" eventType="touchUpInside" id="WL5-zG-SKt"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1882,6 +1879,7 @@
                         <segue destination="bh9-qN-DEC" kind="show" identifier="whishlit" id="tq0-5Z-19J"/>
                         <segue destination="o19-au-cbW" kind="show" identifier="history" id="8J6-cz-DZE"/>
                         <segue destination="bh9-qN-DEC" kind="show" identifier="bookmark" id="YVh-OT-IhT"/>
+                        <segue destination="1OB-qB-Ino" kind="show" identifier="logoutE" id="7Sj-TC-aJB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dzF-e4-ZoZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1897,13 +1895,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="like-2" translatesAutoresizingMaskIntoConstraints="NO" id="MuL-Zt-SdT">
-                                <rect key="frame" x="0.0" y="88" width="414" height="220"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="220"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="MuL-Zt-SdT" secondAttribute="height" multiplier="207:110" id="vj4-xJ-MsK"/>
                                 </constraints>
                             </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="cIE-j5-O3Z">
-                                <rect key="frame" x="0.0" y="316" width="414" height="497"/>
+                                <rect key="frame" x="0.0" y="272" width="414" height="590"/>
                                 <color key="backgroundColor" red="0.92549019610000005" green="0.94117647059999998" blue="0.94509803920000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="cell" rowHeight="85" id="Kqr-pv-QeS">
@@ -2304,7 +2302,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="xhD-Ev-5Mb">
-                                <rect key="frame" x="0.0" y="316" width="414" height="497"/>
+                                <rect key="frame" x="0.0" y="272" width="414" height="590"/>
                                 <color key="backgroundColor" red="0.92549019610000005" green="0.94117647059999998" blue="0.94509803920000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="cell" rowHeight="85" id="3hY-yO-DeM">
@@ -2358,7 +2356,7 @@
                                 </connections>
                             </tableView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ToursHistory" translatesAutoresizingMaskIntoConstraints="NO" id="Vwr-3Q-IpS">
-                                <rect key="frame" x="107" y="88" width="201" height="144"/>
+                                <rect key="frame" x="107" y="44" width="201" height="144"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="Vwr-3Q-IpS" secondAttribute="height" multiplier="207:110" constant="-69.981818181818198" id="qJq-2v-W49"/>
                                 </constraints>
@@ -2893,7 +2891,6 @@
                                 </state>
                                 <connections>
                                     <action selector="uploadPlannedTour:" destination="R2f-w9-8qN" eventType="touchUpInside" id="afB-aL-U2m"/>
-                                    <segue destination="5yY-OY-Eht" kind="show" identifier="PlanATour2E" id="Sgk-aE-8Bj"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -2913,6 +2910,7 @@
                         <outlet property="imageBtn" destination="a83-AE-5e5" id="h0W-XY-YV9"/>
                         <outlet property="tourDiscription" destination="n2G-Va-uhm" id="DJv-ov-O4O"/>
                         <outlet property="tourName" destination="ijn-W7-zHX" id="YOq-xg-bWG"/>
+                        <segue destination="5yY-OY-Eht" kind="show" identifier="PlanATour2E" id="9gm-Dq-PNS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Mns-RE-5PQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -2943,11 +2941,11 @@
                                 <rect key="frame" x="16" y="98" width="382" height="623"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="HallCell" rowHeight="120" id="h7J-vu-sCc" customClass="PlanATour2TableCellViewController" customModule="MAMG" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="382" height="120"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="HallCell" rowHeight="100" id="h7J-vu-sCc" customClass="PlanATour2TableCellViewController" customModule="MAMG" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="382" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="h7J-vu-sCc" id="Ctp-Ue-Ryp">
-                                            <rect key="frame" x="0.0" y="0.0" width="382" height="119.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="382" height="99.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fSR-31-Uaq">
@@ -2983,7 +2981,6 @@
                                 </state>
                                 <connections>
                                     <action selector="NextStep:" destination="5yY-OY-Eht" eventType="touchUpInside" id="btL-lX-jBs"/>
-                                    <segue destination="PTf-jz-JSd" kind="show" identifier="PlanATour3E" id="Hko-qJ-z9d"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -3008,6 +3005,7 @@
                     </view>
                     <connections>
                         <outlet property="tableHalls" destination="uIQ-r8-HpZ" id="WGQ-kQ-aKu"/>
+                        <segue destination="PTf-jz-JSd" kind="show" identifier="PlanATour3E" id="tVs-3t-UAx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oLg-iA-GJm" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -3053,7 +3051,6 @@
                                                 </state>
                                                 <connections>
                                                     <action selector="NextStep:" destination="PTf-jz-JSd" eventType="touchUpInside" id="gyz-be-aHm"/>
-                                                    <segue destination="fEA-Qq-nRE" kind="show" identifier="PlanATour4E" id="9fu-qO-YFF"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -3068,7 +3065,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="382" height="567"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <prototypes>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="HallCell" rowHeight="100" id="PMm-uX-Gne" customClass="PlanATour3TableViewCell" customModule="MAMG" customModuleProvider="target">
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ObjCell" rowHeight="100" id="PMm-uX-Gne" customClass="PlanATour3TableViewCell" customModule="MAMG" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="28" width="382" height="100"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="PMm-uX-Gne" id="Fut-8L-oCS">
@@ -3127,6 +3124,7 @@
                     </view>
                     <connections>
                         <outlet property="ObjTable" destination="W8C-vh-EJU" id="Nur-iI-2xQ"/>
+                        <segue destination="fEA-Qq-nRE" kind="show" identifier="PlanATour4E" id="Dvm-m0-uaB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sef-5o-ijp" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -3142,10 +3140,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2s3-RP-NRn">
-                                <rect key="frame" x="16" y="88" width="382" height="629"/>
+                                <rect key="frame" x="16" y="44" width="382" height="766"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="destination" translatesAutoresizingMaskIntoConstraints="NO" id="cHD-xd-UZo">
-                                        <rect key="frame" x="141" y="264.5" width="100" height="100"/>
+                                        <rect key="frame" x="141" y="333" width="100" height="100"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="100" id="ah5-II-Iv0"/>
                                             <constraint firstAttribute="width" constant="100" id="cfz-IM-HCc"/>
@@ -3158,7 +3156,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="kLZ-KA-qW4">
-                                        <rect key="frame" x="0.0" y="599" width="382" height="30"/>
+                                        <rect key="frame" x="0.0" y="736" width="382" height="30"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TGN-Vm-RJQ">
                                                 <rect key="frame" x="0.0" y="0.0" width="186" height="30"/>
@@ -3249,6 +3247,9 @@
                                             <constraint firstAttribute="height" constant="40" id="R5W-n7-7hv"/>
                                         </constraints>
                                         <state key="normal" image="cancel-1"/>
+                                        <connections>
+                                            <segue destination="fEA-Qq-nRE" kind="show" id="0PQ-8l-fpn"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.20392156859999999" green="0.59607843140000005" blue="0.85882352939999995" alpha="1" colorSpace="calibratedRGB"/>
@@ -3556,7 +3557,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="13" translatesAutoresizingMaskIntoConstraints="NO" id="5vi-26-KsC">
-                                <rect key="frame" x="20" y="90" width="374" height="598"/>
+                                <rect key="frame" x="20" y="46" width="374" height="598"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="email" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AJt-Yj-CUN">
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="34"/>
@@ -3854,10 +3855,12 @@
         <image name="wc" width="128" height="128"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="0PQ-8l-fpn"/>
         <segue reference="Pf6-LG-9Pd"/>
         <segue reference="8J6-cz-DZE"/>
-        <segue reference="YVh-OT-IhT"/>
-        <segue reference="S6l-ot-7Ha"/>
+        <segue reference="tq0-5Z-19J"/>
+        <segue reference="baM-3n-QMl"/>
+        <segue reference="7Sj-TC-aJB"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.94509803920000002" green="0.76862745099999996" blue="0.058823529409999999" alpha="1" colorSpace="calibratedRGB"/>
 </document>

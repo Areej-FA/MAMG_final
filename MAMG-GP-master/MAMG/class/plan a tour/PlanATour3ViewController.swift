@@ -146,6 +146,10 @@ class PlanATour3ViewController: UIViewController, UITableViewDataSource,UITableV
         
     }
     
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 100
+    }
+    
     @IBAction func NextStep(_ sender: Any) {
         if ObjSelected.isEmpty {
             if isItArabic{
@@ -156,13 +160,7 @@ class PlanATour3ViewController: UIViewController, UITableViewDataSource,UITableV
             }
             
         } else {
-            if isItArabic {
-                //
-                
-            } else {
-                
-                self.performSegue(withIdentifier: "PlanATour4E", sender: self)
-            }
+            self.performSegue(withIdentifier: "PlanATour4E", sender: self)
         }
     }
     
@@ -186,21 +184,6 @@ class PlanATour3ViewController: UIViewController, UITableViewDataSource,UITableV
     }
     
     @IBAction func backBtn(_ sender: Any) {
-        if isItArabic {
-            //
-            let cv = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "PlanATour2AR") as! PlanATour2ViewController
-            cv.tourID = tourID
-            cv.hallsSelected = hallsSelected
-            self.present(cv, animated: true, completion: nil)
-            
-        } else {
-            
-            let cv = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "PlanATour2E") as! PlanATour2ViewController
-            cv.tourID = tourID
-            cv.hallsSelected = hallsSelected
-            self.present(cv, animated: true, completion: nil)
-            
-        }
     }
     
     

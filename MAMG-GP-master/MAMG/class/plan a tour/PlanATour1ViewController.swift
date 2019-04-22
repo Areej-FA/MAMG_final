@@ -117,18 +117,10 @@ class PlanATour1ViewController: UIViewController, UIImagePickerControllerDelegat
                 print("Success! Got the object data")
                 let ObjectJSON : JSON = JSON(response.data)
                 self.toursID = ObjectJSON["Tour_id"].int!
+                self.performSegue(withIdentifier: "PlanATour2E", sender: self)
             }else{
                 print("Error \(String(describing: response.result.error))")
             }
-        }
-    }
-    
-    func moveToStep2(_ IDOfTour: Int){
-        if isItArabic {
-            //
-            
-        } else {
-            self.performSegue(withIdentifier: "PlanATour2E", sender: self)
         }
     }
     
@@ -143,7 +135,7 @@ class PlanATour1ViewController: UIViewController, UIImagePickerControllerDelegat
     func alertMessage(TitleOfMessage: String, Message: String, Okay: String){
         let alertPrompt = UIAlertController(title: TitleOfMessage, message: Message, preferredStyle: .actionSheet)
         var confirmAction = UIAlertAction(title: Okay, style: UIAlertAction.Style.default, handler: nil)
-        var cancelAction: UIAlertAction
+        alertPrompt.addAction(confirmAction)
         
         present(alertPrompt, animated: true, completion: nil)
     }

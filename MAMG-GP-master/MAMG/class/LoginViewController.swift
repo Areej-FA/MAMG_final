@@ -19,7 +19,7 @@ class LoginViewController: UIViewController {
     @IBOutlet var emailTextfield_Ar: UITextField!
     @IBOutlet var passwordTextfield_Ar: UITextField!
     
-    let DataURL: String = "http://http://192.168.64.2/dashboard/MyWebServices/api/login.php"
+    let DataURL: String = "http://192.168.64.2/dashboard/MyWebServices/api/login.php"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,10 +46,9 @@ class LoginViewController: UIViewController {
                 let email = emailTextfield_E.text
                 let pass = passwordTextfield_E.text
                  usersEmaile = emailTextfield_E.text!
+                isUserAGust = false
                 let user = ["Email": email ,  "Password" : pass ];
                 dataToJson(url: DataURL, id:  user as! [String : String] )
-                let cv = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ProfileE") as! userProfileViewController
-                self.present(cv, animated: true, completion: nil)
                self.performSegue(withIdentifier: "fLogin", sender: self)
             }
     }
