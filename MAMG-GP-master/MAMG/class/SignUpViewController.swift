@@ -31,7 +31,7 @@ class SignUpViewController: UIViewController {
     @IBOutlet weak var conformPasswordLable: UILabel!
     @IBOutlet weak var signUpButton: UIButton!
     
-    let DataURL: String = "http://localhost/dashboard/MyWebServices/api/newUser.php" //Link to PHP code in localHost
+    let DataURL: String = "http://http://192.168.64.2/dashboard/MyWebServices/api/newUser.php" //Link to PHP code in localHost
     
     //MARK: Send POST request
     func dataToJson(url: String,id: [String: String]){
@@ -72,8 +72,13 @@ class SignUpViewController: UIViewController {
             dataToJson(url: DataURL, id:  user as! [String : String] )
             displayAlert(message: "welcome " + fname!)
             usersEmaile = emailTextField.text!
-                    let cv = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ProfileE") as! userProfileViewController
-                    self.present(cv, animated: true, completion: nil)
+            self.performSegue(withIdentifier: "fSignin", sender: self)
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if(segue.identifier == "fSignin"){
+            let hallInfoVC = segue.destination as! userProfileViewController
         }
     }
     

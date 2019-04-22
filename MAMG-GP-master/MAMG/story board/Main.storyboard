@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="PTf-jz-JSd">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="PTf-jz-JSd">
     <device id="retina6_1" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -1075,7 +1075,6 @@
                                 </state>
                                 <connections>
                                     <action selector="loginButton:" destination="1OB-qB-Ino" eventType="touchUpInside" id="Bgq-Ky-Mgm"/>
-                                    <segue destination="VNj-Ih-He5" kind="show" id="HCR-Ob-Dmf"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l8T-tW-opb">
@@ -1811,14 +1810,14 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="email@example.com" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HFg-xU-4SD">
-                                <rect key="frame" x="96.5" y="380.5" width="221.5" height="29.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="email@example.com" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HFg-xU-4SD">
+                                <rect key="frame" x="20" y="381" width="373" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="25"/>
                                 <color key="textColor" red="0.17254901959999999" green="0.24313725489999999" blue="0.31372549020000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="+996 123456789" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iE4-4q-3Rd">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="+996 123456789" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iE4-4q-3Rd">
                                 <rect key="frame" x="106" y="433.5" width="188" height="29.5"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="25"/>
@@ -1837,7 +1836,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="name of user" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FBi-Gs-xHK">
-                                <rect key="frame" x="124" y="281" width="153" height="30"/>
+                                <rect key="frame" x="29" y="281" width="347" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="25"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1860,9 +1859,6 @@
                                 <state key="normal" title="wishlist">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
-                                <connections>
-                                    <segue destination="bh9-qN-DEC" kind="show" id="ICW-BW-6Kc"/>
-                                </connections>
                             </button>
                             <button contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mcv-Nz-RBC">
                                 <rect key="frame" x="284" y="692" width="109" height="30"/>
@@ -1883,11 +1879,14 @@
                         <outlet property="mobileLable" destination="iE4-4q-3Rd" id="brX-4n-3Iy"/>
                         <outlet property="nameLable" destination="FBi-Gs-xHK" id="pmy-53-VMJ"/>
                         <outlet property="signOutButton" destination="3OQ-OT-14z" id="Ckr-45-U7b"/>
+                        <segue destination="bh9-qN-DEC" kind="show" identifier="whishlit" id="tq0-5Z-19J"/>
+                        <segue destination="o19-au-cbW" kind="show" identifier="history" id="8J6-cz-DZE"/>
+                        <segue destination="bh9-qN-DEC" kind="show" identifier="bookmark" id="YVh-OT-IhT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dzF-e4-ZoZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1433" y="3027"/>
+            <point key="canvasLocation" x="-1433.3333333333335" y="3026.7857142857142"/>
         </scene>
         <!--Wishlist-->
         <scene sceneID="DWS-D1-c5z">
@@ -2387,7 +2386,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YQZ-fz-3HR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3535" y="-281"/>
+            <point key="canvasLocation" x="1074" y="2154"/>
         </scene>
         <!--Get Ticket View Controller-->
         <scene sceneID="wtk-vA-tbu">
@@ -3797,19 +3796,19 @@
         </scene>
     </scenes>
     <resources>
-        <image name="2" width="489" height="458"/>
-        <image name="201952" width="800" height="547"/>
+        <image name="2" width="234.72000122070312" height="219.83999633789062"/>
+        <image name="201952" width="600" height="410.25"/>
         <image name="51_thumb.jpg" width="1135" height="355"/>
         <image name="7170323866_03baccf987_o" width="4476" height="2874"/>
         <image name="FavoriteTours" width="152" height="151.5"/>
         <image name="IMAXButton" width="75" height="75"/>
-        <image name="Image" width="333" height="316.5"/>
-        <image name="Picture2" width="395" height="706"/>
+        <image name="Image" width="319.67999267578125" height="303.83999633789062"/>
+        <image name="Picture2" width="189.60000610351562" height="338.8800048828125"/>
         <image name="PlanATour-1" width="150" height="152"/>
-        <image name="SCITECH_LOGO.png" width="473.27999877929688" height="235.19999694824219"/>
+        <image name="SCITECH_LOGO.png" width="1972" height="980"/>
         <image name="ScitechTours" width="150" height="150"/>
         <image name="Screen Shot 2019-01-15 at 6.55.30 AM.png" width="162" height="214"/>
-        <image name="Tours2" width="489" height="458"/>
+        <image name="Tours2" width="234.72000122070312" height="219.83999633789062"/>
         <image name="ToursButton" width="75" height="75"/>
         <image name="ToursHistory" width="150" height="150"/>
         <image name="VButton" width="75" height="75"/>
@@ -3839,7 +3838,7 @@
         <image name="planning" width="128" height="128"/>
         <image name="play" width="128" height="128"/>
         <image name="settings" width="128" height="128"/>
-        <image name="settings1" width="491" height="460"/>
+        <image name="settings1" width="235.67999267578125" height="220.80000305175781"/>
         <image name="settingsButton" width="75" height="75"/>
         <image name="solar-system" width="128" height="128"/>
         <image name="speaker-4" width="128" height="128"/>
@@ -3856,7 +3855,9 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="Pf6-LG-9Pd"/>
-        <segue reference="baM-3n-QMl"/>
+        <segue reference="8J6-cz-DZE"/>
+        <segue reference="YVh-OT-IhT"/>
+        <segue reference="S6l-ot-7Ha"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.94509803920000002" green="0.76862745099999996" blue="0.058823529409999999" alpha="1" colorSpace="calibratedRGB"/>
 </document>
