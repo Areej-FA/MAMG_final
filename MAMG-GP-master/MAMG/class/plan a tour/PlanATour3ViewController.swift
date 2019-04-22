@@ -27,7 +27,7 @@ struct ObjsName{
 class PlanATour3ViewController: UIViewController, UITableViewDataSource,UITableViewDelegate {
     var tourID: Int = 0
     var tourName: String = ""
-    var url = "http://192.168.64.2/dashboard/MyWebServices/api/getObjects.php"
+    var url = URLNET+"getObjects.php"
     var ObjArray: NSMutableArray = NSMutableArray()
     var hallsSelected : [String] = []
     var ObjSelected : [String] = []

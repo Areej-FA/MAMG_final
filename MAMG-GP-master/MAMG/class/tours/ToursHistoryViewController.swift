@@ -29,7 +29,7 @@ class ToursHistoryViewController: UIViewController, UITableViewDelegate, UITable
     }
     
     func getToursHistory() {
-        let myURL = "http://192.168.64.2/dashboard/MyWebServices/api/getUserTourHistory.php"
+        let myURL = URLNET+"getUserTourHistory.php"
         historyList.removeAll()
         
         let params : Parameters = ["Email":usersEmaile]

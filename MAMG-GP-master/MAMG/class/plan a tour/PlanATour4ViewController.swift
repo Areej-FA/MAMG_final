@@ -24,8 +24,8 @@ class PlanATour4ViewController: UIViewController {
     var ObjSelected : [String] = []
     var tourID: Int = 0
     var tourName: String = ""
-    let ObjURL = "http://192.168.64.2/dashboard/MyWebServices/api/savePlannedTour.php"
-    let UserURL = "http://192.168.64.2/dashboard/MyWebServices/api/saveUsersTour.php"
+    let ObjURL = URLNET+"savePlannedTour.php"
+    let UserURL = URLNET+"saveUsersTour.php"
     var parameterUser: [String : Any] = [:]
     
     

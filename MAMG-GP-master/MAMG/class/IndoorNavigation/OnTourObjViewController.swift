@@ -12,7 +12,7 @@ import SwiftyJSON
 
 class OnTourObjViewController: UIViewController {
     
-    let getAnObject: String = "http://192.168.64.2/dashboard/MyWebServices/api/getAnObject.php"
+    let getAnObject: String = URLNET+"getAnObject.php"
     var ObjectID = 0
     var videoLink: String = ""
     var resourceLink: String = ""

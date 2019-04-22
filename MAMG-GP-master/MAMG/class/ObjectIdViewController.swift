@@ -131,7 +131,7 @@ class ObjectIdViewController: UIViewController {
     
     func checkQRCode(grCode: String){
         
-        let url: String = "http://192.168.64.2/dashboard/MyWebServices/api/getAnObject.php" //Link to PHP code in localHost
+        let url: String = URLNET + "getAnObject.php" //Link to PHP code in localHost
         
         var int: [String: String] = ["id":grCode]
         Alamofire.request(url, method: .post, parameters: int).responseJSON(completionHandler: {(response) in

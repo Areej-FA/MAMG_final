@@ -21,7 +21,7 @@ struct ScitechTours {
 
 class ScitechToursViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-    var url: String = "http://localhost:8888/MyWebServices-3/api/getScitechTours.php"
+    var url: String = URLNET+"getScitechTours.php"
     var nameArray: NSMutableArray = NSMutableArray()
     
     
@@ -103,6 +103,10 @@ class ScitechToursViewController: UIViewController, UITableViewDelegate, UITable
         
         return cell
         
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 100
     }
     
     

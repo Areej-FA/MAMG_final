@@ -43,7 +43,7 @@ class GiftInfoViewController: UIViewController {
         // to check if this product was selected before as a wishlist product or no
         if((gift.product_fav) == 0){
             //Add to wishlist
-            let myURL = "http://192.168.64.2/dashboard/MyWebServices/api/setObjectInWishList.php"
+            let myURL = URLNET+"setObjectInWishList.php"
             
             let pro_id = gift.Pro_id
             let params : Parameters = ["Pro_id":pro_id, "Email":usersEmaile]

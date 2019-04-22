@@ -18,7 +18,7 @@ class HallsViewController: UIViewController, UICollectionViewDelegate, UICollect
     }
     
     func getHalls() {
-        let myURL = "http://192.168.64.2/dashboard/MyWebServices/api/getHalls.php"
+        let myURL = URLNET + "getHalls.php"
         hallsList.removeAll()
         print("sending request")
         Alamofire.request(myURL, method: .post).responseJSON{

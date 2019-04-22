@@ -22,8 +22,8 @@ class PlanATour1ViewController: UIViewController, UIImagePickerControllerDelegat
     
     var imageToUpload: UIImage!
     var imgToUp: UIImage!
-    //let setPlannedTour = "https://panting-shop.000webhostapp.com/webservice/API/setPlannedTour.php"
-    let setPlannedTour = "http://192.168.64.2/dashboard/MyWebServices/api/setPlannedTour.php"
+    
+    let setPlannedTour = URLNET+"setPlannedTour.php"
     
     
     override func viewDidLoad() {

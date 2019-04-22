@@ -14,3 +14,4 @@ var isItArabic : Bool = false
 var autoPlaySound : Bool = false
 var isUserAGust : Bool = false
 var usersEmaile : String = ""
+var URLNET : String = "http://localhost:8888/MyWebServices/api/"

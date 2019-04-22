@@ -30,7 +30,7 @@ class WishlistViewController: UIViewController, UITableViewDelegate, UITableView
 
     func getWishlist() {
         // url for api
-        let myURL = "http://192.168.64.2/dashboard/MyWebServices/api/getUserWishList.php"
+        let myURL = URLNET + "getUserWishList.php"
         wishList.removeAll()
         
         let params : Parameters = ["Email":usersEmaile]
@@ -117,7 +117,7 @@ class WishlistViewController: UIViewController, UITableViewDelegate, UITableView
     }
     // to delete an row
     func deleteFromWishlist(index: IndexPath) {
-        let myURL = "http://192.168.64.2/dashboard/MyWebServices/api/deleteWishlist.php"
+        let myURL = URLNET + "deleteWishlist.php"
 
         let pro_id = wishList[index.row].Pro_id
         let params : Parameters = ["Pro_id":pro_id, "Email":usersEmaile]

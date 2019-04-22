@@ -25,7 +25,7 @@ struct HallsName{
 class PlanATour2ViewController: UIViewController, UITableViewDataSource,UITableViewDelegate {
    
     var tourID: Int = 0
-    var url = "http://192.168.64.2/dashboard/MyWebServices/api/returnHalls.php"
+    var url = URLNET+"returnHalls.php"
     var nameArray: NSMutableArray = NSMutableArray()
     var hallsSelected : [String] = []
     var tourName: String = ""

@@ -97,7 +97,6 @@
                     </view>
                     <navigationItem key="navigationItem" title="Navigate Me" id="QPd-sG-Apb">
                         <barButtonItem key="backBarButtonItem" title="Back" id="qJd-cz-ibO"/>
-                        <barButtonItem key="rightBarButtonItem" systemItem="search" id="vmb-Rv-Kkc"/>
                     </navigationItem>
                     <connections>
                         <outlet property="scitechMapWeb" destination="FxR-mB-5Kw" id="PGh-1w-Hub"/>
@@ -184,7 +183,6 @@
                     </view>
                     <navigationItem key="navigationItem" title="Scientific Halls" id="seE-zO-zde">
                         <barButtonItem key="backBarButtonItem" title="Back" id="Nf3-xd-AhN"/>
-                        <barButtonItem key="rightBarButtonItem" systemItem="search" id="zSr-wh-nLg"/>
                     </navigationItem>
                     <connections>
                         <outlet property="hallsCollectionView" destination="2O4-8j-qhK" id="8Jn-4u-lU4"/>
@@ -335,7 +333,6 @@
                     </view>
                     <navigationItem key="navigationItem" id="9fV-D5-HLF">
                         <barButtonItem key="backBarButtonItem" title="Back" id="3sJ-Rx-gfX"/>
-                        <barButtonItem key="rightBarButtonItem" systemItem="search" id="40v-So-rTC"/>
                     </navigationItem>
                     <connections>
                         <outlet property="hallDescription" destination="2nR-DO-JEl" id="xpe-Sj-Vka"/>
@@ -524,7 +521,6 @@
                     </view>
                     <navigationItem key="navigationItem" title="Home" id="d1W-c6-AOh">
                         <barButtonItem key="backBarButtonItem" title="Back" id="T8A-M6-lcC"/>
-                        <barButtonItem key="rightBarButtonItem" systemItem="search" id="Hmw-Xp-ahf"/>
                     </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4xg-FX-jZF" sceneMemberID="firstResponder"/>
@@ -570,7 +566,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="zrJ-ve-Gp6">
-                                <rect key="frame" x="20" y="346" width="374" height="379"/>
+                                <rect key="frame" x="20" y="346" width="374" height="467"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="107" id="XC1-5i-G6t">
@@ -613,10 +609,10 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="zrJ-ve-Gp6" firstAttribute="centerY" secondItem="dJB-99-ucS" secondAttribute="centerY" id="3Z2-5A-MCT"/>
+                            <constraint firstItem="zrJ-ve-Gp6" firstAttribute="centerY" secondItem="dJB-99-ucS" secondAttribute="centerY" constant="44" id="3Z2-5A-MCT"/>
                             <constraint firstItem="OGU-iQ-GwK" firstAttribute="leading" secondItem="Pp2-vP-Q1B" secondAttribute="leading" id="5TZ-q0-qsj"/>
                             <constraint firstItem="Pp2-vP-Q1B" firstAttribute="trailing" secondItem="dJB-99-ucS" secondAttribute="trailing" constant="2" id="6E9-1z-1zY"/>
-                            <constraint firstItem="Pp2-vP-Q1B" firstAttribute="bottom" secondItem="zrJ-ve-Gp6" secondAttribute="bottom" constant="88" id="Bx3-cJ-2Pc"/>
+                            <constraint firstItem="Pp2-vP-Q1B" firstAttribute="bottom" secondItem="zrJ-ve-Gp6" secondAttribute="bottom" id="Bx3-cJ-2Pc"/>
                             <constraint firstItem="OGU-iQ-GwK" firstAttribute="top" secondItem="Pp2-vP-Q1B" secondAttribute="top" id="Grs-9k-Lhn"/>
                             <constraint firstItem="OGU-iQ-GwK" firstAttribute="trailing" secondItem="Pp2-vP-Q1B" secondAttribute="trailing" id="TJb-ye-av9"/>
                             <constraint firstItem="Pp2-vP-Q1B" firstAttribute="trailing" secondItem="zrJ-ve-Gp6" secondAttribute="trailing" constant="20" id="fSL-3X-VvC"/>
@@ -629,7 +625,6 @@
                     </view>
                     <navigationItem key="navigationItem" title="Events" id="vFZ-ih-LBn">
                         <barButtonItem key="backBarButtonItem" title="Back" id="e8c-67-O0C"/>
-                        <barButtonItem key="rightBarButtonItem" systemItem="search" id="F5V-Fa-lCW"/>
                     </navigationItem>
                     <connections>
                         <outlet property="Test" destination="dJB-99-ucS" id="tHe-YI-Jhf"/>
@@ -639,7 +634,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="t0e-Xs-gIN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1088" y="-949"/>
+            <point key="canvasLocation" x="-1088.4057971014493" y="-949.55357142857133"/>
         </scene>
         <!--Settings-->
         <scene sceneID="YUM-b1-klf">
@@ -818,7 +813,6 @@
                     </view>
                     <navigationItem key="navigationItem" title="IMAX Movie" id="vcT-69-QMP">
                         <barButtonItem key="backBarButtonItem" title="Back" id="6IB-u4-fPh"/>
-                        <barButtonItem key="rightBarButtonItem" systemItem="search" id="eAM-JN-e3y"/>
                     </navigationItem>
                     <connections>
                         <outlet property="moviesCollectionView" destination="nf2-kg-Fbc" id="kkE-TG-xtB"/>
@@ -1007,9 +1001,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="2bO-mo-S6Q"/>
                     </view>
-                    <navigationItem key="navigationItem" id="cVg-rd-GSU">
-                        <barButtonItem key="rightBarButtonItem" systemItem="search" id="6aW-lq-PHf"/>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" id="cVg-rd-GSU"/>
                     <connections>
                         <outlet property="backView" destination="qsl-oe-y4i" id="z7l-7T-j4D"/>
                         <outlet property="movieDescription" destination="I7n-L2-g9c" id="mhO-0g-CsR"/>
@@ -1269,7 +1261,6 @@
                     </view>
                     <navigationItem key="navigationItem" id="R5C-qA-8mf">
                         <barButtonItem key="backBarButtonItem" title="Back" id="MjM-jO-AcS"/>
-                        <barButtonItem key="rightBarButtonItem" systemItem="search" id="V3P-WQ-vKO"/>
                     </navigationItem>
                     <connections>
                         <outlet property="eventImage" destination="sGq-U8-Bgy" id="iaC-9l-cLg"/>
@@ -1591,7 +1582,6 @@
                     </view>
                     <navigationItem key="navigationItem" title="Giftshop" id="ZMx-E4-08q">
                         <barButtonItem key="backBarButtonItem" title="Back" id="UFH-xD-QsV"/>
-                        <barButtonItem key="rightBarButtonItem" systemItem="search" id="e1t-zR-f6W"/>
                     </navigationItem>
                     <connections>
                         <outlet property="giftsCollectionView" destination="71b-hq-bcX" id="PYC-c7-JgD"/>
@@ -1687,9 +1677,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="wIo-Qo-uMH"/>
                     </view>
-                    <navigationItem key="navigationItem" id="Fni-5V-2t9">
-                        <barButtonItem key="rightBarButtonItem" systemItem="search" id="X4b-mF-HUw"/>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" id="Fni-5V-2t9"/>
                     <connections>
                         <outlet property="backView" destination="kv3-5K-WM3" id="tAd-QG-vwQ"/>
                         <outlet property="giftDescription" destination="bqt-bw-fkm" id="nwS-wD-oJo"/>
@@ -2075,7 +2063,6 @@
                     </view>
                     <navigationItem key="navigationItem" title="Tours" id="b1j-2c-Fwe">
                         <barButtonItem key="backBarButtonItem" title="Back" id="1Ig-eD-cwY"/>
-                        <barButtonItem key="rightBarButtonItem" systemItem="search" id="xRA-gR-SJF"/>
                     </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eX9-U5-JfR" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -2153,7 +2140,6 @@
                     </view>
                     <navigationItem key="navigationItem" title="Favorite Tours" id="xsZ-IZ-1bq">
                         <barButtonItem key="backBarButtonItem" title="Back" id="svv-as-JS4"/>
-                        <barButtonItem key="rightBarButtonItem" systemItem="search" id="ScU-Fi-Y5c"/>
                     </navigationItem>
                     <connections>
                         <outlet property="favoritesTableView" destination="ex2-RJ-fcT" id="JDx-ho-whV"/>
@@ -2302,7 +2288,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="xhD-Ev-5Mb">
-                                <rect key="frame" x="0.0" y="272" width="414" height="590"/>
+                                <rect key="frame" x="0.0" y="316" width="414" height="497"/>
                                 <color key="backgroundColor" red="0.92549019610000005" green="0.94117647059999998" blue="0.94509803920000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="cell" rowHeight="85" id="3hY-yO-DeM">
@@ -2356,7 +2342,7 @@
                                 </connections>
                             </tableView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ToursHistory" translatesAutoresizingMaskIntoConstraints="NO" id="Vwr-3Q-IpS">
-                                <rect key="frame" x="107" y="44" width="201" height="144"/>
+                                <rect key="frame" x="107" y="88" width="201" height="144"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="Vwr-3Q-IpS" secondAttribute="height" multiplier="207:110" constant="-69.981818181818198" id="qJq-2v-W49"/>
                                 </constraints>
@@ -2376,7 +2362,6 @@
                     </view>
                     <navigationItem key="navigationItem" title="Tour History" id="Aaq-Bc-TWT">
                         <barButtonItem key="backBarButtonItem" title="Back" id="BRb-ws-Xx0"/>
-                        <barButtonItem key="rightBarButtonItem" systemItem="search" id="dde-J0-SSr"/>
                     </navigationItem>
                     <connections>
                         <outlet property="historyTableView" destination="xhD-Ev-5Mb" id="AZs-wn-bZm"/>
@@ -2753,7 +2738,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Brt-hd-Aeg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2787" y="563"/>
+            <point key="canvasLocation" x="2786.9565217391305" y="562.5"/>
         </scene>
         <!--Tour Information-->
         <scene sceneID="jz3-Xy-XPz">
@@ -3140,10 +3125,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2s3-RP-NRn">
-                                <rect key="frame" x="16" y="44" width="382" height="766"/>
+                                <rect key="frame" x="16" y="88" width="382" height="629"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="destination" translatesAutoresizingMaskIntoConstraints="NO" id="cHD-xd-UZo">
-                                        <rect key="frame" x="141" y="333" width="100" height="100"/>
+                                        <rect key="frame" x="141" y="264.5" width="100" height="100"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="100" id="ah5-II-Iv0"/>
                                             <constraint firstAttribute="width" constant="100" id="cfz-IM-HCc"/>
@@ -3156,7 +3141,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="kLZ-KA-qW4">
-                                        <rect key="frame" x="0.0" y="736" width="382" height="30"/>
+                                        <rect key="frame" x="0.0" y="599" width="382" height="30"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TGN-Vm-RJQ">
                                                 <rect key="frame" x="0.0" y="0.0" width="186" height="30"/>
@@ -3855,9 +3840,9 @@
         <image name="wc" width="128" height="128"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="0PQ-8l-fpn"/>
+        <segue reference="Dvm-m0-uaB"/>
         <segue reference="Pf6-LG-9Pd"/>
-        <segue reference="8J6-cz-DZE"/>
+        <segue reference="mbU-7k-ziC"/>
         <segue reference="tq0-5Z-19J"/>
         <segue reference="baM-3n-QMl"/>
         <segue reference="7Sj-TC-aJB"/>

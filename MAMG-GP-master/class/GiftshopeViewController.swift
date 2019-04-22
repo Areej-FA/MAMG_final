@@ -36,7 +36,7 @@ class GiftshopeViewController: UIViewController, UICollectionViewDelegate, UICol
     
     func getGifts() {
          // url for api
-        let myURL = "http://192.168.64.2/dashboard/MyWebServices/api/getGifts.php"
+        let myURL = URLNET + "getGifts.php"
         giftsList.removeAll()
         let params : Parameters = ["Email":usersEmaile]
         Alamofire.request(myURL, method: .post, parameters: params).responseString{

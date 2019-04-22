@@ -25,7 +25,7 @@ class GetTicketViewController: UIViewController {
     var numberOfKids : Double = 0.0
     var price : Double = 0.0
     
-    let DataURL: String = "http://192.168.64.2/dashboard/MyWebServices/api/getTicket.php"
+    let DataURL: String = URLNET+"getTicket.php"
     var weatherJSON : JSON = []
     
     override func viewDidLoad() {

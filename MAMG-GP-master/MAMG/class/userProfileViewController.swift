@@ -17,7 +17,7 @@ class userProfileViewController: UIViewController {
     @IBOutlet weak internal var mobileLable: UILabel!
     @IBOutlet weak var signOutButton: UIButton!
     
-    let DataURL: String = "http://192.168.64.2/dashboard/MyWebServices/api/userProfile.php"
+    let DataURL: String = URLNET+"userProfile.php"
     
     override func viewDidLoad() {
         super.viewDidLoad()

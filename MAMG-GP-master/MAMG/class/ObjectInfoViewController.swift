@@ -197,7 +197,7 @@ class ObjectInfoViewController: UIViewController {
     //MARK: Bookmark object
     
     @IBAction func SetObjectinBookmark(_ sender: Any) {
-        let setURL: String = "http://192.168.64.2/dashboard/MyWebServices/api/setObjectInBookmark.php"
+        let setURL: String = URLNET+"setObjectInBookmark.php"
         
         Alamofire.request(setURL, method: .post, parameters: int).responseData { (response) in
             

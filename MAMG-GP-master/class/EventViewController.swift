@@ -27,7 +27,7 @@ class EventViewController: UIViewController, UITableViewDelegate, UITableViewDat
     func getEvents() {
         
         
-        let myURL = "http://192.168.64.2/dashboard/MyWebServices/api/getEvents.php"
+        let myURL = URLNET+"getEvents.php"
         eventsList = [EventBean]()
         
         Alamofire.request(myURL, method: .get, parameters: nil).responseJSON{

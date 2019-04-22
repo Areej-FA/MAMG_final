@@ -32,7 +32,7 @@ class ImaxViewController: UIViewController, UICollectionViewDelegate, UICollecti
     }
     
     func getMovies() {
-        let myURL = "http://192.168.64.2/dashboard/MyWebServices/api/getMovies.php"
+        let myURL = URLNET + "getMovies.php"
         moviesList.removeAll()
         
         Alamofire.request(myURL, method: .get, parameters: nil).responseJSON{
