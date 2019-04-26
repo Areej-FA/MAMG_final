@@ -17,7 +17,7 @@ class OnTourObjViewController: UIViewController {
     var videoLink: String = ""
     var resourceLink: String = ""
     var parID: Dictionary<String,Int> = [:]
-    var tName: String = ""
+    var tName: String = "Sarah"
     //OUTLETS
     
     @IBOutlet weak var ObjectName: UILabel!
@@ -36,7 +36,7 @@ class OnTourObjViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        var parID = ["id": ObjectID]
+        var parID = ["id": 7]
         
         ObjectName.text = tName  + " Tour"
         
@@ -122,8 +122,8 @@ class OnTourObjViewController: UIViewController {
             
         }
         //Download image
-        if json["product"][0]["Picture"].stringValue != "null"{
-            let encodedImage = json["product"][0]["Picture"].stringValue
+        if json["object"][0]["Picture"].stringValue != "null"{
+            let encodedImage = json["object"][0]["Picture"].stringValue
             let imageData = Data(base64Encoded: encodedImage, options: NSData.Base64DecodingOptions(rawValue: 0)) //Get image url from json and send it to function to download
             ObjectImage.image = UIImage(data: imageData!)
         }else {
@@ -150,7 +150,7 @@ class OnTourObjViewController: UIViewController {
     
     
     @IBAction func SetObjectinBookmark(_ sender: Any) {
-        let setURL: String = "http://panting-shop.000webhostapp.com/webservice/API/setObjectInBookmark.php"
+        let setURL: String = URLNET + "setObjectInBookmark.php"
         
         Alamofire.request(setURL, method: .post, parameters: parID).responseData { (response) in
             

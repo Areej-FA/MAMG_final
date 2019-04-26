@@ -27,7 +27,7 @@ class HallsViewController: UIViewController, UICollectionViewDelegate, UICollect
                 // case successed
             case .success:
                 let json = JSON(response.data!)
-                print(json)
+                
                 let array = json["product"].arrayValue
                 for i in 0..<array.count {
                     let dic = JSON(array[i])
@@ -36,20 +36,12 @@ class HallsViewController: UIViewController, UICollectionViewDelegate, UICollect
                     object.Hall_id = dic["Hall_id"].stringValue
                     object.Name_E = dic["Name_E"].stringValue
                     object.Picture = dic["Picture"].stringValue
-                
-                        object.Audio_E = dic["Audio_E"].stringValue
-                    
-                    
-                        object.Video_E = dic["Video_E"].stringValue
-                    
+                    object.Audio_E = dic["Audio_E"].stringValue
+                    object.Video_E = dic["Video_E"].stringValue
                     object.Description_E = dic["Description_E"].stringValue
                     object.Name_AR = dic["Name_AR"].string!
-                 
-                        object.Audio_Ar =  dic["Audio_Ar"].stringValue
-                    
-                  
-                        object.Video_AR = dic["Video_AR"].stringValue
-                    
+                    object.Audio_Ar =  dic["Audio_Ar"].stringValue
+                    object.Video_AR = dic["Video_AR"].stringValue
                     object.Description_AR = dic["Description_AR"].stringValue 
                     
                     var featuresList = [HallObjectBean]()

@@ -15,6 +15,8 @@ class ObjectIdViewController: UIViewController {
 
     var captureSession = AVCaptureSession()
     
+    var int: [String: String] = ["":""]
+    
     var videoPreviewLayer: AVCaptureVideoPreviewLayer?
     var qrCodeFrameView: UIView?
     var Message: String = ""
@@ -84,7 +86,7 @@ class ObjectIdViewController: UIViewController {
     
     // MARK: - Helper methods
     
-    func launchApp(decodedURL: String, isInDatabase: Bool) {
+    func launchApp(isInDatabase: Bool) {
         
         if presentedViewController != nil {
             return
@@ -99,16 +101,11 @@ class ObjectIdViewController: UIViewController {
                 
                 if isItArabic {
                     //TODO: check there are different AR and E interfaces
-                    let cv = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ObjectInfoAR") as! ObjectInfoViewController
-                    cv.decodedURL = decodedURL
-                    self.present(cv, animated: true, completion: nil)
+                    self.performSegue(withIdentifier: "ObjId", sender: self)
+                    //ObjId
                 } else {
-                    let cv = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ObjectInfoE") as! ObjectInfoViewController
-                    cv.decodedURL = decodedURL
-                    self.present(cv, animated: true, completion: nil)
+                    self.performSegue(withIdentifier: "ObjId", sender: self)
                 }
-                
-                
             })
             
             cancelAction = UIAlertAction(title: "No", style: UIAlertAction.Style.cancel, handler: nil)
@@ -126,6 +123,15 @@ class ObjectIdViewController: UIViewController {
         
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let decoded = int["id"] else {return}
+        
+        if(segue.identifier == "ObjId"){
+            let cv = segue.destination as! ObjectInfoViewController
+            cv.decodedURL = decoded
+        }
+    }
+    
     
     // Check if the QR code value is an object id or not
     
@@ -133,46 +139,50 @@ class ObjectIdViewController: UIViewController {
         
         let url: String = URLNET + "getAnObject.php" //Link to PHP code in localHost
         
-        var int: [String: String] = ["id":grCode]
-        Alamofire.request(url, method: .post, parameters: int).responseJSON(completionHandler: {(response) in
-            
-            if response.result.isSuccess{
-                print("Success! Got the object data")
-                
-                let ObjectJSON : JSON = JSON(response.data)
-                
-                if(ObjectJSON["Object_id"].stringValue == grCode){
-                    
-                    if isItArabic {
-                        //TODO: translate
-                        self.Message = ""
-                        self.TitleOfMessage = ""
-                    } else {
-                        self.TitleOfMessage = "Found it"
-                        self.Message = "Tap Yes to view the Object info."
-                    }
-                    self.launchApp(decodedURL: grCode, isInDatabase: true)
-                    
-                }else {
-                    if isItArabic {
-                        //TODO: translate
-                        self.TitleOfMessage = ""
-                        self.Message = ""
-                    } else {
-                        self.TitleOfMessage = "An error has occured"
-                        self.Message = "QR code doesnt belong to Scitech"
-                    }
-                    self.launchApp(decodedURL: grCode, isInDatabase: false)
-                    
-                }
-                
-                
-            }else{
-                print("Error \(String(describing: response.result.error))")
-            }
-            
-        })
+        int["id"] = grCode
+        
+//        Alamofire.request(url, method: .post, parameters: int).responseJSON(completionHandler: {(response) in
+//
+//            if response.result.isSuccess{
+//                print("Success! Got the object data")
+//
+//                let ObjectJSON : JSON = JSON(response.data)
+//
+//                if(ObjectJSON["Object_id"].stringValue == grCode){
+//
+//                    if isItArabic {
+//                        //TODO: translate
+//                        self.Message = ""
+//                        self.TitleOfMessage = ""
+//                    } else {
+//                        self.TitleOfMessage = "Found Object"
+//                        self.Message = "Tap Yes to view the Object info."
+//                    }
+//                    self.launchApp(isInDatabase: true)
+//
+//                }else {
+//                    if isItArabic {
+//                        //TODO: translate
+//                        self.TitleOfMessage = ""
+//                        self.Message = ""
+//                    } else {
+//                        self.TitleOfMessage = "An error has occured"
+//                        self.Message = "QR code doesnt belong to Scitech Object"
+//                    }
+//                    self.launchApp(isInDatabase: false)
+//
+//                }
+//
+//
+//            }else{
+//                print("Error \(String(describing: response.result.error))")
+//            }
+//
+//        })
     
+        self.TitleOfMessage = "Found Object"
+        self.Message = "Tap Yes to view the Object info."
+        self.launchApp(isInDatabase: true)
 
     
      

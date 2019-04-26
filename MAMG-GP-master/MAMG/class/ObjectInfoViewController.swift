@@ -26,6 +26,8 @@ class ObjectInfoViewController: UIViewController {
     @IBOutlet weak var Object4Star: UIButton!
     @IBOutlet weak var Object5Star: UIButton!
     
+    @IBOutlet weak var audioIcon: UIButton!
+    @IBOutlet weak var audioLevel: UISlider!
     
     //MARK: URL PHP link
     
@@ -53,7 +55,6 @@ class ObjectInfoViewController: UIViewController {
                 print("Success! Got the object data")
                 
                 let ObjectJSON : JSON = JSON(response.data)
-                print(ObjectJSON)
                 self.dataOfJson(json: ObjectJSON)
             }else{
                 print("Error \(String(describing: response.result.error))")
@@ -94,6 +95,14 @@ class ObjectInfoViewController: UIViewController {
                 ObjectLink.isHidden = true
             }
             
+            if let resource = json["object"][0]["Audio_AR"].string {
+                //Do something with audio
+                
+            } else {
+                audioIcon.isHidden = true
+                audioLevel.isHidden = true
+            }
+            
         } else {
             //Object English Name
             if let name = json["object"][0]["Name_E"].string {
@@ -117,17 +126,33 @@ class ObjectInfoViewController: UIViewController {
             
             if let resource = json["object"][0]["Resource_E"].string {
                 resourceLink = resource;
-                
             } else {
                 ObjectLink.isHidden = true
             }
             
+            if let resource = json["object"][0]["Audio_E"].string {
+                //Do something with audio
+                
+            } else {
+                audioIcon.isHidden = true
+                audioLevel.isHidden = true
+            }
+            
+        }
+        
+        //Download image
+        if let encodedImage = json["object"][0]["Picture"].string {
+            print("\n\n ***** \n\n ***** image: \n \(encodedImage)")
+            let imageData = Data(base64Encoded: encodedImage) //Get image url from json and send it to function to download
+            ObjectImage.image = UIImage(data: imageData!)
+        }else {
+            ObjectImage.image = UIImage(named: "diamond")
         }
         
         //Display the rate count
         //TODO: Alignment for arabic to english
         //TODO: Condition if no rating found
-        if let rate = json[0]["Rate_Count"].int {
+        if let rate = json["object"][0]["Rate_Count"].int {
             ObjectRate.text = rate as? String
         } else {
             ObjectRate.text = "0"
@@ -135,7 +160,7 @@ class ObjectInfoViewController: UIViewController {
         
         // Change grey star to gold star depending on rate value
         // TODO: CHange to switch statement
-        if let rate = json[0]["Rate"].int {
+        if let rate = json["object"][0]["Rate"].int {
             if rate == 1 {
                 Object1Star.setImage(UIImage(named: "star-1"), for: .normal)
             }
@@ -162,18 +187,6 @@ class ObjectInfoViewController: UIViewController {
                 Object5Star.setImage(UIImage(named: "star-1"), for: .normal)
             }
         }
-        
-        //Download image
-        if json["product"][0]["Picture"].stringValue != "null"{
-            let encodedImage = json["product"][0]["Picture"].stringValue
-            let imageData = Data(base64Encoded: encodedImage) //Get image url from json and send it to function to download
-            ObjectImage.image = UIImage(data: imageData!)
-        }else {
-            ObjectImage.image = UIImage(named: "diamond")
-        }
-        
-        
-        //TODO: Audio
         
         
     }
