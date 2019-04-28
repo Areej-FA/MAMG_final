@@ -7,7 +7,7 @@
 //
 
 import Foundation
-
+//Class object model for tour object
 class TourBean {
     var Tour_id: String = ""
     var Name_E: String = ""

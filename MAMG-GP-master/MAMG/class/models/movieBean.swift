@@ -1,5 +1,5 @@
 import Foundation
-
+//Class object model for movie object
 class MovieBean {
     
     var Moive_id: String = ""

@@ -10,6 +10,7 @@ import UIKit
 import Alamofire
 import SwiftyJSON
 
+//Structure model for objects
 struct ObjsList{
     var ObjID: String
     var ObjName: String
@@ -25,15 +26,18 @@ struct ObjsList{
 
 class TourInfoViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
 
+    //create object from class tourBean
     var Tour = TourBean()
-    var tourID = "25"
+    //set id from previous id
+    var tourID = ""
     var objectID = ""
     var objects: NSMutableArray = NSMutableArray()
     var idPar = ["":""]
-    
+    //URL links to api
     let urlTour = URLNET + "getTour.php"
     let urlTObj = URLNET + "getTourObj.php"
     
+    //Connection to table view on interface
     @IBOutlet weak var TourDescription: UILabel!
     @IBOutlet weak var TourImage: UIImageView!
     @IBOutlet weak var TourCollectionView: UICollectionView!
@@ -41,6 +45,7 @@ class TourInfoViewController: UIViewController, UICollectionViewDelegate, UIColl
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //set tour id
         idPar["id"] = tourID
 
         
@@ -49,6 +54,7 @@ class TourInfoViewController: UIViewController, UICollectionViewDelegate, UIColl
         getTObj()
     }
     
+    //Function to get tour info
     func getTour(){
         
         Alamofire.request(urlTour, method: .post, parameters: idPar).responseData(completionHandler: {(response) in
@@ -71,6 +77,7 @@ class TourInfoViewController: UIViewController, UICollectionViewDelegate, UIColl
         })
     }
     
+    //function to get object for that tour
     func getTObj(){
         Alamofire.request(urlTObj, method: .post, parameters: idPar).responseData(completionHandler: {(response) in
             if response.result.isSuccess {
@@ -119,7 +126,7 @@ class TourInfoViewController: UIViewController, UICollectionViewDelegate, UIColl
         return cell
     }
     
-    // to know wich row was selected
+    // to know which row was selected
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let obj = objects[indexPath.row] as! ObjsList
         
@@ -127,6 +134,7 @@ class TourInfoViewController: UIViewController, UICollectionViewDelegate, UIColl
         self.performSegue(withIdentifier: "ObjectInfoE", sender: self)
     }
     
+    //Function to navigate(perform segue) to interface
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if(segue.identifier == "ObjectInfoE"){
             let objInfoVC = segue.destination as! ObjectInfoViewController

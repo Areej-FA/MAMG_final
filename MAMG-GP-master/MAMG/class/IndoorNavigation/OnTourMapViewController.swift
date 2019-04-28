@@ -74,14 +74,15 @@ class OnTourMapViewController: UIViewController, WKNavigationDelegate, CLLocatio
         
         super.viewDidLoad()
         
+        //call to get authurization
         requestAuthurization()
         
         scitechMapWeb.navigationDelegate = self
-        
+        //set tour id as parameter to be sent to api
         idPar = ["id": tourID]
-        
+        //set interface title
         ObjectName.text = tourName + " Tour"
-        
+        //set weblink to indoor map
         let url = URL(string: "http://192.168.64.2/dashboard/scitech2.html")!
         scitechMapWeb.load(URLRequest(url: url))
         
@@ -97,12 +98,13 @@ class OnTourMapViewController: UIViewController, WKNavigationDelegate, CLLocatio
         }
     }
     
+    //request authurization from user to get their current location
     func requestAuthurization(){
         
         locationManager.requestWhenInUseAuthorization()
         
         if CLLocationManager.locationServicesEnabled(){
-            
+            //once authurization is given then the application can start getting the location
             self.locationManager.delegate = self as! CLLocationManagerDelegate
             self.locationManager.desiredAccuracy = kCLLocationAccuracyBestForNavigation
             self.locationManager.startUpdatingLocation()
@@ -113,6 +115,7 @@ class OnTourMapViewController: UIViewController, WKNavigationDelegate, CLLocatio
         }
     }
     
+    //When the web is completely loaded then the boolean varaiable is set to true
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
         webLoaded = true
     }
@@ -126,6 +129,7 @@ class OnTourMapViewController: UIViewController, WKNavigationDelegate, CLLocatio
         userLatitude = location.latitude
         userLongitude = location.longitude
         
+        //Once web is loaded, then users location are sent to the website
         if webLoaded {
             scitechMapWeb.evaluateJavaScript("updatedUserLocation(\(userLatitude), \(userLongitude))", completionHandler:{ (result, error) in
                 guard error == nil else {
@@ -144,7 +148,6 @@ class OnTourMapViewController: UIViewController, WKNavigationDelegate, CLLocatio
         if (locationSet){
             locationSet = false
             findDistanceToObject()
-            
         }
         
         //Find min distance to object
@@ -173,11 +176,12 @@ class OnTourMapViewController: UIViewController, WKNavigationDelegate, CLLocatio
             var newLat = 0.0
             var newLon = 0.0
             
+            //convert lat and long to x(east, west) and z(north, south)
             (newLon, newLat) = self.convertTo(x: userLongitude, z: userLatitude, ObjectLongitude: objLong, ObjectLatitude: objLat)
             
             // Using the two results from the latitude and longitude to calculate the distance between the object and users device
             let dis = sqrt(pow(newLon, 2.0)+pow(newLat, 2.0))
-            
+            //save new distance to array
             locationData.distance = dis
             
             print("got lat \(newLat) long \(newLon)")
@@ -202,7 +206,7 @@ class OnTourMapViewController: UIViewController, WKNavigationDelegate, CLLocatio
         for row in 1..<objectArray.count{
             var locationData = objectArray[row] as! objTour
             var dis = locationData.distance
-            
+            //check if the distance is the closest and set that as the new minimum
             if dis<min{
                 min = dis
                 print("got min \(min)")
@@ -251,6 +255,7 @@ class OnTourMapViewController: UIViewController, WKNavigationDelegate, CLLocatio
         // Using the two results from the latitude and longitude to calculate the distance between the object and users device
         let dis: Double = sqrt(pow(Lon, 2.0)+pow(Lat, 2.0))
         
+        //Adaptive part: once the disyance between the user and the object is less than 10 meters, then open object info interface and once that interface is closed, remove that object from list and recalculate objects distance to fins newest closest object to user too navigate him to it
         if dis < 10.0 {
             if isItArabic {
                 let objVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "objTAR") as! OnTourObjViewController
@@ -338,7 +343,8 @@ class OnTourMapViewController: UIViewController, WKNavigationDelegate, CLLocatio
         _ = navigationController?.popViewController(animated: true)
     }
     
-    
+    //Function not complete: to fins users location based on (AC: distance between user and beacon 1, BC: distance between user and beacon 2, AB: distance between beacon 1 and beacon 2, By: position y of beacon 2, Bx: position x of beacon 2, Ay: position y of beacon 1, Ax: position x of beacon 1)
+    //using these values, the below function should get the users location indoors
     func locateUserByBeacons(AC: Double, BC: Double, AB: Double, By: Double, Bx: Double, Ay: Double, Ax: Double){
         //φ1=arctan2(𝐵𝑦−𝐴𝑦,𝐵𝑥−𝐴𝑥)
         let delta1 = atan2(By-Ay, Bx-Ax)

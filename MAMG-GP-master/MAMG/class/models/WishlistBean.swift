@@ -1,5 +1,5 @@
 import Foundation
-
+//Class object model for wishlist object
 class WishlistBean {
     var Pro_id: String = ""
     var Name_E: String = ""

@@ -1,5 +1,5 @@
 import Foundation
-
+//Class object model for gift object
 class GiftBean {
     var Pro_id: String = ""
     var Name_E: String = ""

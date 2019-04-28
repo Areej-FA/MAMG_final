@@ -38,6 +38,7 @@ class BookmarkViewController: UIViewController, UICollectionViewDelegate, UIColl
 
         bookmarkCollectionView!.contentInset = UIEdgeInsets(top: 20, left: 20, bottom: 20, right: 20)
         
+        //get bookmarked objects from the logged in user
         getObjects()
     }
     

@@ -123,6 +123,7 @@ class ObjectIdViewController: UIViewController {
         
     }
     
+    //Function to navigate(perform segue) to interface
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let decoded = int["id"] else {return}
         

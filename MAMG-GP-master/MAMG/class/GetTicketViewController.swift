@@ -35,12 +35,11 @@ class GetTicketViewController: UIViewController {
         getPrice(type: "Scientific Halls")
     }
     
-    
+    //Get ticket prices from database
     func dataToJson(url: String){
         Alamofire.request(url, method: .get).responseData { (response) in
             if response.result.isSuccess{
                 self.weatherJSON  = JSON( response.result.value! )
-                //                print(self.weatherJSON[1]["Price"])
                 
             }else{
                 print("Error \(String(describing: response.result.error))")
@@ -50,6 +49,8 @@ class GetTicketViewController: UIViewController {
         
     }
     
+    
+    // get tab selected
     @IBAction func selectInfoType(_ sender: Any) {
         
         switch (sender as AnyObject).selectedSegmentIndex{
@@ -73,6 +74,7 @@ class GetTicketViewController: UIViewController {
         }
     }
     
+    //increase price when + is selected for adult ticket prices
     @IBAction func adultsCounter(_ sender: Any) {
         //        print(adultsStepper.stepValue)
         numberOfAdults = adultsStepper.value
@@ -81,6 +83,7 @@ class GetTicketViewController: UIViewController {
         getPrice(type: "")
     }
     
+    //increase price when + is selected for kids ticket prices
     @IBAction func kidsCounter(_ sender: Any) {
         numberOfKids = kidsStepper.value
         numberOfKidsLablel.text = "\(numberOfKids)"
@@ -88,6 +91,7 @@ class GetTicketViewController: UIViewController {
         getPrice(type: "")
     }
     
+    //get total prices
     func getPrice(type: String) {
         var kidsTicketPrice : Double = 0.0
         var adultsTicketPrice : Double = 0.0

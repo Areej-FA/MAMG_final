@@ -29,20 +29,23 @@ class IndoorNavVC: UIViewController, WKNavigationDelegate, CLLocationManagerDele
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //call to get authurization
         requestAuthurization()
         
         scitechMapWeb.navigationDelegate = self
         
+        //set weblink to indoor map
         let url = URL(string: "http://192.168.64.2/dashboard/scitech2.html")!
         scitechMapWeb.load(URLRequest(url: url))
     }
     
+    //request authurization from user to get their current location
     func requestAuthurization(){
         
         locationManager.requestWhenInUseAuthorization()
         
         if CLLocationManager.locationServicesEnabled(){
-            
+            //once authurization is given then the application can start getting the location
             self.locationManager.delegate = self
             self.locationManager.desiredAccuracy = kCLLocationAccuracyBestForNavigation
             self.locationManager.startUpdatingLocation()
@@ -53,18 +56,24 @@ class IndoorNavVC: UIViewController, WKNavigationDelegate, CLLocationManagerDele
         }
     }
     
+    //When the web is completely loaded then the boolean varaiable is set to true
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
         print("switched")
         webFinishedLoading = true
     }
     
+    //Function called every time users position updates
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        
+        // Getting user location from sensor
         let location: CLLocationCoordinate2D = manager.location!.coordinate
-        userLatitude = 26.319387//location.latitude
-        userLongitude = 50.227697//location.longitude
+        userLatitude = location.latitude
+        userLongitude = location.longitude
         
         print("\n\n **********\n \(userLatitude) - \(userLongitude) \n*******\n\n")
         
+        //Once web is loaded, then users location are sent to the website
+
         if webFinishedLoading {
             scitechMapWeb.evaluateJavaScript("updatedUserLocation(\(userLatitude), \(userLongitude))", completionHandler:{ (result, error) in
                 guard error == nil else {
@@ -87,6 +96,8 @@ class IndoorNavVC: UIViewController, WKNavigationDelegate, CLLocationManagerDele
         direction = 24101890
     }
     
+    //Once web is loaded and direction is set, then users location and direction are sent to the website to set indoor naviagtion to scitech hall
+
     @IBAction func navToHalls(_ sender: Any) {
         direction = 24100582
         if direction != 0 && webFinishedLoading{
@@ -102,6 +113,8 @@ class IndoorNavVC: UIViewController, WKNavigationDelegate, CLLocationManagerDele
         }
         
     }
+    
+    //Once web is loaded and direction is set, then users location and direction are sent to the website to set indoor naviagtion to restroom
     
     @IBAction func navToWashroom(_ sender: Any) {
         

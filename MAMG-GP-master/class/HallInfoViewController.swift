@@ -68,6 +68,7 @@ class HallInfoViewController: UIViewController, UICollectionViewDelegate, UIColl
         }
     }
     
+    //adding audio to interface
     @IBAction func audioAction(_ sender: Any) {
         var audioURL = ""
         if(isItArabic){
@@ -83,7 +84,7 @@ class HallInfoViewController: UIViewController, UICollectionViewDelegate, UIColl
         }
     }
     
-    
+    //adding video to interface
     @IBAction func videoAction(_ sender: Any) {
         var videoURL = ""
         if(isItArabic){

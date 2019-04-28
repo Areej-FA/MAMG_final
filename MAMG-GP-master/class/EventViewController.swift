@@ -19,14 +19,11 @@ class EventViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
         getEvents()
     }
     
+    //Function to get events from database
     func getEvents() {
-        
-        
         let myURL = URLNET+"getEvents.php"
         eventsList = [EventBean]()
         
@@ -92,11 +89,12 @@ class EventViewController: UIViewController, UITableViewDelegate, UITableViewDat
         }
     }
     
+    // number of columns
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
     
-    
+    // number of rows
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return (eventsList.count)
     }
@@ -105,6 +103,7 @@ class EventViewController: UIViewController, UITableViewDelegate, UITableViewDat
         return 110
     }
     
+    // to fill the table with data
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         
@@ -123,13 +122,13 @@ class EventViewController: UIViewController, UITableViewDelegate, UITableViewDat
         return cell
     }
     
+    //Function to get tour if from selected cell
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
-        
         event = eventsList[indexPath.row]
         self.performSegue(withIdentifier: "eventInfo", sender: self)
     }
    
+    //Function to navigate(perform segue) to interface
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if(segue.identifier == "eventInfo"){
             let eventVC = segue.destination as! EventInfoViewController
@@ -137,7 +136,7 @@ class EventViewController: UIViewController, UITableViewDelegate, UITableViewDat
         }
     }
     
-
+//connectiong to table view in interface
     @IBOutlet weak var Test: MIDITimeTableView!
 
 }

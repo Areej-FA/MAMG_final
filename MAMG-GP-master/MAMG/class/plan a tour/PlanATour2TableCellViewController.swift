@@ -9,7 +9,7 @@
 import UIKit
 
 class PlanATour2TableCellViewController: UITableViewCell {
-
+//components in prototype row in table cell
     @IBOutlet weak var ObjImg: UIImageView!
     
     @IBOutlet weak var ObjName: UILabel!

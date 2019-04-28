@@ -32,11 +32,13 @@ class ScitechToursViewController: UIViewController, UITableViewDelegate, UITable
         getScitechTours()
     }
    
+    //function to get Scitech tour from database
     func getScitechTours(){
         print("just entered the function")
         Alamofire.request(url, method: .post).responseString { (response) in
+            //if response was successed
             if response.result.isSuccess{
-                
+                /// parse json data
                 print("Here i start")
                 let toursJSON = JSON.init(parseJSON: response.value!)
                 print("This is the json ***> \(toursJSON)")
@@ -61,11 +63,14 @@ class ScitechToursViewController: UIViewController, UITableViewDelegate, UITable
                     let imageData = Data(base64Encoded: encodedImage, options: NSData.Base64DecodingOptions(rawValue: 0))
                     print("*****Img Data : \(imageData!)")
                     
+                    //if no tours found show an alert
                     if isItArabic {
                         self.nameArray.add(ScitechTours.init(name: ARName, UriName: imageData!, id: TourID))
+                        //reload table to add data
                         self.reloadTable()
                     }else{
                         self.nameArray.add(ScitechTours.init(name: EName, UriName: imageData!, id: TourID))
+                        //reload table to add data
                         self.reloadTable()
                     }
                 }
@@ -75,14 +80,17 @@ class ScitechToursViewController: UIViewController, UITableViewDelegate, UITable
         }
     }
     
+    //Function to reload table to add data
     func reloadTable(){
         ScitechToursTable.reloadData()
     }
     
+    // number of rows
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return nameArray.count
     }
     
+    // to fill the table with data
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = self.ScitechToursTable.dequeueReusableCell(withIdentifier: "TourCell", for: indexPath) as? ScitechToursTableViewCell else {
             fatalError("The dequeued cell is not an instance of TableViewCell.")
@@ -94,20 +102,25 @@ class ScitechToursViewController: UIViewController, UITableViewDelegate, UITable
         return cell
     }
     
+    //set row height function
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 100
     }
     
+    //Function to get tour if from selected cell
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let cell = self.ScitechToursTable.cellForRow(at: indexPath)
+        //get row from array that cooresponds the selected cell
         let tour = nameArray[indexPath.row] as! ScitechTours
         selectedTour = tour.id
         self.performSegue(withIdentifier: "ScitechTour", sender: self)
     }
     
+    //Function to navigate(perform segue) to interface
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if(segue.identifier == "ScitechTour"){
             let tourInfo = segue.destination as! TourInfoViewController
+            //Send tour id to next interface
             tourInfo.tourID = self.selectedTour
         }
     }

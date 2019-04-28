@@ -1,5 +1,5 @@
 import Foundation
-
+//Class object model for objects
 class HallObjectBean {
     var Object_id: String = ""
     var Name_E: String = ""

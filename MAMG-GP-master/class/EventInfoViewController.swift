@@ -25,6 +25,7 @@ class EventInfoViewController: UIViewController {
             eventImage.image = UIImage(data: imageData)
         }
         
+        //Check if the language selected is arabic to display the values in arabis else the english values are displyed
         if(isItArabic){
             self.title = event.Name_AR
             eventName.text = event.Name_AR
@@ -33,6 +34,7 @@ class EventInfoViewController: UIViewController {
             eventName.text = event.Name_E
         }
         
+        //set values in interface
         startDate!.text = event.Start_date
         endDate!.text = event.End_date
         

@@ -32,7 +32,7 @@ class HallsViewController: UIViewController, UICollectionViewDelegate, UICollect
                 for i in 0..<array.count {
                     let dic = JSON(array[i])
                     let object = HallBean()
-
+                    //get hall info
                     object.Hall_id = dic["Hall_id"].stringValue
                     object.Name_E = dic["Name_E"].stringValue
                     object.Picture = dic["Picture"].stringValue
@@ -49,7 +49,7 @@ class HallsViewController: UIViewController, UICollectionViewDelegate, UICollect
                     for j in 0..<featuresArray.count {
                         let featuresDic = JSON(featuresArray[j])
                         let obj = HallObjectBean()
-                        
+                        //get objects info from that hall 
                         obj.Object_id = featuresDic["Object_id"].stringValue
                         obj.Name_E = featuresDic["Name_E"].stringValue
                         obj.Picture = featuresDic["Picture"].stringValue
@@ -123,6 +123,7 @@ class HallsViewController: UIViewController, UICollectionViewDelegate, UICollect
         self.performSegue(withIdentifier: "hallInfo", sender: self)
     }
     
+    //Function to navigate(perform segue) to interface
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if(segue.identifier == "hallInfo"){
             let hallInfoVC = segue.destination as! HallInfoViewController

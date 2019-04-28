@@ -46,7 +46,7 @@ class SignUpViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-    
+    //set text field placeholders
             emailLable.text = "Email"
             firstNameLable.text = "First Name"
             lastNameLable.text = "Last Name"
@@ -76,6 +76,7 @@ class SignUpViewController: UIViewController {
         }
     }
     
+    //naviagate to user profile
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if(segue.identifier == "fSignin"){
             let hallInfoVC = segue.destination as! userProfileViewController

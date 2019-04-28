@@ -9,55 +9,51 @@
 import UIKit
 import SwiftyJSON
 import Alamofire
-class PlanATour4ViewController: UIViewController {
 
-    //TODO: •    The user has the option to start the tour or add it to the favorites.
-    //•    After the user clicks favorite, then a flag value will display if the user is signed in.
-    //•    If the name is not signed in, then the user will be redirected to the Sign in interface.
-    //•    If the name is signed in, then the tour will be added to the users' favorite tours.
-    //•    After the user clicks start, then the user will be redirected to the on tour interface.
+class PlanATour4ViewController: UIViewController {
     
+    //Connection to table view on interface
     @IBOutlet weak var saveTour: UIButton!
     @IBOutlet weak var startTour: UIButton!
     
+    //Array of hall id from selected halls and objects from previous interface
     var hallsSelected : [String] = []
     var ObjSelected : [String] = []
     var tourID: Int = 0
     var tourName: String = ""
+    //URL links to api
     let ObjURL = URLNET+"savePlannedTour.php"
     let UserURL = URLNET+"saveUsersTour.php"
+    //parameters to send values to api
     var parameterUser: [String : Any] = [:]
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //check if users is logged in or not
         if isUserAGust {
             saveTour.isHidden = true
         } else {
             saveTour.isHidden = false
+            //set user name and user id to parameter variable
             parameterUser = ["UserID": usersEmaile, "TourID": tourID]
         }
     }
     
     @IBAction func saveTourInDB(_ sender: Any) {
-        print("***************************************\n\n\n")
-        print("***************************************")
-        print( "Object ID:")
-        print(ObjSelected)
-        print( "Tour ID: \(tourID)")
-        print( "User ID: \(usersEmaile)")
         
         if !usersEmaile.isEmpty {
             setUser()
         }
         
         setObjs()
-        
     }
     
+    //Function to save tour to favorite
     func setUser(){
         print("Setting user")
+        //Alamofire request to send parameter values to database and insert them there
         Alamofire.request(UserURL, method: .post, parameters: parameterUser).responseData(completionHandler: {(response) in
             if response.result.isSuccess {
                 
@@ -70,12 +66,15 @@ class PlanATour4ViewController: UIViewController {
         })
     }
     
+    //Function to save tour objects in database
     func setObjs(){
         //Objects is uploaded intoDB
+        //send each object to api and inserting them into T_Object table
         for row in 0..<ObjSelected.count{
             print("Setting obj")
             let objID = ObjSelected[row]
             var parameterObj: [String : Any] = ["ObjID": objID, "TourID": tourID, "UserID": usersEmaile]
+            //Alamofire request to send parameter values to database and insert them there
             Alamofire.request(ObjURL, method: .post, parameters: parameterObj).responseData(completionHandler: {(response) in
                 if response.result.isSuccess {
                     let ObjJSON : JSON = JSON(response.data)
@@ -88,38 +87,19 @@ class PlanATour4ViewController: UIViewController {
         }
     }
     
+    //navigate(perform segue) to indoor naviagtion interface
     @IBAction func startOnTour(_ sender: Any) {
-//        //TODO: Indoor Nav Segue
-//        let cv = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "mapTE") as! OnTourMapViewController
-//        cv.tourName = tourName
-//        cv.tourID = tourID
-//        self.present(cv, animated: true, completion: nil)
         self.performSegue(withIdentifier: "mapTE", sender: self)
     }
     
+    //Function to navigate(perform segue) to interface
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if(segue.identifier == "mapTE"){
             let cv = segue.destination as! OnTourMapViewController
+            //Send tour id and tour nameto next interface
             cv.tourName = tourName
             cv.tourID = tourID
         }
     }
     
-    @IBAction func backBtn(_ sender: Any) {
-        if isItArabic {
-            //
-            let cv = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "PlanATour3AR") as! PlanATour3ViewController
-            cv.hallsSelected = hallsSelected
-            cv.tourID = tourID
-            self.present(cv, animated: true, completion: nil)
-            
-        } else {
-            
-            let cv = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "PlanATour3E") as! PlanATour3ViewController
-            cv.hallsSelected = hallsSelected
-            cv.tourID = tourID
-            self.present(cv, animated: true, completion: nil)
-            
-        }
-    }
 }

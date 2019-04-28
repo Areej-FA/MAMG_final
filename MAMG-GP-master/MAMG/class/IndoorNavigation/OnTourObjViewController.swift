@@ -17,7 +17,7 @@ class OnTourObjViewController: UIViewController {
     var videoLink: String = ""
     var resourceLink: String = ""
     var parID: Dictionary<String,Int> = [:]
-    var tName: String = "Sarah"
+    var tName: String = ""
     //OUTLETS
     
     @IBOutlet weak var ObjectName: UILabel!
@@ -28,8 +28,6 @@ class OnTourObjViewController: UIViewController {
     @IBOutlet weak var audioLevel: UISlider!
     @IBOutlet weak var audioIcon: UIButton!
     
-    //Remove
-    var isItArabic = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,6 +42,7 @@ class OnTourObjViewController: UIViewController {
    
     }
     
+    //get object info from the object that the use was naviagted to
     func getObjectInfo(ObjectID: Dictionary<String,Int>){
         
         Alamofire.request(getAnObject, method: .post, parameters: ObjectID).responseData { (response) in
@@ -60,6 +59,7 @@ class OnTourObjViewController: UIViewController {
         }
     }
     
+    //set the info in interface
     func dataOfJson(json: JSON){
         
         if isItArabic {
@@ -162,7 +162,7 @@ class OnTourObjViewController: UIViewController {
         UIApplication.shared.open(settingsUrl, options: [:], completionHandler: nil)
     }
     
-    
+    //Bookmark object and insert it into database
     @IBAction func SetObjectinBookmark(_ sender: Any) {
         let setURL: String = URLNET + "setObjectInBookmark.php"
         

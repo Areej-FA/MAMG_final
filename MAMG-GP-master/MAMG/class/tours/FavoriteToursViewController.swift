@@ -30,6 +30,7 @@ class FavoriteToursViewController: UIViewController, UITableViewDelegate, UITabl
         
     }
     
+    //function to get favorite tour from database
     func getFavorites() {
         let myURL = URLNET+"getUserFavoriteTour.php"
         favouriteList.removeAll()
@@ -54,6 +55,8 @@ class FavoriteToursViewController: UIViewController, UITableViewDelegate, UITabl
                     object.Name_Ar = dic["Name_Ar"].stringValue
                     self.favouriteList.append(object)
                 }
+                
+                //if no tours found show an alert
                 if (self.favouriteList.count) < 1{
                     let alertController = UIAlertController(title: nil, message: "There are No Tours Favorited", preferredStyle: .alert)
                     
@@ -64,6 +67,7 @@ class FavoriteToursViewController: UIViewController, UITableViewDelegate, UITabl
                     alertController.addAction(action3)
                     self.present(alertController, animated: true, completion: nil)
                 }
+                //reload table to add data
                 self.favoritesTableView.reloadData()
                 break
                 // if fail
@@ -84,10 +88,11 @@ class FavoriteToursViewController: UIViewController, UITableViewDelegate, UITabl
         return (favouriteList.count)
     }
     
+    //set row height function
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 85
     }
-    // to fill the controles with data
+    // to fill the table with data
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         
@@ -103,17 +108,21 @@ class FavoriteToursViewController: UIViewController, UITableViewDelegate, UITabl
         return cell
     }
     
+    //Function to get tour if from selected cell
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let cell = self.favoritesTableView.cellForRow(at: indexPath)
+        //get row from array that cooresponds the selected cell
         let tour = favouriteList[indexPath.row]
         selectedTourID = tour.Tour_id
         self.performSegue(withIdentifier: "FavoriteTour", sender: self)
         
     }
     
+    //Function to navigate(perform segue) to interface
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if(segue.identifier == "FavoriteTour"){
             let tourInfo = segue.destination as! TourInfoViewController
+            //Send tour id to next interface
             tourInfo.tourID = self.selectedTourID
         }
     }

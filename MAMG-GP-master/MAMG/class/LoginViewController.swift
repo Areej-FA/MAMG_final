@@ -39,16 +39,21 @@ class LoginViewController: UIViewController {
         }
     }
     
+    //Function called when login button is tapped
     @IBAction func loginButton(_ sender: Any) {
+        //check it email and password is empty
             if (emailTextfield_E.text == "" || passwordTextfield_E.text == ""){
+                //show alert if empty
                 displayAlert(message: "fileds must be filled");
             }else{
+                //else set email and boolean values in global variables
                 let email = emailTextfield_E.text
                 let pass = passwordTextfield_E.text
                  usersEmaile = emailTextfield_E.text!
                 isUserAGust = false
                 let user = ["Email": email ,  "Password" : pass ];
                 dataToJson(url: DataURL, id:  user as! [String : String] )
+                //navigate to user profile interface
                self.performSegue(withIdentifier: "fLogin", sender: self)
             }
     }
@@ -66,7 +71,7 @@ class LoginViewController: UIViewController {
         
     }
     
-    
+    //Function to display an alert
     func displayAlert(message: String){
         if (isItArabic) {
             let alert = UIAlertController(title: "تنبيه", message: message, preferredStyle: .alert)

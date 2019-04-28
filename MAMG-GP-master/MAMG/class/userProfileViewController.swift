@@ -26,6 +26,7 @@ class userProfileViewController: UIViewController {
         dataToJson(url: DataURL, id:  user )
     }
     
+    //get users info
     func dataToJson(url: String,id: [String: String]){
         Alamofire.request(url, method: .post, parameters: id).responseData { (response) in
             if response.result.isSuccess{
@@ -42,6 +43,7 @@ class userProfileViewController: UIViewController {
         self.performSegue(withIdentifier: "whishlit", sender: self)
     }
     
+    //setting users info
     func updateWeatherData (json : JSON){
         let email = json["Email"].stringValue
         let fname = json["First_name"].stringValue
@@ -54,6 +56,7 @@ class userProfileViewController: UIViewController {
     }
     
     @IBAction func SignOut(_ sender: Any) {
+        //remove email and set guest to true when loggin out
         usersEmaile = ""
         isUserAGust = true
         self.performSegue(withIdentifier: "logoutE", sender: self)
@@ -67,17 +70,22 @@ class userProfileViewController: UIViewController {
         self.performSegue(withIdentifier: "bookmark", sender: self)
     }
     
+    //From naviagtion to other interfaces
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if(segue.identifier == "logoutE"){
+            //to logout and return to login interface
             let lgout = segue.destination as! LoginViewController
         }
         if(segue.identifier == "whishlit"){
+            //to wishlist interface
             let wishlist = segue.destination as! WishlistViewController
         }
         if(segue.identifier == "history"){
+            //to tour history interface
             let history = segue.destination as! ToursHistoryViewController
         }
         if(segue.identifier == "bookmark"){
+            //to bookmark interface
             let bookmark = segue.destination as! BookmarkViewController
         }
     }

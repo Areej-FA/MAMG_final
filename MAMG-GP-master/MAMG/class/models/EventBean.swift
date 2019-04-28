@@ -1,5 +1,5 @@
 import Foundation
-
+//Class object model for event object
 class EventBean {
     var Event_id : String = ""
     var Name_E : String = ""

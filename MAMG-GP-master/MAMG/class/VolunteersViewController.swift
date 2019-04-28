@@ -48,6 +48,7 @@ class VolunteersViewController: UIViewController {
         }
     }
     
+    //get data from fields to send an email and insert them into database
     @IBAction func sendForm(_ sender: Any) {
         print("hello")
         if chackFields() {

@@ -50,7 +50,7 @@ class VisitTimeViewController: UIViewController {
             }
         }
         
-        //MARK:
+        //MARK: get times from database
         func dataToJson(url: String, lang: [String: String]){
             Alamofire.request(url, method: .post, parameters: lang ).responseData { (response) in
                 if response.result.isSuccess{
@@ -64,7 +64,7 @@ class VisitTimeViewController: UIViewController {
             }
         }
         
-        //MARK:
+        //MARK: get times for each day of the week
         func updateUi(data: JSON)  {
             //MARK:
             dayOne.text = data[0]["Days"].string
