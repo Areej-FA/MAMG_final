@@ -77,6 +77,8 @@
 		FC9EA2A62268C276009BC241 /* userProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC9EA2A52268C276009BC241 /* userProfileViewController.swift */; };
 		FC9EA2A82268C31C009BC241 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC9EA2A72268C31C009BC241 /* SignUpViewController.swift */; };
 		FC9EA2AA2268C3AF009BC241 /* VolunteersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC9EA2A92268C3AF009BC241 /* VolunteersViewController.swift */; };
+		FC9EA2AC227364AC009BC241 /* TourBean.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC9EA2AB227364AC009BC241 /* TourBean.swift */; };
+		FC9EA2AE2274914A009BC241 /* BookmarkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC9EA2AD2274914A009BC241 /* BookmarkViewController.swift */; };
 		FCB6FA3C220F3C4A0003C311 /* ObjectInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB6FA3B220F3C4A0003C311 /* ObjectInfoViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -184,6 +186,8 @@
 		FC9EA2A52268C276009BC241 /* userProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = userProfileViewController.swift; sourceTree = "<group>"; };
 		FC9EA2A72268C31C009BC241 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		FC9EA2A92268C3AF009BC241 /* VolunteersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VolunteersViewController.swift; sourceTree = "<group>"; };
+		FC9EA2AB227364AC009BC241 /* TourBean.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TourBean.swift; sourceTree = "<group>"; };
+		FC9EA2AD2274914A009BC241 /* BookmarkViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkViewController.swift; sourceTree = "<group>"; };
 		FCB6FA3B220F3C4A0003C311 /* ObjectInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectInfoViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -220,6 +224,7 @@
 			children = (
 				A01124BF220AE5310005ABE7 /* Variables.swift */,
 				84B47486222D1E7E006CE54D /* TimeBean.swift */,
+				FC9EA2AB227364AC009BC241 /* TourBean.swift */,
 				84B47484222D1D80006CE54D /* movieBean.swift */,
 				8418A38F222DCF2800843DC2 /* GiftBean.swift */,
 				8469E66C22351FF1009BF495 /* HallFeatureBean.swift */,
@@ -342,6 +347,7 @@
 				FC9EA2A72268C31C009BC241 /* SignUpViewController.swift */,
 				FC9EA2A92268C3AF009BC241 /* VolunteersViewController.swift */,
 				CF0A24892269FC87000A896D /* VisitTimeViewController.swift */,
+				FC9EA2AD2274914A009BC241 /* BookmarkViewController.swift */,
 			);
 			path = class;
 			sourceTree = "<group>";
@@ -684,6 +690,7 @@
 				A047138921F6FD9F005ADD1F /* TourViewController.swift in Sources */,
 				FC9EA2A42268C20D009BC241 /* LoginViewController.swift in Sources */,
 				A91A9230225D218A0058DB89 /* GiftInfoViewController.swift in Sources */,
+				FC9EA2AC227364AC009BC241 /* TourBean.swift in Sources */,
 				CF056D1C22687F8F00B2BAEB /* OnTourMapViewController.swift in Sources */,
 				A91A9235225D218A0058DB89 /* ToursHistoryViewController.swift in Sources */,
 				FC139F7122250CC90045237C /* TourInfoViewController.swift in Sources */,
@@ -701,6 +708,7 @@
 				FC139F67222464690045237C /* PlanATour2ViewController.swift in Sources */,
 				FC9EA2AA2268C3AF009BC241 /* VolunteersViewController.swift in Sources */,
 				A91A9233225D218A0058DB89 /* HallsViewController.swift in Sources */,
+				FC9EA2AE2274914A009BC241 /* BookmarkViewController.swift in Sources */,
 				A047138321F6FBD4005ADD1F /* ProgressHUD.m in Sources */,
 				8469E6712235373E009BF495 /* TourHistoryBean.swift in Sources */,
 				A91A9238225D218A0058DB89 /* GiftshopeViewController.swift in Sources */,

@@ -21,14 +21,12 @@ class OnTourObjViewController: UIViewController {
     //OUTLETS
     
     @IBOutlet weak var ObjectName: UILabel!
-    
     @IBOutlet weak var ObjectImage: UIImageView!
-    
-    @IBOutlet weak var ObjectDescribtion: UITextField!
-    
+    @IBOutlet weak var ObjectDescribtion: UILabel!
     @IBOutlet weak var ObjectVideo: UIButton!
-    
     @IBOutlet weak var ObjectLink: UIButton!
+    @IBOutlet weak var audioLevel: UISlider!
+    @IBOutlet weak var audioIcon: UIButton!
     
     //Remove
     var isItArabic = false
@@ -36,7 +34,7 @@ class OnTourObjViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        var parID = ["id": 7]
+        var parID = ["id": 3]
         
         ObjectName.text = tName  + " Tour"
         
@@ -92,6 +90,14 @@ class OnTourObjViewController: UIViewController {
                 ObjectLink.isHidden = true
             }
             
+            if let resource = json["object"][0]["Audio_AR"].string {
+                
+                
+            } else {
+                audioLevel.isHidden = true
+                audioIcon.isHidden = true
+            }
+            
         } else {
             //Object English Name
             if let name = json["object"][0]["Name_E"].string {
@@ -118,6 +124,14 @@ class OnTourObjViewController: UIViewController {
                 
             } else {
                 ObjectLink.isHidden = true
+            }
+            
+            if let resource = json["object"][0]["Audio_E"].string {
+                
+                
+            } else {
+                audioLevel.isHidden = true
+                audioIcon.isHidden = true
             }
             
         }

@@ -10,20 +10,17 @@ import UIKit
 import Alamofire
 import SwiftyJSON
 
-
-
 struct ScitechTours {
     var name: String = ""
     var UriName: Data
     var id : String = ""
-    
 }
 
 class ScitechToursViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     var url: String = URLNET+"getScitechTours.php"
     var nameArray: NSMutableArray = NSMutableArray()
-    
+    var selectedTour: String = ""
     
     @IBOutlet weak var ScitechToursTable: UITableView!
     
@@ -33,14 +30,9 @@ class ScitechToursViewController: UIViewController, UITableViewDelegate, UITable
         ScitechToursTable.delegate = self
         
         getScitechTours()
-       
     }
    
-    
-    
     func getScitechTours(){
-        
-        
         print("just entered the function")
         Alamofire.request(url, method: .post).responseString { (response) in
             if response.result.isSuccess{
@@ -80,26 +72,18 @@ class ScitechToursViewController: UIViewController, UITableViewDelegate, UITable
             }else{
                 print("Error \(String(describing: response.result.error))")
             }
-            
         }
-        
     }
-    
     
     func reloadTable(){
         ScitechToursTable.reloadData()
-        
     }
     
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
         return nameArray.count
     }
     
-    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
         guard let cell = self.ScitechToursTable.dequeueReusableCell(withIdentifier: "TourCell", for: indexPath) as? ScitechToursTableViewCell else {
             fatalError("The dequeued cell is not an instance of TableViewCell.")
         }
@@ -108,38 +92,23 @@ class ScitechToursViewController: UIViewController, UITableViewDelegate, UITable
         cell.Simage.image = UIImage(data: TourNames.UriName)
         
         return cell
-        
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 100
     }
     
-    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
-        if isItArabic {
-            
-            let cv = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "TourInformationE") as! ToursInformationViewController
-            let TourID = nameArray[indexPath.row] as! ScitechTours
-            cv.tourID = TourID.id
-            
-            self.present(cv, animated: true, completion: nil)
-            
-        } else {
-            
-            let cv = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "TourInformationAr") as! ToursInformationViewController
-            let TourID = nameArray[indexPath.row] as! ScitechTours
-            cv.tourID = TourID.id
-            
-            self.present(cv, animated: true, completion: nil)
-            
-        }
-        
+        let cell = self.ScitechToursTable.cellForRow(at: indexPath)
+        let tour = nameArray[indexPath.row] as! ScitechTours
+        selectedTour = tour.id
+        self.performSegue(withIdentifier: "ScitechTour", sender: self)
     }
     
-    
-    
-
-   
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if(segue.identifier == "ScitechTour"){
+            let tourInfo = segue.destination as! TourInfoViewController
+            tourInfo.tourID = self.selectedTour
+        }
+    }
 }

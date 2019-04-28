@@ -6,6 +6,7 @@ class FavoriteToursViewController: UIViewController, UITableViewDelegate, UITabl
 
     @IBOutlet weak var favoritesTableView: UITableView!
     var favouriteList = [FavoriteTourBean]()
+    var selectedTourID: String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -54,7 +55,7 @@ class FavoriteToursViewController: UIViewController, UITableViewDelegate, UITabl
                     self.favouriteList.append(object)
                 }
                 if (self.favouriteList.count) < 1{
-                    let alertController = UIAlertController(title: nil, message: "This is No Favorite for this user", preferredStyle: .alert)
+                    let alertController = UIAlertController(title: nil, message: "There are No Tours Favorited", preferredStyle: .alert)
                     
                     let action3 = UIAlertAction(title: "OK", style: .destructive) { (action:UIAlertAction) in
                         print("You've pressed the destructive");
@@ -100,6 +101,21 @@ class FavoriteToursViewController: UIViewController, UITableViewDelegate, UITabl
         }
         
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let cell = self.favoritesTableView.cellForRow(at: indexPath)
+        let tour = favouriteList[indexPath.row]
+        selectedTourID = tour.Tour_id
+        self.performSegue(withIdentifier: "FavoriteTour", sender: self)
+        
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if(segue.identifier == "FavoriteTour"){
+            let tourInfo = segue.destination as! TourInfoViewController
+            tourInfo.tourID = self.selectedTourID
+        }
     }
     
     // to edit the row

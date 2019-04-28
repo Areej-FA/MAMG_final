@@ -85,8 +85,16 @@ class OnTourMapViewController: UIViewController, WKNavigationDelegate, CLLocatio
         let url = URL(string: "http://192.168.64.2/dashboard/scitech2.html")!
         scitechMapWeb.load(URLRequest(url: url))
         
+        //mapObj
+        self.performSegue(withIdentifier: "mapObj", sender: self)
         
         getTObj()
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if(segue.identifier == "mapObj"){
+            let hallInfoVC = segue.destination as! OnTourObjViewController
+        }
     }
     
     func requestAuthurization(){

@@ -7,24 +7,130 @@
 //
 
 import UIKit
+import Alamofire
+import SwiftyJSON
 
-class TourInfoViewController: UIViewController {
+struct ObjsList{
+    var ObjID: String
+    var ObjName: String
+    var ObjImg: String
+    var selectedObject: Bool = false
+    
+    init(ObjID: String, ObjName: String, ObjImg: String) {
+        self.ObjID = ObjID
+        self.ObjName = ObjName
+        self.ObjImg = ObjImg
+    }
+}
 
+class TourInfoViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
+
+    var Tour = TourBean()
+    var tourID = "25"
+    var objectID = ""
+    var objects: NSMutableArray = NSMutableArray()
+    var idPar = ["":""]
+    
+    let urlTour = URLNET + "getTour.php"
+    let urlTObj = URLNET + "getTourObj.php"
+    
+    @IBOutlet weak var TourDescription: UILabel!
+    @IBOutlet weak var TourImage: UIImageView!
+    @IBOutlet weak var TourCollectionView: UICollectionView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        idPar["id"] = tourID
 
-        // Do any additional setup after loading the view.
+        
+        getTour()
+        
+        getTObj()
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func getTour(){
+        
+        Alamofire.request(urlTour, method: .post, parameters: idPar).responseData(completionHandler: {(response) in
+            if response.result.isSuccess {
+                let TourJSON : JSON = JSON(response.data)
+                print(TourJSON)
+                let name = TourJSON["objectdata"][0]["Name_E"].stringValue
+                let desc = TourJSON["objectdata"][0]["Description_E"].stringValue
+                let image = TourJSON["objectdata"][0]["Picture"].stringValue
+                
+                self.title = name
+                self.TourDescription.text = desc
+                
+                if let imageData = Data(base64Encoded: image) {
+                    self.TourImage.image = UIImage(data: imageData)
+                }
+            } else {
+                print("Error \(String(describing: response.result.error))")
+            }
+        })
     }
-    */
-
+    
+    func getTObj(){
+        Alamofire.request(urlTObj, method: .post, parameters: idPar).responseData(completionHandler: {(response) in
+            if response.result.isSuccess {
+                let ObjJSON : JSON = JSON(response.data)
+                print(ObjJSON)
+                let ObjID = ObjJSON["objectdata"][0]["Object_id"].stringValue
+                var name = ""
+                if isItArabic {
+                    name = ObjJSON["objectdata"][0]["Name_AR"].stringValue
+                } else {
+                    name = ObjJSON["objectdata"][0]["Name_E"].stringValue
+                }
+                let image = ObjJSON["objectdata"][0]["Picture"].stringValue
+                
+                self.objects.add(ObjsList.init(ObjID: ObjID, ObjName: name, ObjImg: image))
+                
+                self.TourCollectionView.reloadData()
+            }else {
+                print("Error \(String(describing: response.result.error))")
+            }
+        })
+    }
+    
+    // number of columns
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 1
+    }
+    // number of rows
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return (objects.count)
+    }
+    // to fill rows with data
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath)
+        cell.layer.cornerRadius = 10
+        let obj = objects[indexPath.row] as! ObjsList
+        
+        let featureImage = cell.viewWithTag(1) as! UIImageView
+        let featureName = cell.viewWithTag(2) as! UILabel
+        
+        featureName.text = obj.ObjName
+        
+        if let imageData = Data(base64Encoded: (obj.ObjImg)) {
+            featureImage.image = UIImage(data: imageData)
+        }
+        return cell
+    }
+    
+    // to know wich row was selected
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let obj = objects[indexPath.row] as! ObjsList
+        
+        objectID = obj.ObjID
+        self.performSegue(withIdentifier: "ObjectInfoE", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if(segue.identifier == "ObjectInfoE"){
+            let objInfoVC = segue.destination as! ObjectInfoViewController
+            objInfoVC.decodedURL = self.objectID
+        }
+    }
 }

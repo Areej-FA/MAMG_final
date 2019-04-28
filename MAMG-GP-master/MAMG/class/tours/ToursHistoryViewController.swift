@@ -6,6 +6,7 @@ class ToursHistoryViewController: UIViewController, UITableViewDelegate, UITable
 
     @IBOutlet weak var historyTableView: UITableView!
     var historyList = [TourHistoryBean]()
+    var selectedTour: String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -98,6 +99,22 @@ class ToursHistoryViewController: UIViewController, UITableViewDelegate, UITable
         historyDate.text = historyList[indexPath.row].date
         
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let cell = self.historyTableView.cellForRow(at: indexPath)
+        let tour = historyList[indexPath.row]
+        selectedTour = tour.Tour_id
+        self.performSegue(withIdentifier: "HistoryTour", sender: self)
+        //ScitechTour
+        //HistoryTour
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if(segue.identifier == "HistoryTour"){
+            let tourInfo = segue.destination as! TourInfoViewController
+            tourInfo.tourID = self.selectedTour
+        }
     }
 
 }

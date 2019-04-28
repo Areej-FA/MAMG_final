@@ -63,15 +63,22 @@ class userProfileViewController: UIViewController {
         self.performSegue(withIdentifier: "history", sender: self)
     }
     
+    @IBAction func bookmark(_ sender: Any) {
+        self.performSegue(withIdentifier: "bookmark", sender: self)
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if(segue.identifier == "logoutE"){
-            let hallInfoVC = segue.destination as! LoginViewController
+            let lgout = segue.destination as! LoginViewController
         }
         if(segue.identifier == "whishlit"){
-            let hallInfoVC = segue.destination as! WishlistViewController
+            let wishlist = segue.destination as! WishlistViewController
         }
         if(segue.identifier == "history"){
-            let hallInfoVC = segue.destination as! ToursHistoryViewController
+            let history = segue.destination as! ToursHistoryViewController
+        }
+        if(segue.identifier == "bookmark"){
+            let bookmark = segue.destination as! BookmarkViewController
         }
     }
     
