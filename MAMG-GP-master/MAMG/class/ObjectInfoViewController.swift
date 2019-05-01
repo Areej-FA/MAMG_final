@@ -31,7 +31,7 @@ class ObjectInfoViewController: UIViewController {
     
     //MARK: URL PHP link
     
-    let DataURL: String = "http://192.168.64.2/dashboard/MyWebServices/api/getAnObject.php" //Link to PHP code in localHost
+    let DataURL: String = URLNET + "getAnObject.php" //Link to PHP code in localHost
     
     var videoLink: String = ""
     var resourceLink: String = ""
@@ -210,7 +210,7 @@ class ObjectInfoViewController: UIViewController {
     //MARK: Bookmark object
     
     @IBAction func SetObjectinBookmark(_ sender: Any) {
-        let setURL: String = URLNET+"setObjectInBookmark.php"
+        let setURL: String = URLNET + "setObjectInBookmark.php"
         
         Alamofire.request(setURL, method: .post, parameters: int).responseData { (response) in
             

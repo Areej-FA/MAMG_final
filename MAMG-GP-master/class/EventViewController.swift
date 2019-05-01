@@ -24,7 +24,7 @@ class EventViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     //Function to get events from database
     func getEvents() {
-        let myURL = URLNET+"getEvents.php"
+        let myURL = URLNET + "getEvents.php"
         eventsList = [EventBean]()
         
         Alamofire.request(myURL, method: .get, parameters: nil).responseJSON{

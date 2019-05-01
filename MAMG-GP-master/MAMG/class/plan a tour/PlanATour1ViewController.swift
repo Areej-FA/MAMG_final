@@ -24,7 +24,7 @@ class PlanATour1ViewController: UIViewController, UIImagePickerControllerDelegat
     var imgToUp: UIImage!
     
     //Link to api file with php code
-    let setPlannedTour = URLNET+"setPlannedTour.php"
+    let setPlannedTour = URLNET + "setPlannedTour.php"
     
     //Main function
     override func viewDidLoad() {

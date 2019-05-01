@@ -19,7 +19,7 @@ class LoginViewController: UIViewController {
     @IBOutlet var emailTextfield_Ar: UITextField!
     @IBOutlet var passwordTextfield_Ar: UITextField!
     
-    let DataURL: String = URLNET+"login.php"
+    let DataURL: String = URLNET + "login.php"
     
     override func viewDidLoad() {
         super.viewDidLoad()

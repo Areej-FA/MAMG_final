@@ -18,7 +18,7 @@ struct ScitechTours {
 
 class ScitechToursViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-    var url: String = URLNET+"getScitechTours.php"
+    var url: String = URLNET + "getScitechTours.php"
     var nameArray: NSMutableArray = NSMutableArray()
     var selectedTour: String = ""
     

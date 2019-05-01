@@ -30,7 +30,7 @@ class PlanATour3ViewController: UIViewController, UITableViewDataSource,UITableV
     var tourID: Int = 0
     var tourName: String = ""
     //URL link to api
-    var url = URLNET+"getObjects.php"
+    var url = URLNET + "getObjects.php"
     //Array of values recieved from database
     var ObjArray: NSMutableArray = NSMutableArray()
     //Array of hall id from selected halls is set from previous interface

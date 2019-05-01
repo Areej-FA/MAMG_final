@@ -32,7 +32,7 @@ class FavoriteToursViewController: UIViewController, UITableViewDelegate, UITabl
     
     //function to get favorite tour from database
     func getFavorites() {
-        let myURL = URLNET+"getUserFavoriteTour.php"
+        let myURL = URLNET + "getUserFavoriteTour.php"
         favouriteList.removeAll()
         
         let params : Parameters = ["Email":usersEmaile]

@@ -28,7 +28,7 @@ class ToursInformationViewController: UIViewController {
 
     //Variables
     var nameArray: NSMutableArray = NSMutableArray()
-    var url = URLNET+"getScitechTours.php"
+    var url = URLNET + "getScitechTours.php"
     var int: [String: String] = ["": ""]
     var tourID: String = ""
     

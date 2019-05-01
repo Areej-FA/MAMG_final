@@ -12,7 +12,7 @@ import SwiftyJSON
 
 class OnTourObjViewController: UIViewController {
     
-    let getAnObject: String = URLNET+"getAnObject.php"
+    let getAnObject: String = URLNET + "getAnObject.php"
     var ObjectID = 0
     var videoLink: String = ""
     var resourceLink: String = ""
@@ -188,7 +188,4 @@ class OnTourObjViewController: UIViewController {
         let cv = UIStoryboard(name: "IndoorNavigation", bundle: nil).instantiateViewController(withIdentifier: "mapTE") as! OnTourMapViewController
         self.present(cv, animated: true, completion: nil)
     }
-    
-
-
 }

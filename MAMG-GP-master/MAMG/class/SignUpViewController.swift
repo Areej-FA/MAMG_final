@@ -31,7 +31,7 @@ class SignUpViewController: UIViewController {
     @IBOutlet weak var conformPasswordLable: UILabel!
     @IBOutlet weak var signUpButton: UIButton!
     
-    let DataURL: String = URLNET+"newUser.php" //Link to PHP code in localHost
+    let DataURL: String = URLNET + "newUser.php" //Link to PHP code in localHost
     
     //MARK: Send POST request
     func dataToJson(url: String,id: [String: String]){

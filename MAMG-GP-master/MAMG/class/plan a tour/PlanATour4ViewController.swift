@@ -22,8 +22,8 @@ class PlanATour4ViewController: UIViewController {
     var tourID: Int = 0
     var tourName: String = ""
     //URL links to api
-    let ObjURL = URLNET+"savePlannedTour.php"
-    let UserURL = URLNET+"saveUsersTour.php"
+    let ObjURL = URLNET + "savePlannedTour.php"
+    let UserURL = URLNET + "saveUsersTour.php"
     //parameters to send values to api
     var parameterUser: [String : Any] = [:]
     

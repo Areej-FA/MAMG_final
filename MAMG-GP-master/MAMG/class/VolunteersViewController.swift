@@ -13,7 +13,7 @@ import SwiftyJSON
 class VolunteersViewController: UIViewController {
 
     //MARK:
-    let DataURL: String = URLNET+"addVolunteer.php"
+    let DataURL: String = URLNET + "addVolunteer.php"
     var message : String = ""
     var gender : String = ""
     var peroid : String = ""
